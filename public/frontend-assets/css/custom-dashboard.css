@@ -1,7 +1,9 @@
 .sidebar .sidebar-wrapper{
 	height: 100vh;
 } 
-
+.sidebar .nav p, .off-canvas-sidebar .nav p{
+  text-transform: capitalize;
+}
 /*Dashboard Home Page*/
 .box-grid-row .col-lg-4 .cards{
 	height: 200px;

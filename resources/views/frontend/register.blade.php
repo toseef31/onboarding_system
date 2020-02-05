@@ -11,9 +11,34 @@
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-md-8 col-xs-12">
-			<h5 class="text-uppercase mb-5 mt-5">Create Account</h5>
 			<div class="signup-form mb-5 mt-5">
 				<form action="" method="post">
+					<h5 class="text-uppercase mb-3 mt-5">Find a Number</h5>
+					<div class="form-group">
+				  	<div class="row">
+				  		<div class="col-md-4">
+				  			<label>Local</label>
+				  			<select class="form-control" name="">
+				  				<option>Singapore</option>
+				  			</select>
+				  		</div>	
+				  		<div class="col-md-4">
+				  			<label>Location</label>
+				  			<select class="form-control">
+				  				<option>Singapore</option>
+				  			</select>
+				  		</div>	
+				  		<div class="col-md-4">
+				  			<label>Choose Number</label>
+				  			<select class="form-control">
+				  				<option>+65-51-4898947</option>
+				  				<option>+65-51-4898947</option>
+				  				<option>+65-82-4898947</option>
+				  			</select>
+				  		</div>	
+				  	</div>
+				  </div>
+					<h5 class="text-uppercase mb-3 mt-4">Create Account</h5>
 				  <div class="form-group">
 				  	<div class="row">
 				  		<div class="col-md-6">
@@ -31,7 +56,7 @@
 				    <input type="text" class="form-control" placeholder="Enter company name" id="company_name">
 				  </div>
 				  <div class="form-group">
-				  	<label>Company Name</label>
+				  	<label>Email</label>
 				    <input type="email" class="form-control" placeholder="Enter email" id="email">
 				  </div>
 				  <div class="form-group">

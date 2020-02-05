@@ -4,6 +4,7 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use DB;
 
 class RegisterController extends Controller
 {
@@ -47,6 +48,11 @@ class RegisterController extends Controller
     public function show($id)
     {
         //
+    }
+
+    public function register(Request $request)
+    {
+      return view('frontend.register');
     }
 
     /**

@@ -557,3 +557,10 @@ header.active .top-line {
 .signup-form .form-control{
   padding: .7rem .75rem;
 }
+.signup-form select.form-control:not([size]):not([multiple]) {
+    height: calc(3rem + 0px);
+}
+/*Shadow Class*/
+.shadow{
+  box-shadow: 0px 0px 1px 1px #ccc;
+}
