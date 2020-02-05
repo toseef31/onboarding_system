@@ -20,9 +20,10 @@ Route::get('/dashboard', function(){
 Route::get('/login', function(){
 	return view('frontend.login');
 });
-Route::get('/register', function(){
-	return view('frontend.register');
-});
+Route::get('/register', 'frontend\RegisterController@register');
 Route::get('/pricing-plan', function(){
 	return view('frontend.membership');
+});
+Route::get('/verification', function(){
+	return view('frontend.verification');
 });

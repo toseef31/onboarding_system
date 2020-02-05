@@ -187,7 +187,7 @@
               <div class="row">
                 <div class="col-xs-3">
                   <div class="icon-big icon-info text-center">
-                    <i class="ti-twitter-alt"></i>
+                    <i class="ti-comments"></i>
                   </div>
                 </div>
                 <div class="col-xs-9">
