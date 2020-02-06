@@ -6,6 +6,13 @@
 	.iti{
 		display: block;
 	}
+	.intl-tel-input .flag-dropdown .selected-flag {
+    margin: 10px 6px;
+    padding: 6px 16px 6px 6px;
+	}
+	.intl-tel-input input{
+		padding-left: 47px !important;
+	}
 </style>
 @endsection
 @section('content')
@@ -13,33 +20,33 @@
 	<div class="row justify-content-center">
 		<div class="col-md-8 col-xs-12">
 		  @if ($errors->any())
-               <div class="alert alert-danger">
-                  <ul>
-                     @foreach ($errors->all() as $error)
-                     <li>{{ $error }}</li>
-                     @endforeach
-                  </ul>
-               </div>
-               @endif
+        <div class="alert alert-danger">
+          <ul>
+             @foreach ($errors->all() as $error)
+             <li>{{ $error }}</li>
+             @endforeach
+          </ul>
+        </div>
+      @endif
 			<div class="signup-form mb-5 mt-5">
 				<form action="{{ url('/register') }}" method="post">
 				{{ csrf_field() }}
 					<h5 class="text-uppercase mb-3 mt-5">Find a Number</h5>
 					<div class="form-group">
 				  	<div class="row">
-				  		<div class="col-md-4">
+				  		<div class="col-md-6">
 				  			<label>Local</label>
 				  			<select class="form-control" name="local">
 				  				<option>Singapore</option>
 				  			</select>
 				  		</div>	
-				  		<div class="col-md-4">
+				  		<!-- <div class="col-md-4">
 				  			<label>Location</label> 
 				  			<select class="form-control" name="location">
 				  				<option>Singapore</option>
 				  			</select>
-				  		</div>	
-				  		<div class="col-md-4">
+				  		</div> -->	
+				  		<div class="col-md-6">
 				  			<label>Choose Number</label>
 				  			<select class="form-control" name="choice_number">
 				  				<option>+65-51-4898947</option>

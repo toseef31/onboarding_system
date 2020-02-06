@@ -6,8 +6,8 @@
       </a>
     </div>
     <ul class="nav">
-      <li  class="{{ request()->is('dashboard') ? 'active' : '' }}">
-        <a href="{{url('/dashboard')}}">
+      <li  class="{{ request()->is('/user-portal') ? 'active' : '' }}">
+        <a href="{{url('/user-portal')}}">
           <i class="ti-panel"></i>
           <p>Company</p>
         </a>

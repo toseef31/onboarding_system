@@ -59,7 +59,7 @@ class RegisterController extends Controller
     public function register(Request $request){
        
         if($request->session()->has('User')){
-			return redirect('dashboard');
+			return redirect('user-portal');
 		}
 
         if($request->isMethod('post')){
@@ -162,7 +162,7 @@ class RegisterController extends Controller
     
 public function accountLogin(Request $request){
         if($request->session()->has('User')){
-			return redirect('dashboard');
+			return redirect('user-portal');
 		}
 		$next = $request->input('next');
 		if($request->isMethod('post')){
@@ -189,7 +189,7 @@ public function accountLogin(Request $request){
 				if($next != ''){
 					return redirect($next);
 				}else{
-					return redirect('/dashboard');
+					return redirect('/user-portal');
 				}
 			}
    

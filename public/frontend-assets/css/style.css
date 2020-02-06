@@ -125,7 +125,7 @@ header.active .top-line {
     display: block;
     font-size: 14px;
     font-weight: 600;
-    line-height: 90px;
+    line-height: 50px;
     padding: 0 15px;
     position: relative;
     text-transform: capitalize;
@@ -555,13 +555,17 @@ header.active .top-line {
 .login-form .btn, .signup-form .btn{
   padding: .5rem 1.75rem;
 }
-/*.signup-form .form-control{
+.signup-form .form-control{
   padding: .7rem .75rem;
-}*/
+}
 .signup-form select.form-control:not([size]):not([multiple]) {
     height: calc(3rem + 0px);
 }
 /*Shadow Class*/
 .shadow{
   box-shadow: 0px 0px 1px 1px #ccc;
+}
+/*Membership page*/
+.subscribe-box .list-group-item{
+  padding: .75rem .2rem;
 }
