@@ -14,8 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/dashboard', function(){
-	return view('frontend.dashboard.dashboard');
+Route::group(['prefix' => 'user-portal'], function () {
+	Route::get('/', function(){
+		return view('frontend.dashboard.dashboard');
+	});
+	Route::get('/manage-profile', function(){
+		return view('frontend.dashboard.profile');
+	});
+	Route::get('/change-password', function(){
+		return view('frontend.dashboard.changepassword');
+	});
 });
 
     Route::get('/plans', 'PlanController@index')->name('plans.index');
@@ -29,4 +37,7 @@ Route::get('logout', 'frontend\RegisterController@logout');
 
 Route::get('/pricing-plan', function(){
 	return view('frontend.membership');
+});
+Route::get('/update-pricing-plan', function(){
+	return view('frontend.update-pricing');
 });

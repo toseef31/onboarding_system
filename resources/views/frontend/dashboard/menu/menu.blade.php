@@ -6,14 +6,14 @@
       </a>
     </div>
     <ul class="nav">
-      <li  class="{{ request()->is('dashboard') ? 'active' : '' }}">
-        <a href="{{url('/dashboard')}}">
+      <li  class="{{ request()->is('/user-portal') ? 'active' : '' }}">
+        <a href="{{url('/user-portal')}}">
           <i class="ti-panel"></i>
           <p>Company</p>
         </a>
       </li>
-      <li class="{{ request()->is('dashboard/profile') ? 'active' : '' }}">
-        <a href="{{url('/dashboard/profile')}}">
+      <li class="{{ request()->is('user-portal/manage-profile') ? 'active' : '' }}">
+        <a href="{{url('user-portal/manage-profile')}}">
           <i class="ti-user"></i>
           <p>User profile management</p>
         </a>
@@ -51,8 +51,8 @@
         </a>
       </li>
       
-      <li class="{{ request()->is('dashboard/listing') ? 'active' : '' }}">
-        <a href="{{url('/dashboard/listing')}}">
+      <li class="{{ request()->is('/update-pricing-plan') ? 'active' : '' }}">
+        <a href="{{url('/update-pricing-plan')}}">
           <i class="ti-map"></i>
           <p>Upgrade package</p>
         </a>
