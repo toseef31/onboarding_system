@@ -13,7 +13,7 @@
         </a>
       </li>
       <li class="{{ request()->is('dashboard/profile') ? 'active' : '' }}">
-        <a href="{{url('/dashboard/profile')}}">
+        <a href="{{url('user-portal/manage-profile')}}">
           <i class="ti-user"></i>
           <p>User profile management</p>
         </a>

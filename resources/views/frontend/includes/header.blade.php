@@ -1,5 +1,5 @@
-<nav class="navbar navbar-default">
-<div class="top-line">
+<nav class="navbar navbar-default sticky-top">
+<div class="top-line d-none d-sm-block">
 		<div class="container">
 				<div class="row">
 						<div class="col-md-6 col-sm-6 col-xs-6">
@@ -18,7 +18,8 @@
 								<div class="brand"> <a href="#">
 										<h1>Logo</h1>
 										</a> </div>
-								<nav  id="nav-wrap" class="main-nav"> <a id="toggle-btn" href="#"><i class="fa fa-bars"></i> </a>
+								<nav  id="nav-wrap" class="main-nav"> 
+									<a id="toggle-btn" class="navbar-toggler"><i class="fa fa-bars"></i> </a>
 								<ul class="sf-menu">
 										<li class="current"> <a href="index.html">Home</a> </li>
 										<li> <a href="about-us.html">About Us </a></li>
@@ -32,3 +33,27 @@
 		</div>
 </div>
 </nav>
+<!-- <nav class="navbar navbar-expand-md navbar-light bg-light">
+  <div class="container">
+   	<div class="row">
+   		<div class="col-md-12">
+   			<a href="#" class="navbar-brand">Brand</a>
+   			<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+   			    <span class="navbar-toggler-icon"></span>
+   			</button>
+
+   			<div class="collapse navbar-collapse" id="navbarCollapse">
+   			    <div class="navbar-nav">
+   			        <a href="#" class="nav-item nav-link active">Home</a>
+   			        <a href="#" class="nav-item nav-link">Profile</a>
+   			        <a href="#" class="nav-item nav-link">Messages</a>
+   			        <a href="#" class="nav-item nav-link disabled" tabindex="-1">Reports</a>
+   			    </div>
+   			    <div class="navbar-nav ml-auto">
+   			        <a href="#" class="nav-item nav-link">Login</a>
+   			    </div>
+   			</div>
+   		</div>
+   	</div>
+  </div>
+</nav> -->

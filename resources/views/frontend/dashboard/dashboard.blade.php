@@ -1,6 +1,6 @@
 @extends('frontend.dashboard.layout.master')
 
-@section('title', 'Dashboard')
+@section('title', 'User Portal')
 
 @section('styling')
 @endsection
@@ -29,12 +29,12 @@
           <div class="cards">
             <div class="content">
               <div class="row">
-                <div class="col-xs-3">
+                <div class="col-xs-12">
                   <div class="icon-big icon-warning text-center">
                     <i class="ti-user"></i>
                   </div>
                 </div>
-                <div class="col-xs-9">
+                <div class="col-xs-12">
                   <a href="{{url('dashboard/profile')}}">
                     <div class="numbers">
                       Company
@@ -51,15 +51,15 @@
           <div class="cards">
             <div class="content">
               <div class="row">
-                <div class="col-xs-3">
+                <div class="col-xs-12">
                   <div class="icon-big icon-success text-center">
                     <i class="ti-view-list-alt"></i>
                   </div>
                 </div>
-                <div class="col-xs-9">
-                  <a href="{{url('/dashboard/changepassword')}}">
+                <div class="col-xs-12">
+                  <a href="{{url('user-portal/manage-profile')}}">
                     <div class="numbers">
-                      User Account
+                      User Profile Management
                     </div>
                   </a>
                 </div>
@@ -73,12 +73,12 @@
           <div class="cards">
             <div class="content">
               <div class="row">
-                <div class="col-xs-3">
+                <div class="col-xs-12">
                   <div class="icon-big icon-danger text-center">
                     <i class="ti-pulse"></i>
                   </div>
                 </div>
-                <div class="col-xs-9">
+                <div class="col-xs-12">
                   <a href="{{'/dashboard/favorite'}}">
                     <div class="numbers">
                       Telephone Setting
@@ -96,12 +96,12 @@
           <div class="cards">
             <div class="content">
               <div class="row">
-                <div class="col-xs-3">
+                <div class="col-xs-12">
                   <div class="icon-big icon-info text-center">
                     <i class="ti-pencil-alt2"></i>
                   </div>
                 </div>
-                <div class="col-xs-9">
+                <div class="col-xs-12">
                   <a href="{{url('/dashboard/coupan')}}">
                     <div class="numbers">
                       Call Reporting
@@ -118,12 +118,12 @@
           <div class="cards">
             <div class="content">
               <div class="row">
-                <div class="col-xs-3">
+                <div class="col-xs-12">
                   <div class="icon-big icon-info text-center">
                     <i class="ti-map"></i>
                   </div>
                 </div>
-                <div class="col-xs-9">
+                <div class="col-xs-12">
                   <a href="{{url('/dashboard/listing')}}">
                     <div class="numbers">
                       Disposition of calls report
@@ -140,12 +140,12 @@
           <div class="cards">
             <div class="content">
               <div class="row">
-                <div class="col-xs-3">
+                <div class="col-xs-12">
                   <div class="icon-big icon-info text-center">
                     <i class="ti-receipt"></i>
                   </div>
                 </div>
-                <div class="col-xs-9">
+                <div class="col-xs-12">
                   <a href="{{url('/dashboard/news')}}">
                     <div class="numbers">
                       Billing Information
@@ -162,12 +162,12 @@
           <div class="cards">
             <div class="content">
               <div class="row">
-                <div class="col-xs-3">
+                <div class="col-xs-12">
                   <div class="icon-big icon-info text-center">
                     <i class="ti-image"></i>
                   </div>
                 </div>
-                <div class="col-xs-9">
+                <div class="col-xs-12">
                   <a href="{{url('/dashboard/user_upload')}}">
                     <div class="numbers">
                       Upgrade package
@@ -185,12 +185,12 @@
           <div class="cards">
             <div class="content">
               <div class="row">
-                <div class="col-xs-3">
+                <div class="col-xs-12">
                   <div class="icon-big icon-info text-center">
                     <i class="ti-comments"></i>
                   </div>
                 </div>
-                <div class="col-xs-9">
+                <div class="col-xs-12">
                   <a href="{{url('/dashboard/user-order')}}">
                     <div class="numbers">
                       WebRTC
@@ -250,8 +250,6 @@
     </div>
   </div>
 </div>
-
-
 @endsection
 
 @section('script')

@@ -8,7 +8,7 @@ $(document).ready(function() {
         delay: 100 
     }); 
     $("#toggle-btn").click(function() {
-        $(".sf-menu").slideToggle("slow"); 
+        $(".sf-menu").toggle(500); 
     });
 
     $('.toggle-subarrow').click(
@@ -20,9 +20,9 @@ $(document).ready(function() {
     $(window).scroll(function() {
         var scroll = $(window).scrollTop();
         if (scroll >= 100 && $(this).width() > 769) {
-            header.addClass("navbar-fixed-top");
+            header.addClass("fixed-top");
         } else {
-            header.removeClass('navbar-fixed-top');
+            header.removeClass('fixed-top');
         }
     });	  
 	  $(this).find(".h4 i").each(function(){
@@ -34,9 +34,9 @@ $(window).scroll(function() {
     var top = 200;
     if ($(window).scrollTop() >= top) {
 
-        nav.addClass('navbar-fixed-top');
+        nav.addClass('fixed-top');
 
     } else {
-        nav.removeClass('navbar-fixed-top');
+        nav.removeClass('fixed-top');
     }
 });
