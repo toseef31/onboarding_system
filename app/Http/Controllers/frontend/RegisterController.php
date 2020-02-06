@@ -193,9 +193,7 @@ public function accountLogin(Request $request){
 				}
 			}
    
-
 		}
-
 
 		return view('frontend.login');
     }
