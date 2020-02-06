@@ -25,13 +25,15 @@ Route::group(['prefix' => 'user-portal'], function () {
 		return view('frontend.dashboard.changepassword');
 	});
 });
-Route::get('/login', function(){
-	return view('frontend.login');
-});
-Route::get('/register', 'frontend\RegisterController@register');
+
+Route::match(['get','post'],'/register', 'frontend\RegisterController@register');
+Route::match(['get','post'],'/verification', 'frontend\RegisterController@accountVerify');
+Route::match(['get','post'],'/login', 'frontend\RegisterController@accountLogin');
+Route::get('logout', 'frontend\RegisterController@logout');
+
 Route::get('/pricing-plan', function(){
 	return view('frontend.membership');
 });
-Route::get('/verification', function(){
-	return view('frontend.verification');
+Route::get('/update-pricing-plan', function(){
+	return view('frontend.update-pricing');
 });

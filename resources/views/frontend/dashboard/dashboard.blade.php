@@ -168,7 +168,7 @@
                   </div>
                 </div>
                 <div class="col-xs-12">
-                  <a href="{{url('/dashboard/user_upload')}}">
+                  <a href="{{url('/update-pricing-plan')}}">
                     <div class="numbers">
                       Upgrade package
                     </div>

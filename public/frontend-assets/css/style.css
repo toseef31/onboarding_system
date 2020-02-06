@@ -555,9 +555,9 @@ header.active .top-line {
 .login-form .btn, .signup-form .btn{
   padding: .5rem 1.75rem;
 }
-.signup-form .form-control{
+/*.signup-form .form-control{
   padding: .7rem .75rem;
-}
+}*/
 .signup-form select.form-control:not([size]):not([multiple]) {
     height: calc(3rem + 0px);
 }

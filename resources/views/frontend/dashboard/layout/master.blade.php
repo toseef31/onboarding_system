@@ -44,21 +44,6 @@
   <script src="{{ asset('/frontend-assets/bootstrap/js/bootstrap.min.js') }}"></script>
   <!-- Custom Script -->
   <script src="{{ asset('/frontend-assets/js/script.js') }}"></script>
-  <script>
-    
-    $('#toggle-passwords').click(function(){
-      
-      if($('#pwd').attr("type") == "text"){
-        $('#pwd').attr('type', 'password');
-        $('#toggle-passwords').addClass( "fa-eye-slash" );
-        $('##toggle-passwords').removeClass( "fa-eye" );
-      }else if($('#pwd').attr("type") == "password"){
-        $('#pwd').attr('type', 'text');
-        $('#toggle-passwords').removeClass( "fa-eye-slash" );
-        $('#toggle-passwords').addClass( "fa-eye" );
-      }
-    });
-
-  </script>
+  
 </body>
 </html>
