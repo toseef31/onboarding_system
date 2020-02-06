@@ -1,3 +1,4 @@
+/*@import "public/frontend-assets/bootstrap/scss/bootstrap";*/
 .navbar {
     border-radius: 0;
     border: 0;
@@ -7,7 +8,7 @@
 
 .header-inner {
     width: 100%;
-    position: relative;
+    /*position: relative;*/
     z-index: 999;
     background-color: #fff;
     -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 0 0 rgba(0, 0, 0, 0.06);
@@ -124,7 +125,7 @@ header.active .top-line {
     display: block;
     font-size: 14px;
     font-weight: 600;
-    line-height: 90px;
+    line-height: 50px;
     padding: 0 15px;
     position: relative;
     text-transform: capitalize;
@@ -330,17 +331,17 @@ header.active .top-line {
         font-size: 13px;
         line-height: 16px;
         display: block;
-        border-top: 1px solid #F96
+        border-top: 1px solid #ddd;
     }
 
     .main-nav .sf-menu li a {
-        color: #fff;
+        /*color: #fff;*/
         padding: 20px;
         line-height: 0px;
         display: block;
         position: relative;
-        background-color: #08991C;
-        text-align: center
+        /*background-color: #08991C;*/
+        /*text-align: center*/
     }
 
     .main-nav .sf-menu ul {
@@ -563,4 +564,8 @@ header.active .top-line {
 /*Shadow Class*/
 .shadow{
   box-shadow: 0px 0px 1px 1px #ccc;
+}
+/*Membership page*/
+.subscribe-box .list-group-item{
+  padding: .75rem .2rem;
 }
