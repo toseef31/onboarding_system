@@ -2,7 +2,7 @@
   <div class="sidebar-wrapper">
     <div class="logo">
       <a href="#" class="simple-text" id="dash_Name">
-        Zeeshan
+        {{auth()->user()->f_name}}
       </a>
     </div>
     <ul class="nav">

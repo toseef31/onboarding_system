@@ -30,11 +30,12 @@
 				  <button type="submit" class="btn btn-danger">Submit</button>
 					 <a href="{{url('/register')}}" class="pull-right" style="float:right">Creat new account</a>
 				</form>
-
+ 
 			</div>
 		</div>
 	</div>
 </div>
 @endsection
 @section('script')
+
 @endsection

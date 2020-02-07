@@ -13,35 +13,36 @@
 	</div> -->
 	<div class="header-inner">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="brand"> <a href="#">
-						<h1>Logo</h1>
-					</a> </div>
-					<nav  id="nav-wrap" class="main-nav">
-						<a id="toggle-btn" class="navbar-toggler"><i class="fa fa-bars"></i> </a>
-						<ul class="sf-menu">
-							<li class="current"> <a href="index.html">Home</a> </li>
-							<!-- <li> <a href="about-us.html">About Us </a></li>
-							<li> <a href="products.html">Products</a></li>
-							<li> <a href="exports.html">Exports</a></li>
-							<li> <a href="clients.html">Clients</a> </li> -->
-							<li> <a href="">Contact</a> </li>
-							@if(session()->has('User'))
-							<li class="dropdown">
-								<a href="" class="dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{session()->get('User')->f_name}}</a>
-								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<a class="dropdown-item" href="{{url('/user-portal')}}"><i class="fas fa-tachometer-alt pr-2"></i> Dashboard</a>
-									<a class="dropdown-item" href="{{url('user-portal/change-password')}}"><i class="fas fa-lock pr-2"></i> Change Password</a>
-									<a href="{{url('/logout')}}"><i class="fas fa-sign-out-alt"></i> Logout</a>
-								</div>
-							</li>
-							@else
-							<li> <a href="{{url('/register')}}" class="{{ request()->is('/register') ? 'active' : '' }}">Register</a> </li>
-							<li> <a href="{{url('/login')}}">Login</a> </li>
-							@endif
-						</ul>
-					</nav> 
+
+				<div class="row">
+						<div class="col-md-12">
+								<div class="brand"> <a href="#">
+										<h1>Logo</h1>
+										</a> </div>
+								<nav  id="nav-wrap" class="main-nav"> 
+									<a id="toggle-btn" class="navbar-toggler"><i class="fa fa-bars"></i> </a>
+								<ul class="sf-menu">
+										<li class="current"> <a href="index.html">Home</a> </li>
+										<!-- <li> <a href="about-us.html">About Us </a></li>
+										<li> <a href="products.html">Products</a></li>
+										<li> <a href="exports.html">Exports</a></li>
+										<li> <a href="clients.html">Clients</a> </li> -->
+										<li> <a href="">Contact</a> </li>
+										@if(\Auth::check())
+										<li class="dropdown">
+											<a href="" class="dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{auth()->user()->f_name}}</a>
+											<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							          <a class="dropdown-item" href="{{url('/user-portal')}}"><i class="fas fa-tachometer-alt pr-2"></i> Dashboard</a>
+							          <a class="dropdown-item" href="{{url('user-portal/change-password')}}"><i class="fas fa-lock pr-2"></i> Change Password</a>
+							          <a href="{{url('/logout')}}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+							        </div>
+										</li>
+										@else
+										<li> <a href="{{url('/register')}}">Register</a> </li>
+										<li> <a href="{{url('/login')}}">Login</a> </li>
+										@endif
+								</ul>
+								</nav> </div>
 				</div>
 			</div>
 		</div>
