@@ -17,19 +17,10 @@ Route::group(['prefix' => 'dashboard'], function () {
 	});
 
 	Route::match(['get','post'],'/logout', 'Dashboard\JobManageController@logout');
-	Route::get('/job_management', 'Dashboard\JobManageController@index');
-	Route::get('/blogs', 'Dashboard\JobManageController@blogs');
-	Route::get('/blog/create', 'frontend\BlogController@create');
-	Route::get('/blog/edit/{id}', 'frontend\BlogController@edit');
-	Route::get('/blog/delete/{id}', 'frontend\BlogController@destroy');
-	Route::post('/blog/store', 'frontend\BlogController@store');
-	Route::match(['get','post'],'/template/{id}', 'Dashboard\JobManageController@template');
-	Route::get('/upload_tamplate', 'Dashboard\JobManageController@showtemplate');
-	Route::get('/job_delete/{id}', 'Dashboard\JobManageController@destroy');
-	Route::post('/post_portal', 'Dashboard\JobManageController@post_portal');
-	Route::post('/mark', 'Dashboard\JobManageController@mark');
-	Route::match(['get','post'],'/jobstatus_update/{id}', 'Dashboard\JobManageController@jobstatus_update');
-
+	Route::resource('/numbers', 'Dashboard\NumberController');
+	Route::post('/numbers/save', 'Dashboard\NumberController@store');
+	Route::get('/numbers/delete/{id}', 'Dashboard\NumberController@destroy');
+	
 	Route::get('/icons', function(){
 		return view('/admin.icons');
 	});
@@ -99,7 +90,7 @@ Route::group(['prefix' => 'user-portal'], function () {
     Route::get('/plan/{plan}', 'PlanController@show')->name('plans.show');
     Route::post('/subscription', 'SubscriptionController@create')->name('subscription.create');
 
-Route::get('/update-pricing-plan', function(){
+  Route::get('/update-pricing-plan', function(){
 	return view('frontend.update-pricing');
 });
 
@@ -109,6 +100,5 @@ Route::match(['get','post'],'/verification', 'frontend\RegisterController@accoun
 Route::get('/login', 'frontend\RegisterController@accountLogin')->name('login');;
 Route::post('/login', 'frontend\RegisterController@checklogin');
 Route::get('logout', 'frontend\RegisterController@logout')->name('logout');
-
 
 

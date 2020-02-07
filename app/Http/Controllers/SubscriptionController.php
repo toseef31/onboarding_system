@@ -18,6 +18,6 @@ class SubscriptionController extends Controller
             ->newSubscription('main', $plan->stripe_plan)
             ->create($request->stripeToken);
         
-        return redirect()->route('home')->with('success', 'Your plan subscribed successfully');
+        return redirect('user-portal')->with('success', 'Your plan subscribed successfully');
     }
 }

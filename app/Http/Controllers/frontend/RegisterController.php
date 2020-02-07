@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Number;
 use DB;
 use Session;
 use Hash;
@@ -91,7 +92,12 @@ class RegisterController extends Controller
         }
 
         if ( Auth::check() ) {
-            return redirect('user-portal');
+            if($request->user()->stripe_id != NULL){
+               return redirect('user-portal');
+            }else{
+                return redirect('pricing-plan');
+            }
+            
         }
     }
 
@@ -177,8 +183,8 @@ class RegisterController extends Controller
             return redirect('verification');
             }
         }
-
-		return view('frontend.register');
+        $numbers = Number::all();
+		return view('frontend.register',compact('numbers'));
     }
 
 

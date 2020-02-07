@@ -9,7 +9,7 @@
           </div>
         </a>
         <a href="{{url('/')}}" class="simple-text logo-normal">
-          Hotel Booking
+          Nautilus Onboarding 
           <!-- <div class="logo-image-big">
             <img src="../assets/img/logo-big.png">
           </div> -->
@@ -24,32 +24,7 @@
               <p>Dashboard</p>
             </a>
           </li>
-          @endif
-          @if(Session::get('chat_admin')->role =='admin' || Session::get('chat_admin')->role =='a')
-          <li>
-            <a href="#manageJobs"  data-toggle="collapse"  role="button" aria-expanded="false" aria-controls="manageJobs">
-              <i class="nc-icon nc-bell-55"></i>
-              <p>Booking Management</p>
-            </a>
-            <ul class="collapse" id="manageJobs">
-              <li><a href="{{url('dashboard/')}}">Booking</a></li>
-            </ul>
-
-          </li>
-           @endif
-         
-           @if(Session::get('chat_admin')->role =='admin')
-        
-          <li>
-            <a class="" data-toggle="collapse" href="#blog" role="button" aria-expanded="false" aria-controls="customer">
-              <i class="nc-icon nc-diamond"></i>
-              <p>Blogs</p>
-            </a>
-            <ul class="collapse" id="blog">
-              <li><a href="{{url('/dashboard/blogs')}}">Blogs</a></li>
-            </ul>
-          </li>
-          <li>
+           <li>
             <a href="#manageUsers"  data-toggle="collapse"  role="button" aria-expanded="false" aria-controls="manageUsers">
               <i class="nc-icon nc-single-02"></i>
               <p>User Management</p>
@@ -58,6 +33,33 @@
               <li><a href="{{url('dashboard/user_management')}}">Add New User </a></li>
             </ul>
           </li>
+          @endif
+          @if(Session::get('chat_admin')->role =='admin' || Session::get('chat_admin')->role =='a')
+          <li>
+            <a href="#manageJobs"  data-toggle="collapse"  role="button" aria-expanded="false" aria-controls="manageJobs">
+              <i class="nc-icon nc-bell-55"></i>
+              <p>Landline Numbers</p>
+            </a>
+            <ul class="collapse" id="manageJobs">
+              <li><a href="{{url('dashboard/numbers/create')}}">add</a></li>
+              <li><a href="{{url('dashboard/numbers')}}">Show</a></li>
+            </ul>
+
+          </li>
+           @endif
+         
+           @if(Session::get('chat_admin')->role =='admin')
+        
+          <!--<li>
+            <a class="" data-toggle="collapse" href="#blog" role="button" aria-expanded="false" aria-controls="customer">
+              <i class="nc-icon nc-diamond"></i>
+              <p>Blogs</p>
+            </a>
+            <ul class="collapse" id="blog">
+              <li><a href="{{url('/dashboard/blogs')}}">Blogs</a></li>
+            </ul>
+          </li>-->
+         
          
           @endif
            @if(Session::get('chat_admin')->role =='admin' || Session::get('chat_admin')->role =='c')

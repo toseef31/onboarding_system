@@ -14,7 +14,7 @@
                                 <span class="navbar-toggler-bar bar3"></span>
                             </button>
                         </div>
-                        <a class="navbar-brand" href="#pablo">Add New Post</a>
+                        <a class="navbar-brand" href="#pablo">Add New Number</a>
                     </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -27,7 +27,7 @@
 
                             <li class="nav-item btn-rotate dropdown">
                                 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{Session::get('fa_admin')->name}}
+                                    {{Session::get('chat_admin')->name}}
                                     <p>
                                         <span class="d-lg-none d-md-block">Some Actions</span>
                                     </p>
@@ -51,38 +51,33 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title"> Add New Post</h4>
+                                <h4 class="card-title"> Add New Number</h4>
                             </div>
 
                             <div class="row" style="margin: 0;">
                             	<div class="col-md-12">
-                                <form  style="padding-top: 20px;" method="post" action="{{url('dashboard/blog/store')}}" enctype="multipart/form-data">
+                                <form  style="padding-top: 20px;" method="post" action="{{url('dashboard/numbers/save')}}" enctype="multipart/form-data">
                                   {{csrf_field()}}
-                            			<div class="form-group">
+                            			
+                            			 <div class="form-group">
                             				<div class="row">
                             					<div class="col-md-12">
-                            						<label>Title</label>
-                                        <input type="text" name="title" id="title" class="form-control worker_input" placeholder="Post Title" required>
+                            						<label>Number</label>
+                                        <input type="text" name="number" id="Enter Number" class="form-control" placeholder="Enter Number">
                                       </div>
                             				</div>
-                            			</div>
-                            			<!-- <div class="form-group">
-                            				<div class="row">
-                            					<div class="col-md-12">
-                            						<label>SLUG</label>
-                                        <input type="text" name="slug" id="slug" class="form-control" placeholder="Slug">
-                                      </div>
-                            				</div>
-                            			</div> -->
-                            			<div class="form-group">
-                        						<label>Description</label>
-                                    <textarea rows="100" cols="70" class="ckeditor" id="editor" name="body" required></textarea>
-                            			</div>
+                            			</div> 
+                            			
                                   <div class="form-group">
                                     <div class="row">
                                       <div class="col-md-12">
-                                        <label>Upload Image</label>
-                                        <input type="file" name="post_image" id="post_image" class="form-control worker_input"style="opacity: 1;position: relative;height: auto;" required>
+                                        <label>Number Status</label>
+                                       
+                                       <select name="status" id="" class="form-control" required="required">
+                                           <option value="0">Available</option>
+                                           <option value="1">Booked</option>
+                                       </select>
+                                       
                                       </div>
                                     </div>
                                   </div>

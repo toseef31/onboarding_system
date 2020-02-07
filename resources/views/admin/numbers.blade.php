@@ -13,7 +13,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="#pablo">Blogs Management</a>
+            <a class="navbar-brand" href="#pablo">Landline Numbeers Management</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -26,7 +26,7 @@
 
               <li class="nav-item btn-rotate dropdown">
                 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  {{Session::get('fa_admin')->name}}
+                  {{Session::get('chat_admin')->name}}
                   <p>
                     <span class="d-lg-none d-md-block">Some Actions</span>
                   </p>
@@ -50,8 +50,8 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title"> Blogs List</h4>
-                <a href="{{url('/dashboard/blog/create')}}" class="btn btn-success" type="button" name="button" style="Background: #87CB16; color: white; margin-top: -45px; float:right;">Add New Blog</a>
+                <h4 class="card-title"> Numbers List</h4>
+                <a href="{{url('/dashboard/numbers/create')}}" class="btn btn-success" type="button" name="button" style="Background: #87CB16; color: white; margin-top: -45px; float:right;">Add New Number</a>
               </div>
 
               <div class="card-body">
@@ -66,29 +66,23 @@
                   @endif
                   <table class="table">
                     <thead class=" text-primary">
-                      <th colspan="2">Blog_id</th>
-                      <th colspan="3">Blog_title</th>
-                      <th colspan="4">Description</th>
-                      <th colspan="1">Author</th>
-                      <th colspan="3">Publish Date</th>
-                      <th class="text-center">Action</th>
+                      <th colspan="">Number_id</th>
+                      <th colspan="">Number</th>
+                      <th colspan="">Status</th>
+                      <th colspan="">Created Date</th>
+                      <th class="">Action</th>
                     </thead>
                     <tbody>
-                    @foreach($allblogs as $jobs)
+                    @foreach($numbers as $jobs)
                       <tr>
-                        <td colspan="2"> {{$jobs->id}}</td>
-                        <td colspan="2"> {{$jobs->title}}</td>
-                        <td colspan="3"> {!! str_limit($jobs->body,60) !!}</td>
-                        <td colspan="3"> {{FA::getAuthorName($jobs->user_id)}}</td>
-                        <td colspan="3"> {{$jobs->created_at}}</td>
-                        <td class="text-right">
-                          @if(FA::checktemplate($jobs->id)=="1")
-                           <a href="{{ url('dashboard/blog/edit/'.$jobs->id)}}">Update Detail</a>
-                          @else
-                          <a href="{{ url('dashboard/blog/create/'.$jobs->id)}}">Add Detail</a>
-                          @endif
+                        <td colspan=""> {{$jobs->num_id}}</td>
+                        <td colspan=""> {{$jobs->number}}</td>
+                        <td colspan=""> @if($jobs->status == 0)Available @else Booked @endif</td>
+                        <td colspan=""> {{$jobs->created_at}}</td>
+                        <td class="">
+                         
                           <i class="fa fa-edit text-primary"></i>
-                         <a onclick="return confirm('Do you want to delete this item?')" href="{{ url('dashboard/blog/delete/'.$jobs->id)}}" > <i class="fa fa-trash text-danger"></i> </a>
+                         <a onclick="return confirm('Do you want to delete this item?')" href="{{ url('dashboard/numbers/delete/'.$jobs->num_id)}}" > <i class="fa fa-trash text-danger"></i> </a>
                           <i class="fa fa-eye text-success"></i>
                         </td>
                       </tr>
