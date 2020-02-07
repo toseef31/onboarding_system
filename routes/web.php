@@ -16,6 +16,9 @@ Route::get('/', function () {
 });
 Route::group(['prefix' => 'user-portal'], function () {
 	Route::get('/', function(){
+		return view('frontend.dashboard.index');
+	});
+	Route::get('/dashboard', function(){
 		return view('frontend.dashboard.dashboard');
 	});
 	Route::get('/manage-profile', function(){
@@ -23,6 +26,18 @@ Route::group(['prefix' => 'user-portal'], function () {
 	});
 	Route::get('/change-password', function(){
 		return view('frontend.dashboard.changepassword');
+	});
+	Route::get('/create-extension', function(){
+		return view('frontend.dashboard.create-extension');
+	});
+	Route::get('/call-report', function(){
+		return view('frontend.dashboard.call-report');
+	});
+	Route::get('/disposition-call-report', function(){
+		return view('frontend.dashboard.disposition-call_report');
+	});
+	Route::get('/billing-info', function(){
+		return view('frontend.dashboard.billing-info');
 	});
 });
 

@@ -18,34 +18,34 @@
           <p>User profile management</p>
         </a>
       </li>
-      <li class="">
-        <a href="{{url('/dashboard/changepassword')}}">
+      <li class="{{ request()->is('user-portal/create-extension') ? 'active' : '' }}">
+        <a href="{{url('user-portal/create-extension')}}">
           <i class="ti-view-list-alt"></i>
           <p>Telephone Setting</p>
         </a>
       </li>
-      <li class="{{ request()->is('dashboard/favorite') ? 'active' : '' }}">
+      <!-- <li class="{{ request()->is('dashboard/favorite') ? 'active' : '' }}">
         <a href="typography.html">
           <i class="ti-pulse"></i>
           <p>Telephone line management</p>
         </a>
-      </li>
+      </li> -->
       
-      <li class="{{ request()->is('dashboard/coupan') ? 'active' : '' }}">
-        <a href="{{url('/dashboard/coupan')}}">
+      <li class="{{ request()->is('user-portal/call-report') ? 'active' : '' }}">
+        <a href="{{url('/user-portal/call-report')}}">
           <i class="ti-pencil-alt2"></i>
           <p>Call Reporting</p>
         </a>
       </li>
       
-      <li class="{{ request()->is('dashboard/listing') ? 'active' : '' }}">
-        <a href="{{url('/dashboard/listing')}}">
+      <li class="{{ request()->is('user-portal/disposition-call-report') ? 'active' : '' }}">
+        <a href="{{url('user-portal/disposition-call-report')}}">
           <i class="ti-map"></i>
           <p>Disposition of calls report</p>
         </a>
       </li>
-      <li class="{{ request()->is('dashboard/news') ? 'active' : '' }}">
-        <a href="{{url('/dashboard/news')}}">
+      <li class="{{ request()->is('user-portal/billing-info') ? 'active' : '' }}">
+        <a href="{{url('/user-portal/billing-info')}}">
           <i class="ti-receipt"></i>
           <p>Billing Information</p>
         </a>
@@ -58,7 +58,7 @@
         </a>
       </li>
       
-      <li class="{{ request()->is('dashboard/profiles') ? 'active' : '' }}">
+      <li class="{{ request()->is('') ? 'active' : '' }}">
         <a href="notifications.html">
           <i class="ti-comments"></i>
           <p>WebRTC</p>

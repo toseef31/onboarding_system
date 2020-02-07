@@ -51,11 +51,7 @@ class RegisterController extends Controller
         //
     }
 
-    // public function register(Request $request)
-    // {
-    //   return view('frontend.register');
-    // }
-
+    
     public function register(Request $request){
        
         if($request->session()->has('User')){
