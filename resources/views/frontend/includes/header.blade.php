@@ -27,9 +27,9 @@
 										<li> <a href="exports.html">Exports</a></li>
 										<li> <a href="clients.html">Clients</a> </li> -->
 										<li> <a href="">Contact</a> </li>
-										@if(session()->has('User'))
+										@if(\Auth::check())
 										<li class="dropdown">
-											<a href="" class="dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{session()->get('User')->f_name}}</a>
+											<a href="" class="dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{auth()->user()->f_name}}</a>
 											<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							          <a class="dropdown-item" href="{{url('/user-portal')}}"><i class="fas fa-tachometer-alt pr-2"></i> Dashboard</a>
 							          <a class="dropdown-item" href="{{url('user-portal/change-password')}}"><i class="fas fa-lock pr-2"></i> Change Password</a>
