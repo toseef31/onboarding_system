@@ -24,12 +24,6 @@
           <p>Telephone Setting</p>
         </a>
       </li>
-      <!-- <li class="{{ request()->is('dashboard/favorite') ? 'active' : '' }}">
-        <a href="typography.html">
-          <i class="ti-pulse"></i>
-          <p>Telephone line management</p>
-        </a>
-      </li> -->
       
       <li class="{{ request()->is('user-portal/call-report') ? 'active' : '' }}">
         <a href="{{url('/user-portal/call-report')}}">
