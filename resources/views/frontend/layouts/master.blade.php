@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/css/style.css')}}">
     <!-- Font Awesome -->
     <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/fontawesome/css/all.min.css')}}">
-    <title>OnBoarding System</title>
+    <title>Nautilus</title>
     @yield('styling')
   </head>	
   <body>
