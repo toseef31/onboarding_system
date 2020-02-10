@@ -5,6 +5,7 @@
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-md-5 col-xs-12">
+			<h3 class="text-uppercase mb-3 mt-5">Login</h3>
 		@if(Session::has('verify'))
                <div class="alert alert-success">
                   {{ Session::get('verify') }}
@@ -24,7 +25,7 @@
 				  </div>
 				  <div class="form-group form-check">
 				    <label class="form-check-label text-danger">
-				      <input class="form-check-input" type="checkbox"> Remember me
+				      <input class="form-check-input" type="checkbox"> Remember me {{Boarding::index()}}
 				    </label>
 				  </div>
 				  <button type="submit" class="btn btn-danger">Submit</button>
