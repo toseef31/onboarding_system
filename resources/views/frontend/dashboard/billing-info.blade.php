@@ -72,9 +72,9 @@
             		      </thead>
             		      <tbody>
             		        <tr>
-            		          <td>Nautilus Basic</td>
-            		          <td>AVBC</td>
-            		          <td>$ 20</td>
+            		          <td>{{ $userplan->name}}</td>
+            		          <td>{{ $userplan->f_name}}</td>
+            		          <td>$ {{ $userplan->cost}}</td>
             		        </tr>
             		      </tbody>
             		    </table>
@@ -90,14 +90,14 @@
             		    <table class="table  table-bordered">
             		      <thead>
             		        <tr>
-            		          <th>Package Info</th>
-            		          <th>Payment</th>
+            		          <th>Card No</th>
+            		          <th>Card Type</th>
             		        </tr>
             		      </thead>
             		      <tbody>
             		        <tr>
-            		          <td>Nautilus Basic</td>
-            		          <td>$ 20</td>
+            		          <td>*******{{ $userplan->card_last_four}}</td>
+            		          <td>{{ $userplan->card_brand}}</td>
             		        </tr>
             		      </tbody>
             		    </table>
