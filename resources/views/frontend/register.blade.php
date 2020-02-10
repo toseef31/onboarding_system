@@ -77,16 +77,20 @@
 				  	<label>Email</label>
 				    <input type="email" class="form-control" placeholder="Enter email" id="email" name="email">
 				  </div>
+					
 				  <div class="form-group">
 				  	<div class="row">
+					
 				  		<div class="col-md-6">
 				  			<label>Password</label>
 				  			<input type="password" class="form-control" placeholder="Enter password" id="password" name="password" autocomplete="off">
 				  		</div>	
+							
 				  		<div class="col-md-6">
 				  			<label>Confirm Password</label>
-				  			<input type="password" class="form-control" placeholder="Enter confirm password" id="confirm_password" autocomplete="off">
-				  		</div>	
+				  			<input type="password" class="form-control" placeholder="Enter confirm password" id="confirm_password" onkeyup='check();' autocomplete="off">
+				  			<span id='message'></span>
+							</div>	
 				  	</div>
 				  </div>
 				  <div class="form-group">
@@ -122,5 +126,21 @@ $(document).on("click","#terms",function(){
 // localized country names e.g. { 'de': 'Deutschland' }
 
 	 });
+</script>
+<script>
+
+var check = function()
+{
+  if (document.getElementById('password').value ==
+    document.getElementById('confirm_password').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'Password Match';
+		$(':input[type="submit"]').prop('disabled', false);
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'Password not matching';
+		$(':input[type="submit"]').prop('disabled', true);
+  }
+}
 </script>
 @endsection
