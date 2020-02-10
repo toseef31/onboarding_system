@@ -2,14 +2,14 @@
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
-      <div class="logo">
-        <a href="{{url('/')}}" class="simple-text logo-mini">
+      <div class="logo text-center">
+        <!-- <a href="{{url('/')}}" class="simple-text logo-mini">
           <div class="logo-image-small">
           
           </div>
-        </a>
+        </a> -->
         <a href="{{url('/')}}" class="simple-text logo-normal">
-          Nautilus Onboarding 
+          Nautilus Dashboard 
           <!-- <div class="logo-image-big">
             <img src="../assets/img/logo-big.png">
           </div> -->
@@ -18,15 +18,15 @@
       <div class="sidebar-wrapper">
         <ul class="nav">
         @if(Session::get('chat_admin')->role =='admin')
-          <li class="active ">
+          <li class="{{ request()->is('/dashboard') ? 'active' : '' }} ">
             <a href="{{url('/dashboard')}}">
               <i class="nc-icon nc-bank"></i>
               <p>Dashboard</p>
             </a>
           </li>
-           <li>
+           <li class="{{ request()->is('/dashboard/user_management') ? 'active' : '' }}">
             <a href="#manageUsers"  data-toggle="collapse"  role="button" aria-expanded="false" aria-controls="manageUsers">
-              <i class="nc-icon nc-single-02"></i>
+              <i class="fas fa-users"></i>
               <p>User Management</p>
             </a>
             <ul class="collapse" id="manageUsers">
@@ -35,9 +35,9 @@
           </li>
           @endif
           @if(Session::get('chat_admin')->role =='admin' || Session::get('chat_admin')->role =='a')
-          <li>
+          <li class="{{ request()->is('/dashboard/numbers/create') ? 'active' : '' }}">
             <a href="#manageJobs"  data-toggle="collapse"  role="button" aria-expanded="false" aria-controls="manageJobs">
-              <i class="nc-icon nc-bell-55"></i>
+              <i class="fas fa-phone"></i>
               <p>Landline Numbers</p>
             </a>
             <ul class="collapse" id="manageJobs">
@@ -65,7 +65,7 @@
            @if(Session::get('chat_admin')->role =='admin' || Session::get('chat_admin')->role =='c')
           <li>
             <a href="">
-              <i class="nc-icon nc-single-02"></i>
+              <i class="far fa-money-bill-alt"></i>
               <p>Payments</p>
             </a>
           </li>
@@ -73,14 +73,14 @@
            @if(Session::get('chat_admin')->role =='admin')
           <li>
             <a href="">
-              <i class="nc-icon nc-single-02"></i>
+              <i class="fas fa-question"></i>
               <p>Help Menu</p>
             </a>
           </li>
           @endif
 		   <li>
             <a href="{{ url('dashboard/logout') }}">
-              <i class="nc-icon nc-single-02"></i>
+              <i class="fas fa-sign-out-alt"></i>
               <p>Logout</p>
             </a>
           </li>
