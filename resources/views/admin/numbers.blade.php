@@ -83,7 +83,7 @@
                          
                           <i class="fa fa-edit text-primary"></i>
                          <a onclick="return confirm('Do you want to delete this item?')" href="{{ url('dashboard/numbers/delete/'.$jobs->num_id)}}" > <i class="fa fa-trash text-danger"></i> </a>
-                          <i class="fa fa-eye text-success"></i>
+                          
                         </td>
                       </tr>
                       @endforeach

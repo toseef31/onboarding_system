@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use DB;
 use Session;
+use App\User;
 
-class JobManageController extends Controller
+class UserManageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +17,9 @@ class JobManageController extends Controller
      */
     public function index()
     {
-       $alljobs = DB::table('fa_jobpost')->orderBy('id','desc')->get();
-       return view('/admin.job_management',compact('alljobs'));
+       $alluser= User::paginate(15);
+      // dd($alluser);
+       return view('/admin.user_management',compact('alluser'));
     }
     public function blogs()
     {
@@ -268,9 +270,10 @@ public function template(Request $request, $id)
      */
     public function destroy(Request $request,$id)
     {
-        DB::table('fa_jobpost')->where('id',$id)->delete();
-        DB::table('fa_template')->where('job_id',$id)->delete();
-        $request->session()->flash('message','Job deleted successfully');
-        return redirect()->back();
+        $number = User::findOrFail($id);
+
+        $number->delete();
+
+        return redirect('/dashboard/user_management');
     }
 }

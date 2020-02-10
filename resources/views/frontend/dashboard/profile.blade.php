@@ -73,13 +73,13 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label>First Name</label>
-											<input type="text" class="form-controls border-input"  name="user_firstname" value="">
+											<input type="text" class="form-controls border-input"  name="f_name" value="{{ $user->f_name}}">
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-											<label>Last Name</label>
-											<input type="text" class="form-controls border-input" name="user_lastname" value="">
+											<label>Sur Name</label>
+											<input type="text" class="form-controls border-input" name="sur_name" value="{{ $user->sur_name}}">
 										</div>
 									</div>
 								</div>
@@ -87,33 +87,24 @@
 									<div class="col-md-12">
 										<div class="form-group">
 											<label>Company Name</label>
-											<input type="text" class="form-controls border-input" disabled="" placeholder="Company Name" value="">
+											<input type="text" class="form-controls border-input"  placeholder="Company Name" name="company_name" value="{{ $user->company_name}}">
 										</div>
 									</div>
 								</div>
-                <div class="row">
+                                <div class="row">
 									<div class="col-md-12">
 										<div class="form-group">
 											<label>Email</label>
-											<input type="email" class="form-controls border-input" disabled="" placeholder="Enter email" value="">
+											<input type="email" class="form-controls border-input" disabled="" placeholder="Enter email" value="{{ $user->email}}">
 										</div>
 									</div>
 								</div>
 								
-								
-								<div class="row">
-									<div class="col-md-12">
-										<div class="form-group">
-											<label>Password</label>
-											<input type="password" id="pac-input" class="form-controls border-input" placeholder="Password" name="password" value="">
-										</div>
-									</div>
-								</div>
 								<div class="row">
 									<div class="col-md-12">
 										<div class="form-group">
 											<label>Phone Number</label>
-											<input type="text" class="form-controls border-input" placeholder="Home Address" name="address1" value="">
+											<input type="text" class="form-controls border-input" disabled="" placeholder="Home Address"  value="{{ $user->mobile}}">
 										</div>
 									</div>
 								</div> 

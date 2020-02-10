@@ -9,7 +9,7 @@
       <li  class="{{ request()->is('/user-portal') ? 'active' : '' }}">
         <a href="{{url('/user-portal')}}">
           <i class="ti-panel"></i>
-          <p>Company</p>
+          <p>Dashboard</p>
         </a>
       </li>
       <li class="{{ request()->is('user-portal/manage-profile') ? 'active' : '' }}">

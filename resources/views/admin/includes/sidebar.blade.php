@@ -31,6 +31,7 @@
             </a>
             <ul class="collapse" id="manageUsers">
               <li><a href="{{url('dashboard/user_management')}}">Add New User </a></li>
+              <li><a href="{{url('dashboard/user_management')}}">Show Users </a></li>
             </ul>
           </li>
           @endif
@@ -41,8 +42,8 @@
               <p>Landline Numbers</p>
             </a>
             <ul class="collapse" id="manageJobs">
-              <li><a href="{{url('dashboard/numbers/create')}}">add</a></li>
-              <li><a href="{{url('dashboard/numbers')}}">Show</a></li>
+              <li><a href="{{url('dashboard/numbers/create')}}"> Add New Numbers</a></li>
+              <li><a href="{{url('dashboard/numbers')}}">Show Numbers</a></li>
             </ul>
 
           </li>
