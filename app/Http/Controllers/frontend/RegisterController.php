@@ -195,7 +195,7 @@ class RegisterController extends Controller
             return redirect('verification');
             }
         }
-        $numbers = Number::all();
+        $numbers = Number::where('status','0')->get();
 		return view('frontend.register',compact('numbers'));
     }
 

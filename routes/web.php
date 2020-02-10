@@ -60,9 +60,7 @@ Route::get('/', function () {
 });
 Route::group(['middleware' => 'auth'], function() {
 Route::group(['prefix' => 'user-portal'], function () {
-	Route::get('/', function(){
-		return view('frontend.dashboard.index');
-	});
+	Route::get('/', 'frontend\DashboardController@index');
 	Route::get('/dashboard', function(){
 		return view('frontend.dashboard.dashboard');
 	});

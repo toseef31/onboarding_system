@@ -107,7 +107,7 @@
 @endsection
 @section('script')
 <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript" src="https://www.jqueryscript.net/demo/jQuery-International-Telephone-Input-With-Flags-Dial-Codes/build/js/intlTelInput.js"></script>
+<script type="text/javascript" src="{{asset('frontend-assets/telphone_input/build/js/intlTelInput.js') }}"></script>
 <script>
 $(document).on("click","#terms",function(){
         if($(this).prop("checked") == true){
@@ -117,6 +117,10 @@ $(document).on("click","#terms",function(){
         	$(':input[type="submit"]').prop('disabled', true);
         }
     });
-   $("#phone_number").intlTelInput();
+   $("#phone_number").intlTelInput({
+		 initialCountry:"{ 'sg': 'Singapore' }",
+// localized country names e.g. { 'de': 'Deutschland' }
+
+	 });
 </script>
 @endsection

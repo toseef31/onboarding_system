@@ -24,7 +24,7 @@ class PlanController extends Controller
     public function show(Plan $plan, Request $request)
     {
         //dd($plan);
-        if($request->user()->subscribedToPlan($plan->stripe_plan, 'main')) {
+        if($request->user()->subscribedToPlan($plan->stripe_plan, 'primary')) {
             return redirect()->route('dashboard')->with('success', 'You have already subscribed the plan');
         }
         return view('frontend.show', compact('plan'));
