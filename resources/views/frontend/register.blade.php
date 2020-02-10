@@ -49,9 +49,9 @@
 				  		<div class="col-md-6">
 				  			<label>Choose Number</label>
 				  			<select class="form-control" name="choice_number">
-				  				<option>+65-51-4898947</option>
-				  				<option>+65-51-4898947</option>
-				  				<option>+65-82-4898947</option>
+								@foreach($numbers as $num)
+				  				<option>{{$num->number}}</option>
+									@endforeach
 				  			</select>
 				  		</div>	
 				  	</div>

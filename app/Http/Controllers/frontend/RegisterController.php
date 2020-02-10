@@ -3,12 +3,24 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Number;
 use DB;
 use Session;
+use Hash;
 
 class RegisterController extends Controller
 {
+
+     use AuthenticatesUsers;
+    protected $redirectTo = '/user-portal';
+
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -51,10 +63,43 @@ class RegisterController extends Controller
         //
     }
 
+
     // public function register(Request $request)
     // {
     //   return view('frontend.register');
     // }
+     public function accountLogin(Request $request){
+        return view('frontend.login');
+    }
+    public function username(){
+        return 'email';
+    }
+     function checklogin(Request $request){
+
+        $this->validate($request, [
+            'email' => 'required', 
+            'password' => 'required',
+        ]);
+
+        $user_data = array(
+            'email'  => $request->get('email'),
+            'password' => $request->get('password'),
+            'status' => 'active'
+        );
+
+        if(!Auth::attempt($user_data)){
+            return redirect('login');
+        }
+
+        if ( Auth::check() ) {
+            if($request->user()->stripe_id != NULL){
+               return redirect('user-portal');
+            }else{
+                return redirect('pricing-plan');
+            }
+            
+        }
+    }
 
     public function register(Request $request){
        
@@ -90,7 +135,7 @@ class RegisterController extends Controller
             $input['sur_name'] = trim($request->input('sur_name'));
             $input['email'] = trim($request->input('email'));
            
-            $input['password'] = md5(trim($request->input('password')));
+            $input['password'] =Hash::make(trim($request->input('password')));
             $input['mobile'] = trim($mobile);
             $input['local'] = trim($request->input('local'));
             $input['location'] = trim($request->input('location'));
@@ -138,8 +183,8 @@ class RegisterController extends Controller
             return redirect('verification');
             }
         }
-
-		return view('frontend.register');
+        $numbers = Number::all();
+		return view('frontend.register',compact('numbers'));
     }
 
 
@@ -159,8 +204,8 @@ class RegisterController extends Controller
         }
 		return view('frontend.verification');
 	}
-    
-public function accountLogin(Request $request){
+   
+public function accountLogin2(Request $request){
         if($request->session()->has('User')){
 			return redirect('user-portal');
 		}
@@ -193,9 +238,7 @@ public function accountLogin(Request $request){
 				}
 			}
    
-
 		}
-
 
 		return view('frontend.login');
     }
@@ -213,12 +256,16 @@ public function accountLogin(Request $request){
 		/* end */
 	}
 
-     public function logout(Request $request){
+ function logout(){
+        Auth::logout();
+        return redirect('login');
+    }
+    //  public function logout(Request $request){
          
-               Session::flush();
-               return redirect('login');
+    //            Session::flush();
+    //            return redirect('login');
            
-       }
+    //    }
    
     public function edit($id)
     {

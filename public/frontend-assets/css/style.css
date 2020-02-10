@@ -379,7 +379,9 @@ header.active .top-line {
         text-align: left;
     }
 }
-
+.main-nav .sf-menu a.active{
+  color: #c44741;
+}
 /*Footer Css*/
 .site-footer
 {
