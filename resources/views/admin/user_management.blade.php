@@ -24,7 +24,7 @@
           <ul class="navbar-nav">
             <li class="nav-item btn-rotate dropdown">
               <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {{Session::get('fa_admin')->name}}
+                {{Session::get('chat_admin')->name}}
                 <p>
                   <span class="d-lg-none d-md-block">Some Actions</span>
                 </p>
@@ -51,38 +51,48 @@
           </form>
           <div class="card">
             <div class="card-header">
-              <h4 class="card-title"> User List</h4>
+              <h4 class="card-title"> Users List</h4>
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                @if(session()->has('message'))
-                <div class="row">
-                  <div class="alert alert-success">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
-                    <strong>Message:</strong>{{session()->get('message')}}
-                  </div>
-                </div>
-                @endif
+                   @if(Session::has('creatuser'))
+               <div class="alert alert-success">
+                  {{ Session::get('creatuser') }}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               @endif
+                   @if(Session::has('deluser'))
+               <div class="alert alert-success">
+                  {{ Session::get('deluser') }}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               @endif
                 <table class="table">
                   <thead class=" text-primary">
-                    <th>Partner id</th>
+                    <th>User id</th>
                     <th>Name</th>
+                    <th>Company Name</th>
                     <th>Phone</th>
                     <th>Email</th>
                     <th>Status</th>
                     <th>Action</th>
                   </thead>
                   <tbody>
-                    @foreach($allpartner as $user)
+                    @foreach($alluser as $user)
                     <tr>
-                      <td> {{$user->p_id}}</td>
-                      <td> {{$user->name}}</td>
-                      <td> {{$user->phoneno}}</td>
+                      <td> {{$user->user_id}}</td>
+                      <td> {{$user->f_name}}</td>
+                      <td> {{$user->company_name}}</td>
+                      <td> {{$user->mobile}}</td>
                       <td> {{$user->email}}</td>
                       <td>{{$user->status}}</td>
                       <td>
-                        <a href="{{url('dashboard/edit_user/'.$user->p_id)}}"><i class="fa fa-edit"></i></a>
-                        <a href=""><i class="fa fa-trash"></i></a>
+                        <a href="{{url('dashboard/edit_user/'.$user->user_id)}}"><i class="fa fa-edit"></i></a>
+                        <a href="{{url('dashboard/user/delete/'.$user->user_id)}}"><i class="fa fa-trash"></i></a>
                       </td>
                     </tr>
                     @endforeach

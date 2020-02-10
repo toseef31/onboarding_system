@@ -22,7 +22,7 @@
 								<nav  id="nav-wrap" class="main-nav"> 
 									<a id="toggle-btn" class="navbar-toggler"><i class="fa fa-bars"></i> </a>
 								<ul class="sf-menu">
-										<li class="current"> <a href="index.html">Home</a> </li>
+										<li class=""> <a href="index.html">Home</a> </li>
 										<!-- <li> <a href="about-us.html">About Us </a></li>
 										<li> <a href="products.html">Products</a></li>
 										<li> <a href="exports.html">Exports</a></li>

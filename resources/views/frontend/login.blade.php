@@ -5,9 +5,18 @@
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-md-5 col-xs-12">
+			<h3 class="text-uppercase mb-3 mt-5">Login</h3>
 		@if(Session::has('verify'))
                <div class="alert alert-success">
                   {{ Session::get('verify') }}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               @endif
+							   @if(Session::has('loginAlert'))
+               <div class="alert alert-danger">
+                  {{ Session::get('loginAlert') }}
                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                   </button>
@@ -24,7 +33,7 @@
 				  </div>
 				  <div class="form-group form-check">
 				    <label class="form-check-label text-danger">
-				      <input class="form-check-input" type="checkbox"> Remember me
+				      <input class="form-check-input" type="checkbox"> Remember me 
 				    </label>
 				  </div>
 				  <button type="submit" class="btn btn-danger">Submit</button>

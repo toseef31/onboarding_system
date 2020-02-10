@@ -50,7 +50,7 @@
 				  			<label>Choose Number</label>
 				  			<select class="form-control" name="choice_number">
 								@foreach($numbers as $num)
-				  				<option>{{$num->number}}</option>
+				  				<option value="{{$num->num_id}}">{{$num->number}}</option>
 									@endforeach
 				  			</select>
 				  		</div>	
@@ -77,16 +77,20 @@
 				  	<label>Email</label>
 				    <input type="email" class="form-control" placeholder="Enter email" id="email" name="email">
 				  </div>
+					
 				  <div class="form-group">
 				  	<div class="row">
+					
 				  		<div class="col-md-6">
 				  			<label>Password</label>
 				  			<input type="password" class="form-control" placeholder="Enter password" id="password" name="password" autocomplete="off">
 				  		</div>	
+							
 				  		<div class="col-md-6">
 				  			<label>Confirm Password</label>
-				  			<input type="password" class="form-control" placeholder="Enter confirm password" id="confirm_password" autocomplete="off">
-				  		</div>	
+				  			<input type="password" class="form-control" placeholder="Enter confirm password" id="confirm_password" onkeyup='check();' autocomplete="off">
+				  			<span id='message'></span>
+							</div>	
 				  	</div>
 				  </div>
 				  <div class="form-group">
@@ -107,7 +111,7 @@
 @endsection
 @section('script')
 <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript" src="https://www.jqueryscript.net/demo/jQuery-International-Telephone-Input-With-Flags-Dial-Codes/build/js/intlTelInput.js"></script>
+<script type="text/javascript" src="{{asset('frontend-assets/telphone_input/build/js/intlTelInput.js') }}"></script>
 <script>
 $(document).on("click","#terms",function(){
         if($(this).prop("checked") == true){
@@ -117,6 +121,26 @@ $(document).on("click","#terms",function(){
         	$(':input[type="submit"]').prop('disabled', true);
         }
     });
-   $("#phone_number").intlTelInput();
+   $("#phone_number").intlTelInput({
+		 initialCountry:"{ 'sg': 'Singapore' }",
+// localized country names e.g. { 'de': 'Deutschland' }
+
+	 });
+</script>
+<script>
+
+var check = function()
+{
+  if (document.getElementById('password').value ==
+    document.getElementById('confirm_password').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'Password Match';
+		$(':input[type="submit"]').prop('disabled', false);
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'Password not matching';
+		$(':input[type="submit"]').prop('disabled', true);
+  }
+}
 </script>
 @endsection

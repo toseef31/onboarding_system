@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Number;
+use App\User;
 use DB;
 use Session;
 use Hash;
@@ -38,7 +39,7 @@ class RegisterController extends Controller
      */
     public function create()
     {
-        //
+       
     }
 
     /**
@@ -58,9 +59,20 @@ class RegisterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+        // dd();
+        if($request->isMethod('post')){
+            $post =User::find($request->user()->user_id);
+            $post->f_name = $request->input('f_name');
+            
+            $post->sur_name = $request->input('sur_name');
+            $post->company_name = $request->input('company_name');
+            $post->save();
+        }
+         $user = User::findOrFail($request->user()->user_id);
+         //dd($user);
+         return view('frontend.dashboard.profile',compact('user'));
     }
 
 
@@ -88,6 +100,8 @@ class RegisterController extends Controller
         );
 
         if(!Auth::attempt($user_data)){
+            // $fNotice = 'Please check your mobile for verification code';
+			$request->session()->flash('loginAlert', 'Invalid Email & Password');
             return redirect('login');
         }
 
@@ -112,6 +126,11 @@ class RegisterController extends Controller
             
         $mobile = str_replace(' ', '', $request->input('mobile'));
            // dd($mobile);
+
+        // $numbers = Number::where('num_id',$request->input('choice_number'))->first();
+           
+          
+           
 			$this->validate($request,[
 				'email' => 'required|email|unique:users,email',
 				'sur_name' => 'required|min:2|max:32',
@@ -175,6 +194,7 @@ class RegisterController extends Controller
                   //  dd($ok); 
      
       if($ok == "success"){
+           DB::table('numbers')->where('num_id',$request->input('choice_number'))->update(['status'=>'2']);
         //   / dd($result);
            $userId = DB::table('users')->insertGetId($input);
             setcookie('cc_data', $userId, time() + (86400 * 30), "/");
@@ -183,7 +203,7 @@ class RegisterController extends Controller
             return redirect('verification');
             }
         }
-        $numbers = Number::all();
+        $numbers = Number::where('status','0')->get();
 		return view('frontend.register',compact('numbers'));
     }
 
@@ -193,17 +213,27 @@ class RegisterController extends Controller
         if($request->isMethod('post')){
             $code=trim($request->input('verify_code'));
             // dd($code);
-        $verify=DB::table('users')->where('verify_code','=', $code)->update(['status'=> 'active']);
-      
-        if($verify == 1){
-            $verifys = 'Your account verify successfully';
-            $request->session()->flash('verify',$verifys);
-            return redirect('pricing-plan');
-        }
+            $client = DB::table('users')->where('verify_code','=', $code)->first();
+            $verify=DB::table('users')->where('user_id','=', $client->user_id)->update(['status'=> 'active']);
+        
+             if($verify == 1){
+                $verifys = 'Your account verify successfully';
+                $request->session()->flash('verify',$verifys);
+                 
+                if ($client != null)
+                {
+                    Auth::loginUsingId($client->user_id);
+                }
+            
+                if ( Auth::check() ) {
+                        return redirect('pricing-plan');
+                    }
+                
+             }
 
+            }
+            return view('frontend.verification');
         }
-		return view('frontend.verification');
-	}
    
 public function accountLogin2(Request $request){
         if($request->session()->has('User')){

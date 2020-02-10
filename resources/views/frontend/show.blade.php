@@ -2,10 +2,14 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8  my-5">
+       <h1 class="text-center pt-5">Payment Information</h1>
+    <div class="row justify-content-center my-5">
+        <div class="col-md-4 my-5">
+          <img src="{{asset('frontend-assets/images/CreditCard.png')}}" width="100%" class="mt-5">
+        </div>
+        <div class="col-md-6  my-5">
             <div class="">
-                <p style="font-weight:600">You will be charged ${{ number_format($plan->cost, 2) }} for {{ $plan->name }} Plan</p>
+                <p class="mb-4 font-weight-bold">You will be charged ${{ number_format($plan->cost, 2) }} for {{ $plan->name }} Plan</p>
             </div>
             <div class="card">
                 <form action="{{ route('subscription.create') }}" method="post" id="payment-form">
@@ -25,8 +29,9 @@
                             <input type="hidden" name="plan" value="{{ $plan->id }}" />
                         </div>
                     </div>
-                    <div class="card-footer">
-                        <button class="btn btn-dark" type="submit">Pay</button>
+                    <div class="card-footer text-right">
+                      <button class="btn btn-dark w-49 p-2" onclick="window.history.go(-1); return false;">Back</button>
+                        <button class="btn btn-danger p-2 w-49" type="submit">Pay</button>
                     </div>
                 </form>
             </div>

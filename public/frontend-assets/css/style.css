@@ -132,15 +132,15 @@ header.active .top-line {
 }
 
 .main-nav .sf-menu li.current a {
-    color: #424E75;
+    color: #dc3545;
 }
 
 .main-nav .sf-menu li.current ul a {
-    color: #424E75;
+    color: #dc3545;
 }
 
 .main-nav .sf-menu li ul li.current a {
-    color: #424E75;
+    color: #dc3545;
 }
 
 .main-nav .sf-menu ul {
@@ -548,7 +548,7 @@ header.active .top-line {
 }
 /*Login Page*/
 .login-form{
-  margin-top: 10rem;
+  margin-top: 5rem;
   margin-bottom: 10rem;
 }
 .login-form .form-control{
@@ -570,4 +570,8 @@ header.active .top-line {
 /*Membership page*/
 .subscribe-box .list-group-item{
   padding: .75rem .2rem;
+}
+/*Bootstrap Width*/
+.w-49{
+  width: 49%;
 }

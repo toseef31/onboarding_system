@@ -50,51 +50,39 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title"> Numbers List</h4>
-                <h5 class="card-title" style="text-align:center">Booked: {{$numbersbook}} &nbsp; &nbsp;  Available: {{$numbersavailable}} &nbsp; &nbsp;  Reserve: {{$numbersreserve}}</h5>
-                <a href="{{url('/dashboard/numbers/create')}}" class="btn btn-success" type="button" name="button" style="Background: #87CB16; color: white; margin-top: -45px; float:right;">Add New Number</a>
+                <h4 class="card-title"> Payments</h4>
+                <!--<a href="{{url('/dashboard/numbers/create')}}" class="btn btn-success" type="button" name="button" style="Background: #87CB16; color: white; margin-top: -45px; float:right;">Add New Number</a>-->
               </div>
 
               <div class="card-body">
                 <div class="table-responsive">
-                  @if(session()->has('createnum'))
+                  @if(session()->has('message'))
                     <div class="row">
                       <div class="alert alert-success">
-                       <strong>Message:</strong>{{session()->get('createnum')}}
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                       
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+                        <strong>Message:</strong>{{session()->get('message')}}
                       </div>
                     </div>
                   @endif
-                   @if(Session::has('delnum'))
-               <div class="alert alert-success">
-                  {{ Session::get('delnum') }}
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                  </button>
-               </div>
-               @endif
                   <table class="table">
                     <thead class=" text-primary">
-                      <th colspan="">Number_id</th>
-                      <th colspan="">Number</th>
-                      <th colspan="">Status</th>
-                      <th colspan="">Created Date</th>
-                      <th class="">Action</th>
+                      <th colspan="">Pay_id</th>
+                      <th colspan="">Name</th>
+                      <th colspan="">Package Name</th>
+                      <th colspan="">Package Price</th>
+                      <th class="">Created_at</th>
                     </thead>
                     <tbody>
-                    @foreach($numbers as $jobs)
+                    @foreach($payments as $jobs)
                       <tr>
-                        <td colspan=""> {{$jobs->num_id}}</td>
-                        <td colspan=""> {{$jobs->number}}</td>
-                        <td colspan=""> @if($jobs->status == 0)Available @elseif($jobs->status == 1) Booked @else Reserve @endif</td>
-                        <td colspan=""> {{$jobs->created_at}}</td>
+                        <td colspan=""> {{$jobs->id}}</td>
+                        <td colspan=""> {{$jobs->f_name}}</td>
+                        <td colspan=""> {{$jobs->plan->name}}</td>
+                        <td colspan=""> {{$jobs->plan->cost}}</td>
                         <td class="">
-                         
-                          <i class="fa fa-edit text-primary"></i>
-                         <a onclick="return confirm('Do you want to delete this item?')" href="{{ url('dashboard/numbers/delete/'.$jobs->num_id)}}" > <i class="fa fa-trash text-danger"></i> </a>
+                         {{$jobs->created_at}}
+                          <!--<i class="fa fa-edit text-primary"></i>
+                         <a onclick="return confirm('Do you want to delete this item?')" href="{{ url('dashboard/numbers/delete/'.$jobs->id)}}" > <i class="fa fa-trash text-danger"></i> </a>-->
                           
                         </td>
                       </tr>

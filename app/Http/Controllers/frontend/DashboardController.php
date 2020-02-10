@@ -1,25 +1,26 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\frontend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Number;
+use DB;
 
-class NumberController extends Controller
+class DashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $numbers = Number::all();
-        $numbersbook = Number::where('status','1')->count();
-        $numbersavailable = Number::where('status','0')->count();
-        $numbersreserve = Number::where('status','2')->count();
-        return view('/admin.numbers',compact('numbers','numbersbook','numbersavailable','numbersreserve'));
+        $userplan=DB::table('users')
+        ->join('subscriptions','subscriptions.user_user_id','=','users.user_id')
+        ->join('plans','plans.stripe_plan','=','subscriptions.stripe_plan')
+        ->where('users.user_id',$request->user()->user_id)->first();
+       // dd($userplan);
+        return view('frontend.dashboard.index',compact('userplan'));
     }
 
     /**
@@ -29,7 +30,7 @@ class NumberController extends Controller
      */
     public function create()
     {
-        return view('/admin.create_number');
+        //
     }
 
     /**
@@ -40,18 +41,7 @@ class NumberController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-        'number' => 'required',
-        'status' => 'required'
-    ]);
-
-    $number = new Number();
-    //On left field name in DB and on right field name in Form/view
-    $number->number = $request->input('number');
-    $number->status = $request->input('status');
-    $number->save();
-    $request->session()->flash('createnum', 'Number Create Successfully');
-    return redirect('dashboard/numbers');
+        //
     }
 
     /**
@@ -94,12 +84,8 @@ class NumberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request,$id)
+    public function destroy($id)
     {
-         $number = Number::findOrFail($id);
-
-        $number->delete();
-$request->session()->flash('delnum', 'Number delete Successfully');
-        return redirect('/dashboard/numbers');
+        //
     }
 }

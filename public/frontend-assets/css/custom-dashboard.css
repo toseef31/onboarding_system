@@ -1,8 +1,23 @@
 .sidebar .sidebar-wrapper{
-	height: 100vh;
+	height: 103vh;
 } 
 .sidebar .nav p, .off-canvas-sidebar .nav p{
   text-transform: capitalize;
+}
+.main-panel{
+
+}
+.btn-fill{
+  background-color: #c44741 !important;
+  border-color: #c44741;
+}
+.content .table thead{
+  background: #212120;
+  color: white;
+  padding: 12px;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+  padding: 14px;
 }
 /*Dashboard Home Page*/
 .box-grid-row .col-lg-4 .cards{
@@ -175,15 +190,15 @@ header.active .top-line {
     border-left: .3em solid transparent;
 }
 .main-nav .sf-menu li.current a {
-    color: #424E75;
+    color: #c44741;
 }
 
 .main-nav .sf-menu li.current ul a {
-    color: #424E75;
+    color: #c44741;
 }
 
 .main-nav .sf-menu li ul li.current a {
-    color: #424E75;
+    color: #c44741;
 }
 
 .main-nav .sf-menu ul {
@@ -200,7 +215,7 @@ header.active .top-line {
     z-index: 99;
     margin: 1px 0;
     padding: 0;
-    border-top: solid 2px #c44741;
+    border-top: solid 2px #c44741 !important;
     background-color: #fff;
     -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .05);
     box-shadow: 0 1px 3px rgba(0, 0, 0, .05);
@@ -221,7 +236,7 @@ header.active .top-line {
 }
 
 .main-nav .sf-menu a:hover {
-    color: #c44741;
+    color: #c44741 !important;
 }
 
 .main-nav .sf-menu ul li {

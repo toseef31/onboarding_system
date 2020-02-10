@@ -174,9 +174,9 @@ demo = {
     });
 
 
-    ctx = document.getElementById('chartEmail').getContext("2d");
+    ctxe = document.getElementById('chartEmail').getContext("2d");
 
-    myChart = new Chart(ctx, {
+    myChart = new Chart(ctxe, {
       type: 'pie',
       data: {
         labels: [1, 2, 3],
