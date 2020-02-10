@@ -31,13 +31,13 @@
               <div class="row">
                 <div class="col-xs-12">
                   <div class="icon-big icon-warning text-center">
-                    <i class="ti-user"></i>
+                    <i class="ti-panel"></i>
                   </div>
                 </div>
                 <div class="col-xs-12">
-                  <a href="{{url('dashboard/profile')}}">
+                  <a href="{{url('user-portal/dashboard')}}">
                     <div class="numbers">
-                      Company
+                      Dashboard
                     </div>
                   </a>
                 </div>
@@ -53,7 +53,7 @@
               <div class="row">
                 <div class="col-xs-12">
                   <div class="icon-big icon-success text-center">
-                    <i class="ti-view-list-alt"></i>
+                    <i class="ti-user"></i>
                   </div>
                 </div>
                 <div class="col-xs-12">
@@ -79,7 +79,7 @@
                   </div>
                 </div>
                 <div class="col-xs-12">
-                  <a href="{{'/dashboard/favorite'}}">
+                  <a href="{{'user-portal/create-extension'}}">
                     <div class="numbers">
                       Telephone Setting
                     </div>
@@ -102,7 +102,7 @@
                   </div>
                 </div>
                 <div class="col-xs-12">
-                  <a href="{{url('/dashboard/coupan')}}">
+                  <a href="{{url('user-portal/call-report')}}">
                     <div class="numbers">
                       Call Reporting
                     </div>
@@ -124,7 +124,7 @@
                   </div>
                 </div>
                 <div class="col-xs-12">
-                  <a href="{{url('/dashboard/listing')}}">
+                  <a href="{{url('user-portal/disposition-call-report')}}">
                     <div class="numbers">
                       Disposition of calls report
                     </div>
@@ -146,7 +146,7 @@
                   </div>
                 </div>
                 <div class="col-xs-12">
-                  <a href="{{url('/dashboard/news')}}">
+                  <a href="{{url('user-portal/billing-info')}}">
                     <div class="numbers">
                       Billing Information
                     </div>
@@ -191,7 +191,7 @@
                   </div>
                 </div>
                 <div class="col-xs-12">
-                  <a href="{{url('/dashboard/user-order')}}">
+                  <a href="{{url('')}}">
                     <div class="numbers">
                       WebRTC
                     </div>

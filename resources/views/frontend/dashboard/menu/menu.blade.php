@@ -6,8 +6,8 @@
       </a>
     </div>
     <ul class="nav">
-      <li  class="{{ request()->is('/user-portal') ? 'active' : '' }}">
-        <a href="{{url('/user-portal')}}">
+      <li  class="{{ request()->is('user-portal/dashboard') ? 'active' : '' }}">
+        <a href="{{url('user-portal/dashboard')}}">
           <i class="ti-panel"></i>
           <p>Dashboard</p>
         </a>
@@ -20,7 +20,7 @@
       </li>
       <li class="{{ request()->is('user-portal/create-extension') ? 'active' : '' }}">
         <a href="{{url('user-portal/create-extension')}}">
-          <i class="ti-view-list-alt"></i>
+          <i class="ti-pulse"></i>
           <p>Telephone Setting</p>
         </a>
       </li>
@@ -47,7 +47,7 @@
       
       <li class="{{ request()->is('/update-pricing-plan') ? 'active' : '' }}">
         <a href="{{url('/update-pricing-plan')}}">
-          <i class="ti-map"></i>
+          <i class="ti-image"></i>
           <p>Upgrade package</p>
         </a>
       </li>

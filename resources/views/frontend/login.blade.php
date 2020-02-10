@@ -25,7 +25,7 @@
 				  </div>
 				  <div class="form-group form-check">
 				    <label class="form-check-label text-danger">
-				      <input class="form-check-input" type="checkbox"> Remember me {{Boarding::index()}}
+				      <input class="form-check-input" type="checkbox"> Remember me 
 				    </label>
 				  </div>
 				  <button type="submit" class="btn btn-danger">Submit</button>

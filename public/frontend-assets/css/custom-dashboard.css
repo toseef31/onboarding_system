@@ -4,6 +4,21 @@
 .sidebar .nav p, .off-canvas-sidebar .nav p{
   text-transform: capitalize;
 }
+.main-panel{
+
+}
+.btn-fill{
+  background-color: #c44741 !important;
+  border-color: #c44741;
+}
+.content .table thead{
+  background: #212120;
+  color: white;
+  padding: 12px;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+  padding: 14px;
+}
 /*Dashboard Home Page*/
 .box-grid-row .col-lg-4 .cards{
 	height: 200px;

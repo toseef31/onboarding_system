@@ -77,7 +77,8 @@
 				<div class="col-lg-9 col-md-9 app-view-mainCol">
 					<div class="cards">
 						<div class="header">
-							<h4 class="title">New Extension</h4>
+							<h3 class="title">New Extension</h3>
+							<hr>
 						</div>
 						<div class="content">
 							<form class="form-horizontals profile-form" action="" method="post">

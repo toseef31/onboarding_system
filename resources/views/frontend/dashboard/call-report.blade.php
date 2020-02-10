@@ -56,7 +56,8 @@
         <div class="col-lg-9 col-md-9 app-view-mainCol">
           <div class="cards">
             <div class="header">
-              <h4 class="title">Phone Status</h4>
+              <h3 class="title">Phone Status</h3>
+              <hr>
             </div>
             <div class="content">
               <div class="table-responsive">
@@ -86,7 +87,8 @@
             </div>
             <hr>
             <div class="header">
-              <h4 class="title">Incoming Call Status</h4>
+              <h3 class="title">Incoming Call Status</h3>
+              <hr>
             </div>
             <div class="content">
               <div class="table-responsive">

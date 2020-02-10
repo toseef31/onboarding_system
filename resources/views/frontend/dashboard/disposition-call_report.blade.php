@@ -56,7 +56,8 @@
         <div class="col-lg-9 col-md-9 app-view-mainCol">
           <div class="cards">
             <div class="header">
-              <h4 class="title">Enter Call Report</h4>
+              <h3 class="title">Enter Call Report</h3>
+              <hr>
             </div> <br>
             <div class="content">
             	<form action="" method="post">
@@ -79,7 +80,8 @@
             </div>
             <hr>
             <div class="header">
-              <h4 class="title">Call Detail</h4>
+              <h3 class="title">Call Detail</h3>
+              <hr>
             </div>
             <div class="content">
               <div class="table-responsive">

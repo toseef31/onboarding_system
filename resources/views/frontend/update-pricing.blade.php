@@ -31,7 +31,7 @@
                           <a href="{{ route('plans.show', $plan->slug) }}" class="btn btn-danger btn-block mt-5 py-2">Get Plan</a>
                  
 				 @else
-				 <button class="btn btn-success btn-block mt-5 py-2">Your Current Plan</button>
+				 <button class="btn btn-success btn-block mt-5 py-2" disabled>Your Current Plan</button>
 				  @endif
 				<!--<a href="{{url('/user-portal')}}" class="btn btn-danger btn-block mt-5 py-2">Get Plan</a>-->
 			</div>

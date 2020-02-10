@@ -60,10 +60,10 @@ Route::get('/', function () {
 });
 Route::group(['middleware' => 'auth'], function() {
 Route::group(['prefix' => 'user-portal'], function () {
-	Route::get('/', 'frontend\DashboardController@index');
-	Route::get('/dashboard', function(){
+	Route::get('/', function(){
 		return view('frontend.dashboard.dashboard');
 	});
+	Route::get('/dashboard', 'frontend\DashboardController@index');
 	
 	Route::get('/change-password', function(){
 		return view('frontend.dashboard.changepassword');

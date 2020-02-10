@@ -571,3 +571,7 @@ header.active .top-line {
 .subscribe-box .list-group-item{
   padding: .75rem .2rem;
 }
+/*Bootstrap Width*/
+.w-49{
+  width: 49%;
+}
