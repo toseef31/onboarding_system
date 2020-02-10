@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Plan;
+use DB;
 
 class SubscriptionController extends Controller
 {
@@ -17,7 +18,7 @@ class SubscriptionController extends Controller
         $request->user()
             ->newSubscription('main', $plan->stripe_plan)
             ->create($request->stripeToken);
-        
+        DB::table('numbers')->where('num_id',$request->user()->choice_number)->update(['status'=>'1']);
         return redirect('user-portal')->with('success', 'Your plan subscribed successfully');
     }
 }

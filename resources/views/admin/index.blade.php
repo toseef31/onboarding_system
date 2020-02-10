@@ -68,11 +68,13 @@
                     </div>
                   </div>
                   <div class="col-7 col-md-8">
+                  <a href="{{ url('dashboard/user_management')}}">
                     <div class="numbers">
                       <p class="card-category">Total Users</p>
-                      <p class="card-title">150
+                      <p class="card-title">{{$allusers}}
                         <p>
                     </div>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -94,11 +96,13 @@
                     </div>
                   </div>
                   <div class="col-7 col-md-8" style="padding-left: 0;">
+                  <a href="{{ url('dashboard/numbers')}}">
                     <div class="numbers">
                       <p class="card-category">Landline Numbers</p>
-                      <p class="card-title">1,345
+                      <p class="card-title">{{$allnumbers}}
                         <p>
                     </div>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -120,11 +124,13 @@
                     </div>
                   </div>
                   <div class="col-7 col-md-8">
+                  <a href="{{ url('dashboard/payments')}}">
                     <div class="numbers">
                       <p class="card-category">Orders</p>
-                      <p class="card-title">23
+                      <p class="card-title">{{$subscriptions}}
                         <p>
                     </div>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -146,11 +152,13 @@
                     </div>
                   </div>
                   <div class="col-7 col-md-8">
+                  <a href="{{ url('dashboard/payments')}}">
                     <div class="numbers">
                       <p class="card-category">Total Payments</p>
-                      <p class="card-title">$ 345
+                      <p class="card-title">$ {{$payments}}
                         <p>
                     </div>
+                    </a>
                   </div>
                 </div>
               </div>

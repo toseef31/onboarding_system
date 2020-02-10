@@ -55,14 +55,22 @@
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                @if(session()->has('message'))
-                <div class="row">
-                  <div class="alert alert-success">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
-                    <strong>Message:</strong>{{session()->get('message')}}
-                  </div>
-                </div>
-                @endif
+                   @if(Session::has('creatuser'))
+               <div class="alert alert-success">
+                  {{ Session::get('creatuser') }}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               @endif
+                   @if(Session::has('deluser'))
+               <div class="alert alert-success">
+                  {{ Session::get('deluser') }}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               @endif
                 <table class="table">
                   <thead class=" text-primary">
                     <th>User id</th>

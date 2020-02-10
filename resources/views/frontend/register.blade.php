@@ -50,7 +50,7 @@
 				  			<label>Choose Number</label>
 				  			<select class="form-control" name="choice_number">
 								@foreach($numbers as $num)
-				  				<option>{{$num->number}}</option>
+				  				<option value="{{$num->num_id}}">{{$num->number}}</option>
 									@endforeach
 				  			</select>
 				  		</div>	

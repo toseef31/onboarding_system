@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use DB;
 use Session;
 use App\User;
+use App\Number;
 
 class UserManageController extends Controller
 {
@@ -15,6 +16,18 @@ class UserManageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     public function dashboard()
+    {
+       $allusers= User::count();
+       $allnumbers= Number::count();
+        $subscriptions= DB::table('subscriptions')->count();
+         $payments= DB::table('subscriptions')
+       ->join('plans','subscriptions.stripe_plan','=','plans.stripe_plan')->sum('plans.cost');
+       
+      
+     //dd($payments);
+       return view('/admin.index',compact('allusers','allnumbers','subscriptions','payments'));
+    }
     public function index()
     {
        $alluser= User::paginate(15);
@@ -273,7 +286,7 @@ public function template(Request $request, $id)
         $number = User::findOrFail($id);
 
         $number->delete();
-
+       $request->session()->flash('deluser', 'User delete Successfully');
         return redirect('/dashboard/user_management');
     }
 }

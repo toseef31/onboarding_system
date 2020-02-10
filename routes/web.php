@@ -12,15 +12,15 @@
 */
 Route::match(['get','post'],'/admin/login', 'Dashboard\UserManageController@admin_login');
 Route::group(['prefix' => 'dashboard'], function () {
-	Route::get('/', function(){
-		return view('/admin.index');
-	});
+	Route::get('/', 'Dashboard\UserManageController@dashboard');
     Route::get('/user_management', 'Dashboard\UserManageController@index');
 	Route::get('/user/delete/{id}', 'Dashboard\UserManageController@destroy');
 	Route::match(['get','post'],'/logout', 'Dashboard\UserManageController@logout');
 	Route::resource('/numbers', 'Dashboard\NumberController');
 	Route::post('/numbers/save', 'Dashboard\NumberController@store');
 	Route::get('/numbers/delete/{id}', 'Dashboard\NumberController@destroy');
+	Route::get('/payments', 'Dashboard\PaymentController@index');
+
 	
 	Route::get('/icons', function(){
 		return view('/admin.icons');
@@ -64,6 +64,7 @@ Route::group(['prefix' => 'user-portal'], function () {
 		return view('frontend.dashboard.dashboard');
 	});
 	Route::get('/dashboard', 'frontend\DashboardController@index');
+	
 	
 	Route::get('/change-password', function(){
 		return view('frontend.dashboard.changepassword');
