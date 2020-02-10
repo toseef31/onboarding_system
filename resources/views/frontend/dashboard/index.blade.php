@@ -46,7 +46,7 @@
                   <tbody>
                     <tr>
                       <td>Business Number</td>
-                      <td>{{ $userplan->choice_number}}</td>
+                      <td>{{ Boarding::Numberget($userplan->choice_number)->number}}</td>
                       <td>Virtual Receptionist</td>
                     </tr>
                   </tbody>

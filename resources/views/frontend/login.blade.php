@@ -14,6 +14,14 @@
                   </button>
                </div>
                @endif
+							   @if(Session::has('loginAlert'))
+               <div class="alert alert-danger">
+                  {{ Session::get('loginAlert') }}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               @endif
 			<div class="login-form">
 				<form action="" method="post">
 					{{ csrf_field() }}
@@ -25,7 +33,7 @@
 				  </div>
 				  <div class="form-group form-check">
 				    <label class="form-check-label text-danger">
-				      <input class="form-check-input" type="checkbox"> Remember me {{Boarding::index()}}
+				      <input class="form-check-input" type="checkbox"> Remember me
 				    </label>
 				  </div>
 				  <button type="submit" class="btn btn-danger">Submit</button>

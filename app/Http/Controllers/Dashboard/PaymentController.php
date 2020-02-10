@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Dashboard;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Number;
+use DB;
 
-class NumberController extends Controller
+class PaymentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +15,13 @@ class NumberController extends Controller
      */
     public function index()
     {
-        $numbers = Number::all();
-        $numbersbook = Number::where('status','1')->count();
-        $numbersavailable = Number::where('status','0')->count();
-        $numbersreserve = Number::where('status','2')->count();
-        return view('/admin.numbers',compact('numbers','numbersbook','numbersavailable','numbersreserve'));
+       $payments= DB::table('users')->select('users.user_id','users.f_name','subscriptions.id','subscriptions.user_user_id','subscriptions.stripe_plan','subscriptions.created_at')
+       ->join('subscriptions','subscriptions.user_user_id','=','users.user_id')->get();
+       foreach($payments as &$payment){
+           $payment->plan=DB::table('plans')->where('stripe_plan',$payment->stripe_plan)->first();
+       }
+       //dd($payments);
+        return view('/admin.payments',compact('payments'));
     }
 
     /**
@@ -29,7 +31,7 @@ class NumberController extends Controller
      */
     public function create()
     {
-        return view('/admin.create_number');
+        //
     }
 
     /**
@@ -40,18 +42,7 @@ class NumberController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-        'number' => 'required',
-        'status' => 'required'
-    ]);
-
-    $number = new Number();
-    //On left field name in DB and on right field name in Form/view
-    $number->number = $request->input('number');
-    $number->status = $request->input('status');
-    $number->save();
-    $request->session()->flash('createnum', 'Number Create Successfully');
-    return redirect('dashboard/numbers');
+        //
     }
 
     /**
@@ -94,12 +85,8 @@ class NumberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request,$id)
+    public function destroy($id)
     {
-         $number = Number::findOrFail($id);
-
-        $number->delete();
-$request->session()->flash('delnum', 'Number delete Successfully');
-        return redirect('/dashboard/numbers');
+        //
     }
 }

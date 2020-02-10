@@ -100,6 +100,8 @@ class RegisterController extends Controller
         );
 
         if(!Auth::attempt($user_data)){
+            // $fNotice = 'Please check your mobile for verification code';
+			$request->session()->flash('loginAlert', 'Invalid Email & Password');
             return redirect('login');
         }
 
@@ -124,6 +126,11 @@ class RegisterController extends Controller
             
         $mobile = str_replace(' ', '', $request->input('mobile'));
            // dd($mobile);
+
+        // $numbers = Number::where('num_id',$request->input('choice_number'))->first();
+           
+          
+           
 			$this->validate($request,[
 				'email' => 'required|email|unique:users,email',
 				'sur_name' => 'required|min:2|max:32',
@@ -187,6 +194,7 @@ class RegisterController extends Controller
                   //  dd($ok); 
      
       if($ok == "success"){
+           DB::table('numbers')->where('num_id',$request->input('choice_number'))->update(['status'=>'2']);
         //   / dd($result);
            $userId = DB::table('users')->insertGetId($input);
             setcookie('cc_data', $userId, time() + (86400 * 30), "/");

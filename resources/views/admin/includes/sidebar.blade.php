@@ -65,7 +65,7 @@
           @endif
            @if(Session::get('chat_admin')->role =='admin' || Session::get('chat_admin')->role =='c')
           <li>
-            <a href="">
+            <a href="{{url('dashboard/payments')}}">
               <i class="far fa-money-bill-alt"></i>
               <p>Payments</p>
             </a>
