@@ -52,7 +52,7 @@
                   </tbody>
                 </table>
               </div>
-              <a href="" class="btn btn-success">Manage Extension</a>
+              <a href="" class="btn btn-success">Manage Number</a>
 
             </div>
             <hr>
