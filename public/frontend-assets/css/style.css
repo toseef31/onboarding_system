@@ -547,10 +547,10 @@ header.active .top-line {
   }
 }
 /*Login Page*/
-.login-form{
+/*.login-form{
   margin-top: 5rem;
   margin-bottom: 10rem;
-}
+}*/
 .login-form .form-control{
   padding: 1rem .75rem;
 }
@@ -574,4 +574,20 @@ header.active .top-line {
 /*Bootstrap Width*/
 .w-49{
   width: 49%;
+}
+/*Social Buuton*/
+.btn-linkedin{
+  background-color: #007BB6;
+}
+.btn-instagram{
+  background-color: #3F729B;
+}
+.btn-facebook{
+  background-color: #3B5998;
+}
+.btn-twitter{
+  background-color: #55ACEE;
+}
+.btn-youtube{
+  background-color: #cd201f;
 }
