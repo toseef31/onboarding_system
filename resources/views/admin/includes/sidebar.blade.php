@@ -30,7 +30,7 @@
               <p>User Management</p>
             </a>
             <ul class="collapse" id="manageUsers">
-              <li><a href="{{url('dashboard/user_management')}}"><i class="fas fa-user-plus" style="font-size: 17px; margin-right: 0;"></i>  Add New User </a></li>
+              <li><a href="{{url('dashboard/add-users')}}"><i class="fas fa-user-plus" style="font-size: 17px; margin-right: 0;"></i>  Add New User </a></li>
               <li><a href="{{url('dashboard/user_management')}}"><i class="fas fa-eye" style="font-size: 17px; margin-right: 0;"></i> View Users </a></li>
             </ul>
           </li>
