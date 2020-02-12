@@ -9,7 +9,7 @@
           </div>
         </a> -->
         <a href="{{url('/')}}" class="simple-text logo-normal">
-          Nautilus Dashboard 
+          Nautilus 
           <!-- <div class="logo-image-big">
             <img src="../assets/img/logo-big.png">
           </div> -->
@@ -30,8 +30,8 @@
               <p>User Management</p>
             </a>
             <ul class="collapse" id="manageUsers">
-              <li><a href="{{url('dashboard/user_management')}}">Add New User </a></li>
-              <li><a href="{{url('dashboard/user_management')}}">Show Users </a></li>
+              <li><a href="{{url('dashboard/user_management')}}"><i class="fas fa-user-plus" style="font-size: 17px; margin-right: 0;"></i>  Add New User </a></li>
+              <li><a href="{{url('dashboard/user_management')}}"><i class="fas fa-eye" style="font-size: 17px; margin-right: 0;"></i> View Users </a></li>
             </ul>
           </li>
           @endif
@@ -42,8 +42,8 @@
               <p>Landline Numbers</p>
             </a>
             <ul class="collapse" id="manageJobs">
-              <li><a href="{{url('dashboard/numbers/create')}}"> Add New Numbers</a></li>
-              <li><a href="{{url('dashboard/numbers')}}">Show Numbers</a></li>
+              <li><a href="{{url('dashboard/numbers/create')}}"><i class="fas fa-plus" style="font-size: 17px; margin-right: 0;"></i>  Add New Numbers</a></li>
+              <li><a href="{{url('dashboard/numbers')}}"><i class="fas fa-eye" style="font-size: 17px; margin-right: 0;"></i> View Numbers</a></li>
             </ul>
 
           </li>

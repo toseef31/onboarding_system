@@ -19,7 +19,7 @@
           ©
           <script>
             document.write(new Date().getFullYear())
-          </script>, made with <i class="fa fa-heart heart"></i> by Nautilus
+          </script>, design by <strong>Nautilus</strong>
         </span>
       </div>
     </div>
