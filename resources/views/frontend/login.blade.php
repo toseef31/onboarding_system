@@ -14,27 +14,26 @@
 				<a href="" class="btn btn-twitter btn-block facebook text-left mb-4 py-2 text-white"><i class="fab fa-twitter pr-2"></i> Find us on Twitter</a>
 				<a href="" class="btn btn-linkedin btn-block facebook text-left mb-4 py-2 text-white"><i class="fab fa-linkedin pr-2"></i> Find us on Linkdin</a>
 				<a href="" class="btn btn-youtube btn-block facebook text-left mb-4 py-2 text-white"><i class="fab fa-youtube pr-2"></i> Find us on Youtube</a>
-
 			</div>
 		</div>
 		<div class="col-md-5 col-xs-12 mt-5 mb-5 shadow rounded">
 			<h3 class="text-uppercase mb-3 mt-3 text-center">Nautilus Login</h3>
-		@if(Session::has('verify'))
-               <div class="alert alert-success">
-                  {{ Session::get('verify') }}
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                  </button>
-               </div>
-               @endif
-							   @if(Session::has('loginAlert'))
-               <div class="alert alert-danger">
-                  {{ Session::get('loginAlert') }}
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                  </button>
-               </div>
-               @endif
+			@if(Session::has('verify'))
+			<div class="alert alert-success">
+				{{ Session::get('verify') }}
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			@endif
+			@if(Session::has('loginAlert'))
+			<div class="alert alert-danger">
+				{{ Session::get('loginAlert') }}
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			@endif
 			<div class="login-form pb-5">
 				<form action="" method="post">
 					{{ csrf_field() }}
@@ -53,7 +52,7 @@
 				  <button type="submit" class="btn btn-danger">Submit</button>
 					 <a href="{{url('/register')}}" class="float-right mt-3">Creat new account</a>
 				</form>
- 
+				
 			</div>
 		</div>
 	</div>
