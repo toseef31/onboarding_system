@@ -47,13 +47,14 @@
                   <tbody>
                     <tr>
                       <td>Business Number</td>
-                      <td>{{ Boarding::Numberget($userplan->choice_number)->number}}</td>
+                      <td>{{ Boarding::Numberget($userplan->choice_number)->number}}
+                      </td>
                       <td>Virtual Receptionist</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-              <a href="" class="btn btn-fill">Manage Number</a>
+              <a href="{{url('user-portal/create-extension')}}" class="btn btn-fill">Manage Number</a>
 
             </div>
             <hr>
@@ -85,7 +86,7 @@
                   </tbody>
                 </table>
               </div>
-              <a href="" class="btn btn-fill">Manage Call Reports</a>
+              <a href="{{url('user-portal/call-report')}}" class="btn btn-fill">Manage Call Reports</a>
 
             </div>
             <hr>

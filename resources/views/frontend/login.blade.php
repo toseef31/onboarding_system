@@ -48,9 +48,10 @@
 				    <label class="form-check-label text-danger">
 				      <input class="form-check-input" type="checkbox"> Remember me 
 				    </label>
+				    <a href="" class="float-right">Forget Password?</a>
 				  </div>
 				  <button type="submit" class="btn btn-danger">Submit</button>
-					 <a href="{{url('/register')}}" class="pull-right" style="float:right">Creat new account</a>
+					 <a href="{{url('/register')}}" class="float-right mt-3">Creat new account</a>
 				</form>
  
 			</div>

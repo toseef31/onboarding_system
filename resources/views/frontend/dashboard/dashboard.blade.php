@@ -79,7 +79,7 @@
                   </div>
                 </div>
                 <div class="col-xs-12">
-                  <a href="{{'user-portal/create-extension'}}">
+                  <a href="{{url('user-portal/create-extension')}}">
                     <div class="numbers">
                       Telephone Setting
                     </div>
