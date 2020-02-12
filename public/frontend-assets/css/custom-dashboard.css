@@ -1,6 +1,11 @@
 .sidebar .sidebar-wrapper{
-	height: 103vh;
+	height: 93vh;
 } 
+.wrapper{
+  height: auto;
+  margin-left: 0;
+  margin-right: 0;
+}
 .sidebar .nav p, .off-canvas-sidebar .nav p{
   text-transform: capitalize;
 }
@@ -441,10 +446,11 @@ header.active .top-line {
 .site-footer
 {
   background-color:#26272b;
-  padding:45px 0 20px;
+  padding:25px 0 20px;
   font-size:15px;
   line-height:24px;
   color:#737373;
+  z-index: 1000;
 }
 .site-footer hr
 {
@@ -510,7 +516,8 @@ header.active .top-line {
 }
 .copyright-text
 {
-  margin:0
+  margin:0;
+  line-height: 38px;
 }
 @media (max-width:991px)
 {
@@ -607,4 +614,8 @@ header.active .top-line {
 }
 .profile-form .btn{
   padding: 12px;
+}
+/*Border-radious*/
+.rounded-circle {
+    border-radius: 50%!important;
 }

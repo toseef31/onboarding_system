@@ -19,7 +19,7 @@ class DashboardController extends Controller
         ->join('subscriptions','subscriptions.user_user_id','=','users.user_id')
         ->join('plans','plans.stripe_plan','=','subscriptions.stripe_plan')
         ->where('users.user_id',$request->user()->user_id)->first();
-       // dd($userplan);
+        //dd($userplan);
         return view('frontend.dashboard.index',compact('userplan'));
     }
 

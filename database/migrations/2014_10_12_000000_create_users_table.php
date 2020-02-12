@@ -22,6 +22,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('company_name')->nullable();
             $table->string('mobile');
+            $table->string('no_of_employees');
+            $table->string('business_nature');
             $table->string('local');
             $table->string('location');
             $table->string('choice_number');

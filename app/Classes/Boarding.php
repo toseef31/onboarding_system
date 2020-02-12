@@ -10,7 +10,7 @@ use Hash;
 class Boarding {
 
   public function Numberget($id){
-    $numbers = Number::where('num_id',$id)->first();
+    $numbers = Number::where('number',$id)->first();
     return $numbers;
   }
         

@@ -3,11 +3,11 @@
 @endsection
 @section('content')
 <div class="container">
-	<div class="row justify-content-center mt-5 mb-5">
+	<div class="row justify-content-center mt-5 mb-15">
 		<div class="text-center w-100 mt-4">
 			<h2>NAUTILUS LOGO</h2>
 		</div>
-		<div class="col-md-4 col-xs-12 mt-5 mb-5">
+		<!-- <div class="col-md-4 col-xs-12 mt-5 mb-5">
 			<div class="px-3 my-3">
 				<a href="" class="btn btn-facebook btn-block facebook text-left mb-4 py-2 text-white"><i class="fab fa-facebook pr-2"></i> Find us on Facebook</a>
 				<a href="" class="btn btn-instagram btn-block facebook text-left mb-4 py-2 text-white"><i class="fab fa-instagram pr-2"></i> Find us on Instagram</a>
@@ -15,7 +15,7 @@
 				<a href="" class="btn btn-linkedin btn-block facebook text-left mb-4 py-2 text-white"><i class="fab fa-linkedin pr-2"></i> Find us on Linkdin</a>
 				<a href="" class="btn btn-youtube btn-block facebook text-left mb-4 py-2 text-white"><i class="fab fa-youtube pr-2"></i> Find us on Youtube</a>
 			</div>
-		</div>
+		</div> -->
 		<div class="col-md-5 col-xs-12 mt-5 mb-5 shadow rounded">
 			<h3 class="text-uppercase mb-3 mt-3 text-center">Nautilus Login</h3>
 			@if(Session::has('verify'))

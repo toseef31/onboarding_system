@@ -79,7 +79,7 @@
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-											<label>Sur Name</label>
+											<label>Last Name</label>
 											<input type="text" class="form-controls border-input" name="sur_name" value="{{ $user->sur_name}}">
 										</div>
 									</div>
@@ -106,6 +106,24 @@
 										<div class="form-group">
 											<label>Phone Number</label>
 											<input type="text" class="form-controls border-input" disabled="" placeholder="Home Address"  value="{{ $user->mobile}}">
+										</div>
+									</div>
+								</div>
+								
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+											<label>No of Employees</label>
+											<input type="text" class="form-controls border-input" name="no_of_employees" placeholder="Number of Employees"  value="{{ $user->no_of_employees}}">
+										</div>
+									</div>
+								</div>
+								
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+											<label>Nature of Business</label>
+											<input type="text" class="form-controls border-input" name="business_nature" placeholder="Number of Employees"  value="{{ $user->business_nature}}">
 										</div>
 									</div>
 								</div> 

@@ -16,7 +16,7 @@
 
 				<div class="row">
 						<div class="col-md-12">
-								<div class="brand"> <a href="#">
+								<div class="brand"> <a href="{{('/user-portal')}}">
 										<h1>Logo</h1>
 										</a> </div>
 								<nav  id="nav-wrap" class="main-nav"> 
@@ -30,7 +30,8 @@
 										<li> <a href="">Contact</a> </li>
 										@if(\Auth::check())
 										<li class="dropdown">
-											<a href="" class="dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{auth()->user()->f_name}}</a>
+											<a href="" class="dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												<img src="{{asset('frontend-assets/images/user.jpg')}}" class="rounded-circle">{{auth()->user()->f_name}}</a>
 											<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							          <a class="dropdown-item" href="{{url('/user-portal')}}"><i class="fas fa-tachometer-alt pr-2"></i> Dashboard</a>
 							          <a class="dropdown-item" href="{{url('user-portal/change-password')}}"><i class="fas fa-lock pr-2"></i> Change Password</a>
