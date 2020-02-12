@@ -5,7 +5,7 @@
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-md-5 col-xs-12">
-			<h3 class="text-uppercase mb-3 mt-5">Login</h3>
+			<h3 class="text-uppercase mb-3 mt-5" style="text-align:center">Login</h3>
 		@if(Session::has('verify'))
                <div class="alert alert-success">
                   {{ Session::get('verify') }}
@@ -22,7 +22,7 @@
                   </button>
                </div>
                @endif
-			<div class="login-form">
+			<div class="login-form"  style="margin-top: 4rem;">
 				<form action="" method="post">
 					{{ csrf_field() }}
 				  <div class="form-group">
