@@ -67,6 +67,7 @@
                   <table class="table">
                     <thead class=" text-primary">
                       <th colspan="">Pay_id</th>
+                      <th colspan="">Stripe Payment_id</th>
                       <th colspan="">Name</th>
                       <th colspan="">Package Name</th>
                       <th colspan="">Package Price</th>
@@ -76,6 +77,7 @@
                     @foreach($payments as $jobs)
                       <tr>
                         <td colspan=""> {{$jobs->id}}</td>
+                        <td colspan=""> {{$jobs->stripe_id}}</td>
                         <td colspan=""> {{$jobs->f_name}}</td>
                         <td colspan=""> {{$jobs->plan->name}}</td>
                         <td colspan=""> {{$jobs->plan->cost}}</td>

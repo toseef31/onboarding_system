@@ -106,9 +106,10 @@
             		    <table class="table  table-bordered">
             		      <thead>
             		        <tr>
-            		          <th>Package Info</th>
+            		          <th>Package Name</th>
             		          <th>Card Owner</th>
             		          <th>Payment</th>
+                          <th>Payment Date</th>
             		        </tr>
             		      </thead>
             		      <tbody>
@@ -116,6 +117,7 @@
             		          <td>{{ $userplan->name}}</td>
             		          <td>{{ $userplan->f_name}}</td>
             		          <td>$ {{ $userplan->cost}}</td>
+                          <td>{{ $userplan->created_at}}</td>
             		        </tr>
             		      </tbody>
             		    </table>

@@ -15,7 +15,7 @@ class PaymentController extends Controller
      */
     public function index()
     {
-       $payments= DB::table('users')->select('users.user_id','users.f_name','subscriptions.id','subscriptions.user_user_id','subscriptions.stripe_plan','subscriptions.created_at')
+       $payments= DB::table('users')->select('users.user_id','users.f_name','subscriptions.id','subscriptions.user_user_id','subscriptions.stripe_id','subscriptions.stripe_plan','subscriptions.created_at')
        ->join('subscriptions','subscriptions.user_user_id','=','users.user_id')->get();
        foreach($payments as &$payment){
            $payment->plan=DB::table('plans')->where('stripe_plan',$payment->stripe_plan)->first();

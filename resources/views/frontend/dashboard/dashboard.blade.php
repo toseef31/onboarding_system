@@ -191,7 +191,7 @@
                   </div>
                 </div>
                 <div class="col-xs-12">
-                  <a href="{{url('')}}">
+                  <a href="">
                     <div class="numbers">
                       WebRTC
                     </div>

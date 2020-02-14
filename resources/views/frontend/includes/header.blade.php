@@ -16,7 +16,7 @@
 
 				<div class="row">
 						<div class="col-md-12">
-								<div class="brand"> <a href="{{('/user-portal')}}">
+								<div class="brand"> <a href="{{url('/user-portal')}}">
 										<h1>Logo</h1>
 										</a> </div>
 								<nav  id="nav-wrap" class="main-nav"> 
