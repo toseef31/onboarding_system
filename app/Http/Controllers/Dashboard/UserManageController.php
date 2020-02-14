@@ -8,6 +8,7 @@ use DB;
 use Session;
 use App\User;
 use App\Number;
+use Hash;
 
 class UserManageController extends Controller
 {
@@ -34,6 +35,55 @@ class UserManageController extends Controller
       // dd($alluser);
        return view('/admin.user_management',compact('alluser'));
     }
+
+    public function createUser(Request $request)
+    {
+     // dd($request->all());
+      $post = new User;
+          
+      $mobile = str_replace(' ', '', $request->input('mobile'));
+
+      $post->f_name = $request->input('f_name');
+       $post->sur_name = $request->input('sur_name');
+       $post->company_name = $request->input('company_name');
+       $post->email = $request->input('email');
+       $post->no_of_employees = $request->input('no_of_employees');
+       $post->business_nature = $request->input('business_nature');
+       $post->mobile = trim($mobile);
+       $post->password = Hash::make(trim($request->input('password')));
+       $post->status = 'active';
+
+       $post->save();
+
+      return redirect('/dashboard/add-users')->with('success','User created successfully');
+    }
+
+    public function editUser(Request $request,$id)
+    {
+       
+      if($request->isMethod('post')){
+        $mobile = str_replace(' ', '', $request->input('mobile'));
+
+          $post =User::find($id);
+          
+          $post->f_name = $request->input('f_name');
+           $post->sur_name = $request->input('sur_name');
+           $post->company_name = $request->input('company_name');
+           $post->email = $request->input('email');
+           $post->no_of_employees = $request->input('no_of_employees');
+           $post->business_nature = $request->input('business_nature');
+           $post->mobile = trim($mobile);
+           $post->password = Hash::make(trim($request->input('password')));
+           $post->status = $request->input('status');
+          $post->save();
+
+          return back()->with('success','User updated successfully');
+      }
+       $user = User::findOrFail($id);
+       //dd($user);
+       return view('admin.edit_user',compact('user'));
+    }
+
     public function blogs()
     {
        $alljobs = DB::table('fa_jobpost')->orderBy('id','desc')->get();

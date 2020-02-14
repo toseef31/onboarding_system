@@ -1,6 +1,5 @@
 @extends('admin.layouts.master')
 @section('content')
-<link href="{{asset('/frontend-assets/js/ckeditor/css/samples.css')}}" rel="stylesheet" />
     <div class="wrapper">
         <div class="main-panel">
             <!-- Navbar -->
@@ -14,7 +13,7 @@
                                 <span class="navbar-toggler-bar bar3"></span>
                             </button>
                         </div>
-                        <a class="navbar-brand" href="#pablo">Add New Number</a>
+                        <a class="navbar-brand" href="#pablo">Edit Number</a>
                     </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -51,19 +50,19 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title"> Add New Number</h4>
+                                <h4 class="card-title"> Edit Number</h4>
                             </div>
-
+                            @include('frontend.includes.messages')
                             <div class="row" style="margin: 0;">
                             	<div class="col-md-12">
-                                <form  style="padding-top: 20px;" method="post" action="{{url('dashboard/numbers/save')}}" enctype="multipart/form-data">
+                                <form  style="padding-top: 20px;" method="post" action="" enctype="">
                                   {{csrf_field()}}
                             			
                             			 <div class="form-group">
                             				<div class="row">
                             					<div class="col-md-12">
                             						<label>Number</label>
-                                        <input type="text" name="number" id="Enter Number" class="form-control" placeholder="Enter Number">
+                                        <input type="text" name="number" id="Enter Number" class="form-control" placeholder="Enter Number" value="{{$number->number}}">
                                       </div>
                             				</div>
                             			</div> 
@@ -73,11 +72,11 @@
                                       <div class="col-md-12">
                                         <label>Number Status</label>
                                        
-                                       <select name="status" id="" class="form-control" required="required">
-                                           <option value="0">Available</option>
-                                           <option value="1">Booked</option>
-                                           <option value="2">Reserved</option>
-                                       </select>
+                                        <select name="status" id="" class="form-control" required="required">
+                                            <option value="0" {{$number->status == 0 ? 'selected' : '' }}>Available</option>
+                                            <option value="1"{{$number->status == 1 ? 'selected' : '' }}>Booked</option>
+                                            <option value="2"{{$number->status == 2 ? 'selected' : '' }}>Reserved</option>
+                                        </select>
                                        
                                       </div>
                                     </div>
@@ -97,7 +96,4 @@
 
 @endsection
 @section('script')
-<script src="{{asset('/frontend-assets/js/ckeditor/ckeditor.js')}}"></script>
-<script src="{{asset('/frontend-assets/js/ckeditor/js/sample.js')}}"></script>
-<script src="{{asset('/frontend-assets/js/ckeditor/js/sf.js')}}"></script>
 @endsection

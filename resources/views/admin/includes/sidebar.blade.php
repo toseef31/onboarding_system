@@ -18,7 +18,7 @@
       <div class="sidebar-wrapper">
         <ul class="nav">
         @if(Session::get('chat_admin')->role =='admin')
-          <li class="{{ request()->is('/dashboard') ? 'active' : '' }} ">
+          <li class="{{ request()->is('/dashboard') ? 'active' : '' }}">
             <a href="{{url('/dashboard')}}">
               <i class="nc-icon nc-bank"></i>
               <p>Dashboard</p>
@@ -42,8 +42,8 @@
               <p>Landline Numbers</p>
             </a>
             <ul class="collapse" id="manageJobs">
-              <li><a href="{{url('dashboard/numbers/create')}}"><i class="fas fa-plus" style="font-size: 17px; margin-right: 0;"></i>  Add New Numbers</a></li>
-              <li><a href="{{url('dashboard/numbers')}}"><i class="fas fa-eye" style="font-size: 17px; margin-right: 0;"></i> View Numbers</a></li>
+              <li class="{{ request()->is('/dashboard/numbers/create') ? 'active' : '' }}"><a href="{{url('dashboard/numbers/create')}}"><i class="fas fa-plus" style="font-size: 17px; margin-right: 0;"></i>  Add New Numbers</a></li>
+              <li class="{{ request()->is('dashboard/numbers') ? 'active' : '' }}"><a href="{{url('dashboard/numbers')}}"><i class="fas fa-eye" style="font-size: 17px; margin-right: 0;"></i> View Numbers</a></li>
             </ul>
 
           </li>
@@ -64,7 +64,7 @@
          
           @endif
            @if(Session::get('chat_admin')->role =='admin' || Session::get('chat_admin')->role =='c')
-          <li>
+          <li class="{{ request()->is('dashboard/payments') ? 'active' : '' }}">
             <a href="{{url('dashboard/payments')}}">
               <i class="far fa-money-bill-alt"></i>
               <p>Payments</p>

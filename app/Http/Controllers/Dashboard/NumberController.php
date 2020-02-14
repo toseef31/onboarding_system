@@ -71,9 +71,22 @@ class NumberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request,$id)
     {
-        //
+
+      if($request->isMethod('post')){
+
+          $number =Number::find($id);
+          
+          $number->number = $request->input('number');
+           $number->status = $request->input('status');
+          $number->save();
+
+          return back()->with('success','User updated successfully');
+      }
+       $number = Number::findOrFail($id);
+       //dd($user);
+       return view('admin.edit_number',compact('number'));
     }
 
     /**

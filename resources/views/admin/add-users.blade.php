@@ -26,7 +26,7 @@
 
                             <li class="nav-item btn-rotate dropdown">
                                 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    
+                                    {{Session::get('chat_admin')->name}}
                                     <p>
                                         <span class="d-lg-none d-md-block">Some Actions</span>
                                     </p>
@@ -52,10 +52,11 @@
                             <div class="card-header">
                                 <h4 class="card-title"> Add User</h4>
                             </div>
-
+                            @include('frontend.includes.messages')
                             <div class="row" style="margin: 0;">
                             	<div class="col-md-12">
-                            		<form action="" method="post">
+                            		<form action="{{url('dashboard/create_user')}}" method="post">
+                                  {{ csrf_field() }}
                             			<div class="form-group">
                             				<div class="row">
                             					<div class="col-md-6">

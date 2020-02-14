@@ -14,12 +14,16 @@ Route::match(['get','post'],'/admin/login', 'Dashboard\UserManageController@admi
 Route::group(['prefix' => 'dashboard'], function () {
 	Route::get('/', 'Dashboard\UserManageController@dashboard');
     Route::get('/user_management', 'Dashboard\UserManageController@index');
+	Route::post('/create_user', 'Dashboard\UserManageController@createUser');
 	Route::get('/user/delete/{id}', 'Dashboard\UserManageController@destroy');
+	Route::match(['get','post'],'/edit-user/{id}', 'Dashboard\UserManageController@editUser');
 	Route::match(['get','post'],'/logout', 'Dashboard\UserManageController@logout');
 	Route::resource('/numbers', 'Dashboard\NumberController');
 	Route::post('/numbers/save', 'Dashboard\NumberController@store');
 	Route::get('/numbers/delete/{id}', 'Dashboard\NumberController@destroy');
+	Route::match(['get','post'],'/edit-number/{id}', 'Dashboard\NumberController@edit');
 	Route::get('/payments', 'Dashboard\PaymentController@index');
+
 
 	
 	Route::get('/icons', function(){
@@ -48,9 +52,10 @@ Route::group(['prefix' => 'dashboard'], function () {
 	Route::get('/add-users', function(){
 		return view('/admin.add-users');
 	});
-	Route::get('/edit_user/{id}', function(){
-		return view('/admin.edit_user');
-	});
+	Route::get('/edit-user/{id}', 'Dashboard\UserManageController@editUser' );
+	// {
+	// 	return view('/admin.edit_user');
+	// });
 });
 
 //////////////////////// Admin Dashboard Close ////////////////////////////
