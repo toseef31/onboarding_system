@@ -3,9 +3,9 @@
 @endsection
 @section('content')
 <div class="container">
-	<div class="row justify-content-center mt-5 mb-15">
+	<div class="row justify-content-center mt-5 mb-8">
 		<div class="text-center w-100 mt-4">
-			<h2>NAUTILUS LOGO</h2>
+			<img src="{{asset('frontend-assets/images/logo.jpg')}}" width="22%">
 		</div>
 		<!-- <div class="col-md-4 col-xs-12 mt-5 mb-5">
 			<div class="px-3 my-3">

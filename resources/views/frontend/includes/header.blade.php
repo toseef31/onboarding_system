@@ -16,9 +16,10 @@
 
 				<div class="row">
 						<div class="col-md-12">
-								<div class="brand"> <a href="{{url('/user-portal')}}">
-										<h1>Logo</h1>
-										</a> </div>
+								<div class="brand"> 
+									<a href="{{url('/user-portal')}}">
+										<img src="{{asset('frontend-assets/images/logo.jpg')}}" height="90px">
+									</a> </div>
 								<nav  id="nav-wrap" class="main-nav"> 
 									<a id="toggle-btn" class="navbar-toggler"><i class="fa fa-bars"></i> </a>
 								<ul class="sf-menu">
