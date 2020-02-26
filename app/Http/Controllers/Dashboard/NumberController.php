@@ -99,7 +99,7 @@ class NumberController extends Controller
          $number = Number::findOrFail($id);
 
         $number->delete();
-$request->session()->flash('delnum', 'Number delete Successfully');
+       $request->session()->flash('delnum', 'Number delete Successfully');
         return redirect('/dashboard/numbers');
     }
 }
