@@ -68,6 +68,8 @@ class RegisterController extends Controller
             
             $post->sur_name = $request->input('sur_name');
             $post->company_name = $request->input('company_name');
+            $post->business_nature = $request->input('business_nature');
+            $post->no_of_employees = $request->input('no_of_employees');
             $post->save();
         }
          $user = User::findOrFail($request->user()->user_id);

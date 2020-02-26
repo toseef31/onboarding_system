@@ -53,7 +53,7 @@
       </li>
       
       <li class="{{ request()->is('') ? 'active' : '' }}">
-        <a href="notifications.html">
+        <a href="">
           <i class="ti-comments"></i>
           <p>WebRTC</p>
         </a>

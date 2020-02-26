@@ -13,7 +13,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="#pablo">Landline Numbeers Management</a>
+            <a class="navbar-brand" href="#pablo">Landline Numbers Management</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -93,7 +93,8 @@
                         <td colspan=""> {{$jobs->created_at}}</td>
                         <td class="">
                          
-                          <i class="fa fa-edit text-primary"></i>
+                          <a href="{{url('dashboard/edit-number/'.$jobs->num_id)}}"><i class="fa fa-edit text-primary"></i></a>
+                          
                          <a onclick="return confirm('Do you want to delete this item?')" href="{{ url('dashboard/numbers/delete/'.$jobs->num_id)}}" > <i class="fa fa-trash text-danger"></i> </a>
                           
                         </td>

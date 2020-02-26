@@ -30,7 +30,7 @@
 
   @yield('inner-header')
   
-    <div class="wrapper">
+    <div class="wrapper row">
       @yield('content')
     </div>
   

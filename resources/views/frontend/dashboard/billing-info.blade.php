@@ -56,7 +56,7 @@
         <div class="col-lg-12 col-md-12 app-view-mainCol">
           <div class="cards" style="height: 420px;">
             <div class="row">
-            	<div class="col-md-6">
+            	<div class="col-md-7">
             		<div class="header">
             		  <h3 class="title">Information</h3>
                   <hr>
@@ -66,9 +66,10 @@
             		    <table class="table  table-bordered">
             		      <thead>
             		        <tr>
-            		          <th>Package Info</th>
+            		          <th>Package Name</th>
             		          <th>Card Owner</th>
             		          <th>Payment</th>
+                          <th>Payment Date</th>
             		        </tr>
             		      </thead>
             		      <tbody>
@@ -76,13 +77,14 @@
             		          <td>{{ $userplan->name}}</td>
             		          <td>{{ $userplan->f_name}}</td>
             		          <td>$ {{ $userplan->cost}}</td>
+                          <td>{{ $userplan->created_at}}</td>
             		        </tr>
             		      </tbody>
             		    </table>
             		  </div>
             		</div>
             	</div>
-            	<div class="col-md-6">
+            	<div class="col-md-5">
             		<div class="header">
             		  <h3 class="title">Card Info</h3>
                   <hr>

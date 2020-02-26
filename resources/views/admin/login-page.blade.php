@@ -16,7 +16,7 @@
     <div class="login">
         <div class="login-body">
             <a class="login-brand" href="{{ url('admin/login') }}">
-                <img class="img-responsive" src="{{asset('frontend-assets/static-images/header/search1.png')}}" alt="">
+                <span style="font-size: 20px;">Nautilus Admin Login</span>
             </a>
             <div class="login-form">
                 @if(session()->has('loginError'))
@@ -25,7 +25,7 @@
                 <form data-toggle="validator" class="login-form" method="post">
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="email">Email Or Username</label>
+                        <label for="email">Email</label>
                         <input class="form-control" name="email" autocomplete="off" data-msg-required="Please enter your username / email." required>
                     </div>
                     <div class="form-group">

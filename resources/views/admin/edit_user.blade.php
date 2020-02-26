@@ -50,48 +50,59 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title"> Add User</h4>
+                                <h4 class="card-title"> Edit User</h4>
                             </div>
-
+                             @include('frontend.includes.messages')
                             <div class="row" style="margin: 0;">
                             	<div class="col-md-12">
-                            		<form action="" method="">
-                            			<div class="form-group">
-                            				<div class="row">
-                            					<div class="col-md-6">
-                            						<label>User name</label>
-                            						<input type="text" name="username" class="form-control">
-                            					</div>
-                            					<div class="col-md-6">
-                            						<label>Email address</label>
-                            						<input type="email" name="email" class="form-control">
-                            					</div>		
-                            				</div>
-                            			</div>
-                            			<div class="form-group">
-                            				<div class="row">
-                            					<div class="col-md-6">
-		                        						<label>Phone Number</label>
-		                        						<input type="Number" name="phone_number" class="form-control">
-		                        					</div>
-                            					<div class="col-md-6">
-		                        						<label>User type</label>
-		                        						<select class="form-control" name="user_type">
-		                        							<option>Admin</option>
-		                        							<option>Experts only</option>
-		                        							<option>Customer only</option>
-		                        							<option>Customer only</option>
-		                        						</select>
-		                        					</div>
-		                        				</div>
-                            			</div>
-                            			<div class="form-group">
-                        						<label>Password</label>
-                        						<input type="password" name="username" class="form-control">
-                            			</div>
-                            			<div class="form-group">
-                            				<button type="submit" class="btn btn-success">Update </button>
-                            			</div>
+                            		<form action="" method="post">
+                  			          {{ csrf_field() }}
+                                  <div class="form-group">
+                                    <div class="row">
+                                      <div class="col-md-6">
+                                        <label>First name</label>
+                                        <input type="text" name="f_name" class="form-control" value="{{$user->f_name}}">
+                                      </div>
+                                      <div class="col-md-6">
+                                          <label>Last name</label>
+                                          <input type="text" name="sur_name" class="form-control" value="{{$user->sur_name}}">
+                                      </div>    
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label>Company Name</label>
+                                    <input type="text" name="company_name" class="form-control" value="{{$user->company_name}}">
+                                  </div>
+                                  <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" name="email" class="form-control" value="{{$user->email}}">
+                                  </div>
+                                  <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="number" name="mobile" class="form-control" value="{{$user->mobile}}">
+                                  </div>
+                                  <div class="form-group">
+                                    <label>Number of Employees</label>
+                                    <input type="number" name="no_of_employees" class="form-control" value="{{$user->no_of_employees}}">
+                                  </div>                 
+                                  <div class="form-group">
+                                    <label>Business Nature</label>
+                                    <input type="text" name="business_nature" class="form-control" value="{{$user->business_nature}}">
+                                  </div>                 
+                                  <div class="form-group">
+                                    <label>Status</label>
+                                    <select name="status" class="form-control">
+                                      <option value="active" {{$user->status ==  'active' ? 'selected' : ''}}>Active</option>
+                                      <option value="inactive" {{$user->status ==  'inactive' ? 'selected' : ''}}>InActive</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" name="password" class="form-control" value="">
+                                  </div>
+                                  <div class="form-group">
+                                    <button type="submit" class="btn btn-success">Add </button>
+                                  </div>
                             		</form>
                             	</div>
                             </div>

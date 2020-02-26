@@ -26,7 +26,7 @@
 
                             <li class="nav-item btn-rotate dropdown">
                                 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{Session::get('fa_admin')->name}}
+                                    {{Session::get('chat_admin')->name}}
                                     <p>
                                         <span class="d-lg-none d-md-block">Some Actions</span>
                                     </p>
@@ -52,34 +52,46 @@
                             <div class="card-header">
                                 <h4 class="card-title"> Add User</h4>
                             </div>
-
+                            @include('frontend.includes.messages')
                             <div class="row" style="margin: 0;">
                             	<div class="col-md-12">
-                            		<form action="" method="">
+                            		<form action="{{url('dashboard/create_user')}}" method="post">
+                                  {{ csrf_field() }}
                             			<div class="form-group">
                             				<div class="row">
                             					<div class="col-md-6">
-                            						<label>User name</label>
-                            						<input type="text" name="username" class="form-control">
+                            						<label>First name</label>
+                            						<input type="text" name="f_name" class="form-control">
                             					</div>
-                            					<div class="col-md-6">
-                            						<label>Email address</label>
-                            						<input type="email" name="email" class="form-control">
-                            					</div>		
+                                      <div class="col-md-6">
+                                          <label>Last name</label>
+                                          <input type="text" name="sur_name" class="form-control">
+                                      </div>		
                             				</div>
                             			</div>
+                                  <div class="form-group">
+                                    <label>Company Name</label>
+                                    <input type="text" name="company_name" class="form-control">
+                                  </div>
+                                  <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" name="email" class="form-control">
+                                  </div>
                             			<div class="form-group">
-                        						<label>User type</label>
-                        						<select class="form-control" name="user_type">
-                        							<option>Admin</option>
-                        							<option>Experts only</option>
-                        							<option>Customer only</option>
-                        							<option>Customer only</option>
-                        						</select>
+                        						<label>Phone Number</label>
+                        						<input type="number" name="mobile" class="form-control">
                             			</div>
+                                  <div class="form-group">
+                                    <label>Number of Employees</label>
+                                    <input type="number" name="no_of_employees" class="form-control">
+                                  </div>                 
+                                  <div class="form-group">
+                                    <label>Business Nature</label>
+                                    <input type="text" name="business_nature" class="form-control">
+                                  </div>
                             			<div class="form-group">
                         						<label>Password</label>
-                        						<input type="password" name="username" class="form-control">
+                        						<input type="password" name="password" class="form-control">
                             			</div>
                             			<div class="form-group">
                             				<button type="submit" class="btn btn-success">Add </button>

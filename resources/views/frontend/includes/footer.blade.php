@@ -1,6 +1,6 @@
   <!-- Site footer -->
-    <footer class="site-footer">
-      <div class="container">
+    <footer class="site-footer mt-5" style="">
+      <!-- <div class="container">
         <div class="row">
           <div class="col-sm-12 col-md-6">
             <h6>About</h6>
@@ -36,7 +36,7 @@
           </div>
         </div>
         <hr>
-      </div>
+      </div> -->
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12">

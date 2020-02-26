@@ -386,7 +386,7 @@ header.active .top-line {
 .site-footer
 {
   background-color:#26272b;
-  padding:45px 0 20px;
+  padding:25px 0 20px;
   font-size:15px;
   line-height:24px;
   color:#737373;
@@ -455,7 +455,8 @@ header.active .top-line {
 }
 .copyright-text
 {
-  margin:0
+  margin:0;
+  line-height: 38px;
 }
 @media (max-width:991px)
 {
@@ -547,10 +548,10 @@ header.active .top-line {
   }
 }
 /*Login Page*/
-.login-form{
+/*.login-form{
   margin-top: 5rem;
   margin-bottom: 10rem;
-}
+}*/
 .login-form .form-control{
   padding: 1rem .75rem;
 }
@@ -574,4 +575,23 @@ header.active .top-line {
 /*Bootstrap Width*/
 .w-49{
   width: 49%;
+}
+.mb-8{
+  margin-bottom: 8rem;
+}
+/*Social Buuton*/
+.btn-linkedin{
+  background-color: #007BB6;
+}
+.btn-instagram{
+  background-color: #3F729B;
+}
+.btn-facebook{
+  background-color: #3B5998;
+}
+.btn-twitter{
+  background-color: #55ACEE;
+}
+.btn-youtube{
+  background-color: #cd201f;
 }

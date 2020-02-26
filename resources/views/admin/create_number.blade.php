@@ -76,6 +76,7 @@
                                        <select name="status" id="" class="form-control" required="required">
                                            <option value="0">Available</option>
                                            <option value="1">Booked</option>
+                                           <option value="2">Reserved</option>
                                        </select>
                                        
                                       </div>

@@ -91,8 +91,8 @@
                       <td> {{$user->email}}</td>
                       <td>{{$user->status}}</td>
                       <td>
-                        <a href="{{url('dashboard/edit_user/'.$user->user_id)}}"><i class="fa fa-edit"></i></a>
-                        <a href="{{url('dashboard/user/delete/'.$user->user_id)}}"><i class="fa fa-trash"></i></a>
+                        <a href="{{url('dashboard/edit-user/'.$user->user_id)}}"><i class="fa fa-edit"></i></a>
+                        <a onclick="return confirm('Do you want to delete this item?')" href="{{url('dashboard/user/delete/'.$user->user_id)}}"><i class="fa fa-trash text-danger"></i></a>
                       </td>
                     </tr>
                     @endforeach
