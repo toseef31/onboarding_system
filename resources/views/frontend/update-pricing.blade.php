@@ -55,7 +55,7 @@
 					 @else
 					 <button class="btn btn-success btn-block mt-5 py-2" disabled>Your Current Plan</button>
 					  @endif -->
-					  <h1 class="mt-4 mb-1 text-danger" style="font-weight: 700;">@if($plan->cost ==0.00) Free @else <span style="font-size: 27px;">s$</span>{{$plan->cost}}<span style="font-size: 27px;">.00</span> @endif</h1>
+					  <h1 class="mt-4 mb-1 text-danger" style="font-weight: 700;">@if($plan->cost ==0.00) Free @else <span style="font-size: 27px;">S$</span>{{$plan->cost}}<span style="font-size: 27px;">.00</span> @endif</h1>
 					  <sub class="h6">{{$plan->pricetag}}</sub><br>
 					  <sub class="h6" style="color: gray;">*annual payment</sub>
 					<!--<a href="{{url('/user-portal')}}" class="btn btn-danger btn-block mt-5 py-2">Get Plan</a>-->
