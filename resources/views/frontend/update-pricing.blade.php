@@ -62,7 +62,6 @@
 			</a>
 		</div>
 		@endforeach
-		
 	<!-- End Box -->
 	</div>
 </div>
