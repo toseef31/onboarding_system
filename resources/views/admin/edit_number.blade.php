@@ -76,6 +76,7 @@
                                             <option value="0" {{$number->status == 0 ? 'selected' : '' }}>Available</option>
                                             <option value="1"{{$number->status == 1 ? 'selected' : '' }}>Booked</option>
                                             <option value="2"{{$number->status == 2 ? 'selected' : '' }}>Reserved</option>
+                                            <option value="2"{{$number->status == 3 ? 'selected' : '' }}>Unavailable</option>
                                         </select>
                                        
                                       </div>
