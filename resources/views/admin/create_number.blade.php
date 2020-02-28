@@ -77,6 +77,7 @@
                                            <option value="0">Available</option>
                                            <option value="1">Booked</option>
                                            <option value="2">Reserved</option>
+                                           <option value="3">Unavailable</option>
                                        </select>
                                        
                                       </div>
