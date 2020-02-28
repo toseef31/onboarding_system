@@ -26,15 +26,21 @@
 }
 /*Dashboard Home Page*/
 .box-grid-row .col-lg-4 .cards{
-	height: 200px;
+	height: 240px;
 }
 .box-grid-row .col-lg-4 .cards .content {
-    padding: 25px 15px 10px 15px;
+    padding: 5rem 15px 10px 15px;
+}
+.box-grid-row .col-lg-4 .cards .content a:hover{
+  color: white;
 }
 .box-grid-row .col-lg-4 .cards .numbers{
 	text-align: center;
   padding-top: 1rem;
   font-size: 1.8em;
+}
+.usage-card .progress{
+  height: 10px;
 }
 /*Media Query*/
 @media(max-width: 768px){

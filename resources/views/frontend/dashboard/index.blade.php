@@ -4,6 +4,11 @@
 
 @section('styling')
 <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/css/credit-card.css')}}">
+<style>
+  .border-radius{
+    border-radius: 25px;
+  }
+</style>
 @endsection
 @section('content')
 
@@ -72,8 +77,8 @@
                   </tbody>
                 </table>
               </div>
-              <a href="{{url('user-portal/create-extension')}}" class="btn btn-fill">Manage Number</a>
-             @if($userplan != null) <a href="{{url('user-portal/stopnumber/'.$user->choice_number)}}" onclick='deleteItem()' class="btn btn-warning">Stop Number</a>@endif
+              <a href="{{url('user-portal/create-extension')}}" class="btn btn-success border-radius">Manage Number</a>
+             @if($userplan != null) <a href="{{url('user-portal/stopnumber/'.$user->choice_number)}}" onclick='deleteItem()' class="btn btn-warning border-radius">Stop Number</a>@endif
 
             </div>
             <hr>
@@ -105,7 +110,7 @@
                   </tbody>
                 </table>
               </div>
-              <a href="{{url('user-portal/call-report')}}" class="btn btn-fill">Manage Call Reports</a>
+              <a href="{{url('user-portal/call-report')}}" class="btn btn-success border-radius">Manage Call Reports</a>
 
             </div>
             <hr>
@@ -113,10 +118,75 @@
           </div>
 
         </div>
-        @if($userplan != null)
+        <!-- @if($userplan != null) -->
         <div class="col-lg-6 col-md-6 app-view-mainCol">
-           <div class="cards">
-            <div class="row">
+          <div class="cards cards-user usage-card">
+            <div class="header">
+              <h4 class="title">Usage</h4>
+            </div>
+            <div class="content">
+              <form>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <label>Voice mintues</label><span class="pull-right">0 used of 50</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="0"
+                      aria-valuemin="0" aria-valuemax="100">
+                        <span class="sr-only">70% Complete</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <label>1-to-1 SMS Messages</label><span class="pull-right">0 used of 50</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="0"
+                      aria-valuemin="0" aria-valuemax="100">
+                        <span class="sr-only">70% Complete</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <label>Allocated Extensions</label><span class="pull-right">1 used of 2</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="50"
+                      aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                        <span class="sr-only">50% Complete</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <label>Allocated Phone Numbers</label><span class="pull-right">1 used of 1</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="100"
+                      aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                        <span class="sr-only">100% Complete</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <label>Overage Charges</label><span class="pull-right">0.0 used of 6.0</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="0"
+                      aria-valuemin="0" aria-valuemax="100">
+                        <span class="sr-only">0% Complete</span>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+                <a href="" class="btn btn-success border-radius">Save Usage</a>
+              </form> 
+            </div>
+
+
+            <!-- <div class="row">
             	<div class="col-md-12">
             		<div class="header">
             		  <h4 class="title">Billing Information</h4>
@@ -142,11 +212,11 @@
             		      </tbody>
             		    </table>
             		  </div>
-                <a href="{{url('/user-portal/billing-info')}}" class="btn btn-fill">Billing Info</a>
+                <a href="{{url('/user-portal/billing-info')}}" class="btn btn-success border-radius">Billing Info</a>
             		</div>
             	</div>
-            </div>
-            @endif
+            </div> -->
+            <!-- @endif -->
             
           </div>
             <div style="clear: both;"></div>

@@ -77,13 +77,13 @@
 				<div class="col-lg-9 col-md-9 app-view-mainCol">
 					<div class="cards">
 						<div class="header">
-							<h3 class="title">New Extension</h3>
+							<h3 class="title">Telephone Setting</h3>
 							<hr>
 						</div>
 						<div class="content">
 							<form class="form-horizontals profile-form" action="" method="post">
 								{{ csrf_field() }}
-								<div class="row">
+								<!-- <div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
 											<label>Extension Type</label> <br>
@@ -98,20 +98,21 @@
 											<input type="radio" name="role"> Non Admin
 										</div>
 									</div>
-								</div>
+								</div> -->
 								<div class="row">
 									<div class="col-md-12">
 										<div class="form-group">
-											<label>First Name</label>
-											<input type="text" class="form-controls border-input" disabled="" placeholder="First Name" value="">
+											<label>Call Flow</label>
+											<input type="text" class="form-controls border-input" placeholder="Instruction/Setting" value="">
 										</div>
 									</div>
 								</div>
                 <div class="row">
 									<div class="col-md-12">
 										<div class="form-group">
-											<label>Surname</label>
-											<input type="text" class="form-controls border-input" disabled="" placeholder="Enter Surname" value="">
+											<label>Call Recording</label>
+											<input type="text" class="form-controls border-input" placeholder="Extension" value="" style="margin-bottom: 20px;">
+											<input type="text" name="" placeholder="Instruction" class="form-controls border-input">
 										</div>
 									</div>
 								</div>
@@ -120,22 +121,141 @@
 								<div class="row">
 									<div class="col-md-12">
 										<div class="form-group">
-											<label>Email(login)</label>
-											<input type="email" id="pac-input" class="form-controls border-input" placeholder="Emater your login email Address" name="password" value="">
+											<label>Call Log Reports</label>
+											<select class="form-controls border-input" style="margin-bottom: 20px;">	
+													<option>Select Option</option>
+													<option>Yes</option>
+													<option>No</option>
+											</select>
+											<input type="email" id="pac-input" class="form-controls border-input" placeholder="Enter email Address" name="email" value="">
 										</div>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-12">
 										<div class="form-group">
-											<label>Mobile Phone Number</label>
-											<input type="tel" class="form-controls border-input" placeholder="Mobile phone number" name="phone_number" value="" id="phone_number">
+											<label>Installation Address</label>
+											<input type="text" class="form-controls border-input" placeholder="Address detail" name="installation_address" value="" id="installation_address">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+											<label>Billing Address </label>
+											<input type="text" class="form-controls border-input" placeholder="Billing detail" name="billing_address" value="" id="billing_address">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+											<label>Timeline/Deadline as stipulated by Client</label>
+											<input type="text" class="form-controls border-input" placeholder="Timeline/Deadline as stipulated by Client" name="deadline" value="" id="deadline">
 										</div>
 									</div>
 								</div> 
-
+								<h4>Contact Person (for project):</h4>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+											<label>Name</label>
+											<input type="text" class="form-controls border-input" placeholder="Name" name="person_name" value="" id="person_name">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+											<label>Contact</label>
+											<input type="number" class="form-controls border-input" placeholder="Contact Info" name="contact_info" value="" id="contact_info">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+											<label>Email</label>
+											<input type="email" class="form-controls border-input" placeholder="Person email" name="person_email" value="" id="person_email">
+										</div>
+									</div>
+								</div>
+								<h4>Contact Person (for account):</h4>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+											<label>Name</label>
+											<input type="text" class="form-controls border-input" placeholder="Name" name="account_person_name" value="" id="account_person_name">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+											<label>Contact</label>
+											<input type="number" class="form-controls border-input" placeholder="Contact Info" name="account_contact_info" value="" id="account_contact_info">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+											<label>Email</label>
+											<input type="email" class="form-controls border-input" placeholder="Person email" name="account_person_email" value="" id="account_person_email">
+										</div>
+									</div>
+								</div>
+								<hr>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+											<label>Additional Comments</label>
+											<textarea class="form-controls border-input" placeholder="Additional Comments"></textarea>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+											<label>Customer Acceptance Signature </label>
+											<textarea class="form-controls border-input" placeholder="Customer Acceptance Signature"></textarea>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+											<label>Person In Change Name </label>
+											<textarea class="form-controls border-input" placeholder="Person In Change Name:  "></textarea>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+											<label>Date </label>
+											<input type="date" name="date" class="form-controls border-input">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+											<label>Company Seal </label>
+											<textarea class="form-controls border-input" placeholder="Company Seal"></textarea>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+											<label>Registration Code </label>
+											<input type="text" class="form-controls border-input" name="registration_code">
+										</div>
+									</div>
+								</div>
 								<div class="text-center">
-									<button type="submit" class="btn btn-info btn-fill btn-wd">Add Extension</button>
+									<button type="submit" class="btn btn-info btn-fill btn-wd">Submit</button>
 								</div>
 
 								<div class="clearfix"></div>

@@ -3,6 +3,11 @@
 @section('title', 'User Portal')
 
 @section('styling')
+<style>
+  .text-white{
+    color: white;
+  }
+</style>
 @endsection
 @section('content')
 
@@ -48,16 +53,16 @@
           </div>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <div class="cards">
+          <div class="cards" style="background-color: burlywood;">
             <div class="content">
               <div class="row">
                 <div class="col-xs-12">
-                  <div class="icon-big icon-success text-center">
+                  <div class="icon-big text-white text-center">
                     <i class="ti-user"></i>
                   </div>
                 </div>
                 <div class="col-xs-12">
-                  <a href="{{url('user-portal/manage-profile')}}">
+                  <a href="{{url('user-portal/manage-profile')}}" class="text-white">
                     <div class="numbers">
                       User Profile Management
                     </div>
@@ -70,16 +75,16 @@
           </div>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <div class="cards">
+          <div class="cards" style="background-color: #005fff;">
             <div class="content">
               <div class="row">
                 <div class="col-xs-12">
-                  <div class="icon-big icon-danger text-center">
+                  <div class="icon-big text-white text-center">
                     <i class="ti-pulse"></i>
                   </div>
                 </div>
                 <div class="col-xs-12">
-                  <a href="{{url('user-portal/create-extension')}}">
+                  <a href="{{url('user-portal/create-extension')}}" class="text-white">
                     <div class="numbers">
                       Telephone Setting
                     </div>
@@ -93,16 +98,16 @@
         </div>
         
         <div class="col-lg-4 col-sm-6">
-          <div class="cards">
+          <div class="cards" style="background-color: #7429b9e6;">
             <div class="content">
               <div class="row">
                 <div class="col-xs-12">
-                  <div class="icon-big icon-info text-center">
+                  <div class="icon-big text-white text-center">
                     <i class="ti-pencil-alt2"></i>
                   </div>
                 </div>
                 <div class="col-xs-12">
-                  <a href="{{url('user-portal/call-report')}}">
+                  <a href="{{url('user-portal/call-report')}}" class="text-white">
                     <div class="numbers">
                       Call Reporting
                     </div>
@@ -115,16 +120,16 @@
           </div>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <div class="cards">
+          <div class="cards" style="background-color: #55c39e;">
             <div class="content">
               <div class="row">
                 <div class="col-xs-12">
-                  <div class="icon-big icon-info text-center">
+                  <div class="icon-big text-white text-center">
                     <i class="ti-map"></i>
                   </div>
                 </div>
                 <div class="col-xs-12">
-                  <a href="{{url('user-portal/disposition-call-report')}}">
+                  <a href="{{url('user-portal/disposition-call-report')}}" class="text-white">
                     <div class="numbers">
                       Disposition of calls report
                     </div>
@@ -137,16 +142,16 @@
           </div>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <div class="cards">
+          <div class="cards" style="background-color: brown;">
             <div class="content">
               <div class="row">
                 <div class="col-xs-12">
-                  <div class="icon-big icon-info text-center">
+                  <div class="icon-big text-white text-center">
                     <i class="ti-receipt"></i>
                   </div>
                 </div>
                 <div class="col-xs-12">
-                  <a href="{{url('user-portal/billing-info')}}">
+                  <a href="{{url('user-portal/billing-info')}}" class="text-white">
                     <div class="numbers">
                       Billing Information
                     </div>
@@ -159,16 +164,16 @@
           </div>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <div class="cards">
+          <div class="cards" style="background-color: #e4be40;">
             <div class="content">
               <div class="row">
                 <div class="col-xs-12">
-                  <div class="icon-big icon-info text-center">
+                  <div class="icon-big text-white text-center">
                     <i class="ti-image"></i>
                   </div>
                 </div>
                 <div class="col-xs-12">
-                  <a href="{{url('/update-pricing-plan')}}">
+                  <a href="{{url('/update-pricing-plan')}}" class="text-white">
                     <div class="numbers">
                       Upgrade package
                     </div>
@@ -182,16 +187,16 @@
         </div>
        
         <div class="col-lg-4 col-sm-6">
-          <div class="cards">
+          <div class="cards" style="background-color: #0085c6;">
             <div class="content">
               <div class="row">
                 <div class="col-xs-12">
-                  <div class="icon-big icon-info text-center">
+                  <div class="icon-big text-white text-center">
                     <i class="ti-comments"></i>
                   </div>
                 </div>
                 <div class="col-xs-12">
-                  <a href="">
+                  <a href="" class="text-white">
                     <div class="numbers">
                       WebRTC
                     </div>
