@@ -10,7 +10,18 @@ use Hash;
 class Boarding {
 
   public function Numberget($id){
-    $numbers = Number::where('number',$id)->first();
+    //dd($numbers);
+   
+    $numbers = Number::where('num_id',$id)->where('status','!=','0')->first();
+    //dd($numbers);
+    return $numbers;
+  }
+
+  public function availableNumber(){
+    //dd($numbers);
+   
+    $numbers = Number::where('status','=','0')->get();
+    //dd($numbers);
     return $numbers;
   }
         

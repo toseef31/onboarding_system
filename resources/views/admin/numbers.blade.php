@@ -51,7 +51,7 @@
             <div class="card">
               <div class="card-header">
                 <h4 class="card-title"> Numbers List</h4>
-                <h5 class="card-title" style="text-align:center">Booked: {{$numbersbook}} &nbsp; &nbsp;  Available: {{$numbersavailable}} &nbsp; &nbsp;  Reserve: {{$numbersreserve}}</h5>
+                <h5 class="card-title" style="text-align:center">Booked: {{$numbersbook}} &nbsp; &nbsp;  Available: {{$numbersavailable}} &nbsp; &nbsp;  Reserve: {{$numbersreserve}}&nbsp; &nbsp;  Unavailable: {{$numberunavail}}</h5>
                 <a href="{{url('/dashboard/numbers/create')}}" class="btn btn-success" type="button" name="button" style="Background: #87CB16; color: white; margin-top: -45px; float:right;">Add New Number</a>
               </div>
 
@@ -89,7 +89,7 @@
                       <tr>
                         <td colspan=""> {{$jobs->num_id}}</td>
                         <td colspan=""> {{$jobs->number}}</td>
-                        <td colspan=""> @if($jobs->status == 0)Available @elseif($jobs->status == 1) Booked @else Reserve @endif</td>
+                        <td colspan=""> @if($jobs->status == 0)Available @elseif($jobs->status == 1) Booked @elseif($jobs->status == 2) Reserve @else Unavailable @endif</td>
                         <td colspan=""> {{$jobs->created_at}}</td>
                         <td class="">
                          

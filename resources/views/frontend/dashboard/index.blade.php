@@ -47,7 +47,25 @@
                   <tbody>
                     <tr>
                       <td>Business Number</td>
-                      <td>{{ Boarding::Numberget($userplan->choice_number)->number}}
+                      <td>
+                     @if(Boarding::Numberget($user->choice_number) != null)
+                     @if(Boarding::Numberget($user->choice_number)->status == '3')
+                       Unavailable
+                     @else
+                      {{Boarding::Numberget($user->choice_number)->number}} 
+
+                      @endif
+                     @else
+                     <form action="{{ url('user-portal/changeNumber')}}" method="post" id="submitchangeNumber">
+                      {{ csrf_field() }}
+                      <select name="number" id="selectNumber" class="form-control" required="required">
+                        <option value="">Select Number</option>
+                        @foreach(Boarding::availableNumber() as $num)
+                          <option value="{{$num->num_id}}">{{$num->number}}</option>
+                          @endforeach
+                      </select>
+                     </form>
+                     @endif
                       </td>
                       <td>Virtual Receptionist</td>
                     </tr>
@@ -55,6 +73,7 @@
                 </table>
               </div>
               <a href="{{url('user-portal/create-extension')}}" class="btn btn-fill">Manage Number</a>
+             @if($userplan != null) <a href="{{url('user-portal/stopnumber/'.$user->choice_number)}}" onclick='deleteItem()' class="btn btn-warning">Stop Number</a>@endif
 
             </div>
             <hr>
@@ -94,6 +113,7 @@
           </div>
 
         </div>
+        @if($userplan != null)
         <div class="col-lg-6 col-md-6 app-view-mainCol">
            <div class="cards">
             <div class="row">
@@ -126,7 +146,7 @@
             		</div>
             	</div>
             </div>
-            
+            @endif
             
           </div>
             <div style="clear: both;"></div>
@@ -142,5 +162,15 @@
 @endsection
 
 @section('script')
-
+<script>
+function deleteItem() {
+    if (confirm("Are you sure?")) {
+        // your deletion code
+    }
+    return false;
+}
+$('#selectNumber').change(function(){
+  $('#submitchangeNumber').submit();
+})
+</script>
 @endsection

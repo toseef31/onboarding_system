@@ -74,16 +74,19 @@
             		      </thead>
             		      <tbody>
             		        <tr>
+                        @if($userplan != null)
             		          <td>{{ $userplan->name}}</td>
             		          <td>{{ $userplan->f_name}}</td>
             		          <td>$ {{ $userplan->cost}}</td>
                           <td>{{ $userplan->created_at}}</td>
+                          @endif
             		        </tr>
             		      </tbody>
             		    </table>
             		  </div>
             		</div>
             	</div>
+               @if($userplan != null)
             	<div class="col-md-5">
             		<div class="header">
             		  <h3 class="title">Card Info</h3>
@@ -211,6 +214,7 @@
                                 </div>
                               </div>
             	</div>
+              @endif
             </div>
             
           </div>
@@ -374,6 +378,7 @@
 
   //pop in the appropriate card icon when detected
   // cardnumber_mask.on("accept", function () {
+@if($userplan != null)
     var card_type = "{{ $userplan->card_brand}}";
       // alert(card_type);
       switch (card_type) {
@@ -424,7 +429,7 @@
               swapColor('grey');
               break;
       }
-
+@endif
   // });
 
 

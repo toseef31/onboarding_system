@@ -108,13 +108,14 @@ class RegisterController extends Controller
         }
 
         if ( Auth::check() ) {
-            if($request->user()->stripe_id != NULL){
-               return redirect('user-portal');
-            }else{
-                return redirect('pricing-plan');
-            }
+            // if($request->user()->stripe_id != NULL){
+            //    return redirect('user-portal');
+            // }else{
+            //     return redirect('pricing-plan');
+          
+           // }
             
-        }
+        }  return redirect('user-portal');
     }
 
     public function register(Request $request){
@@ -228,7 +229,7 @@ class RegisterController extends Controller
                 }
             
                 if ( Auth::check() ) {
-                        return redirect('pricing-plan');
+                        return redirect('user-portal');
                     }
                 
              }

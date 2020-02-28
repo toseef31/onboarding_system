@@ -19,7 +19,8 @@ class NumberController extends Controller
         $numbersbook = Number::where('status','1')->count();
         $numbersavailable = Number::where('status','0')->count();
         $numbersreserve = Number::where('status','2')->count();
-        return view('/admin.numbers',compact('numbers','numbersbook','numbersavailable','numbersreserve'));
+        $numberunavail = Number::where('status','3')->count();
+        return view('/admin.numbers',compact('numbers','numbersbook','numbersavailable','numbersreserve','numberunavail'));
     }
 
     /**

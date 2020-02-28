@@ -85,6 +85,8 @@ Route::group(['prefix' => 'user-portal'], function () {
 	});
 	Route::get('/billing-info','PlanController@usershow');
 	Route::match(['get','post'],'/manage-profile', 'frontend\RegisterController@show');
+	Route::match(['get','post'],'/changeNumber', 'frontend\DashboardController@updateNumber');
+	Route::get('/stopnumber/{id}', 'frontend\DashboardController@stopNumber');
 });
 
     Route::get('/pricing-plan', 'PlanController@index')->name('plans.index');
