@@ -36,11 +36,11 @@
 	@foreach($plans as $plan)
 		<div class="col col-md-3 text-center text-dark mb-3 px-1 mx-2 rounded">
 			<a href="{{ route('plans.show', $plan->slug) }}">
-				<div class="subscribe-box bg-white p-3 pt-5 pb-5 rounded shadow-lg">
+				<div class="subscribe-box bg-white p-3 pt-5 pb-5 rounded shadow-lg" style="height: 605px;">
 					<h2 class="text-capitalize text-primary">{{$plan->name}}</h2>
 					
 					<div class="border-top-3 border-primary"></div>
-					<h6 class="text-danger mt-2">Standard User Licence</h6>
+					<h6 class="text-danger mt-2">{{$plan->heading}}</h6>
 					<ul class="list-group align-items-start mt-4">
 						<li class="list-group-item bg-white border-0"><i class="fas fa-check pr-2"></i> {{$plan->land_number}}</li>
 						<li class="list-group-item bg-white border-0"><i class="fas fa-check pr-2"></i> {{$plan->extension}}</li>
@@ -55,8 +55,9 @@
 					 @else
 					 <button class="btn btn-success btn-block mt-5 py-2" disabled>Your Current Plan</button>
 					  @endif -->
-					  <h1 class="mt-4 mb-1 text-danger">@if($plan->cost ==0.00) Free @else ${{$plan->cost}} @endif</h1>
-					  <sub class="h6">months</sub>
+					  <h1 class="mt-4 mb-1 text-danger" style="font-weight: 700;">@if($plan->cost ==0.00) Free @else <span style="font-size: 27px;">s$</span>{{$plan->cost}}<span style="font-size: 27px;">.00</span> @endif</h1>
+					  <sub class="h6">{{$plan->pricetag}}</sub><br>
+					  <sub class="h6" style="color: gray;">*annual payment</sub>
 					<!--<a href="{{url('/user-portal')}}" class="btn btn-danger btn-block mt-5 py-2">Get Plan</a>-->
 				</div>
 			</a>
