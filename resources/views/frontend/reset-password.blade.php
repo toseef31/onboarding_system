@@ -17,7 +17,7 @@
 			</div>
 		</div> -->
 		<div class="col-md-5 col-xs-12 mt-5 mb-5 shadow rounded">
-			<h3 class="text-uppercase mb-3 mt-3 text-center">Nautilus Login</h3>
+			<h3 class="text-uppercase mb-3 mt-3 text-center">Nautilus Reset Password</h3>
 			@if(Session::has('verify'))
 			<div class="alert alert-success">
 				{{ Session::get('verify') }}
@@ -26,39 +26,42 @@
 				</button>
 			</div>
 			@endif
-			@if(Session::has('loginAlert'))
+			@if(Session::has('resetAlert'))
 			<div class="alert alert-danger">
-				{{ Session::get('loginAlert') }}
+				{{ Session::get('resetAlert') }}
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
 			@endif
-			@if(Session::has('passwordSuccess'))
+			@if ($errors->any())
+			<div class="alert alert-danger">
+				 <ul>
+						@foreach ($errors->all() as $error)
+						<li>{{ $error }}</li>
+						@endforeach
+				 </ul>
+			</div>
+			@endif
+			@if(Session::has('resetSuccess'))
 			<div class="alert alert-success">
-				 {{ Session::get('passwordSuccess') }}
-				 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				 {{ Session::get('resetSuccess') }}
+				 <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right: 30px;margin-top: 59px;color: black;">
 				 <span aria-hidden="true">&times;</span>
 				 </button>
 			</div>
 			@endif
 			<div class="login-form pb-5">
-				<form action="" method="post">
-					{{ csrf_field() }}
-				  <div class="form-group">
-				    <input type="email" class="form-control" placeholder="Enter email" id="email" name="email">
-				  </div>
-				  <div class="form-group">
-				    <input type="password" class="form-control" placeholder="Enter password" id="pwd" name="password">
-				  </div>
-				  <div class="form-group form-check">
-				    <label class="form-check-label text-danger">
-				      <input class="form-check-input" type="checkbox"> Remember me
-				    </label>
-				    <a href="{{url('forget-password')}}" class="float-right">Forget Password?</a>
-				  </div>
-				  <button type="submit" class="btn btn-danger">Submit</button>
-					 <a href="{{url('/register')}}" class="float-right mt-3">Creat new account</a>
+				<form class="form-horizontal" method="POST" action="{{ url('/reset-passwrod') }}">
+						{{ csrf_field() }}
+						<input type="hidden" name="user_id" value="{{$user->user_id}}">
+						<div class="form-group">
+					    <input type="password" class="form-control" placeholder="Enter password" id="pwd" name="password" required>
+					  </div>
+						<div class="form-group">
+							<input id="confirm_password" type="password" class="form-control" name="confirm_password" placeholder="Confirm password" required>
+					  </div>
+						<button type="submit" class="btn btn-danger">Submit</button>
 				</form>
 
 			</div>

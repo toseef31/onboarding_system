@@ -26,39 +26,30 @@
 				</button>
 			</div>
 			@endif
-			@if(Session::has('loginAlert'))
+			@if(Session::has('resetAlert'))
 			<div class="alert alert-danger">
-				{{ Session::get('loginAlert') }}
-				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-				</button>
+				 {{ Session::get('resetAlert') }}
+				 <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right: 30px;margin-top: 59px;color: black;">
+				 <span aria-hidden="true">&times;</span>
+				 </button>
 			</div>
 			@endif
-			@if(Session::has('passwordSuccess'))
+			@if(Session::has('resetSuccess'))
 			<div class="alert alert-success">
-				 {{ Session::get('passwordSuccess') }}
-				 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				 {{ Session::get('resetSuccess') }}
+				 <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="margin-right: 30px;margin-top: 59px;color: black;">
 				 <span aria-hidden="true">&times;</span>
 				 </button>
 			</div>
 			@endif
 			<div class="login-form pb-5">
-				<form action="" method="post">
+				<form action="{{ url('/checkEmail') }}" method="post">
 					{{ csrf_field() }}
 				  <div class="form-group">
 				    <input type="email" class="form-control" placeholder="Enter email" id="email" name="email">
 				  </div>
-				  <div class="form-group">
-				    <input type="password" class="form-control" placeholder="Enter password" id="pwd" name="password">
-				  </div>
-				  <div class="form-group form-check">
-				    <label class="form-check-label text-danger">
-				      <input class="form-check-input" type="checkbox"> Remember me
-				    </label>
-				    <a href="{{url('forget-password')}}" class="float-right">Forget Password?</a>
-				  </div>
+
 				  <button type="submit" class="btn btn-danger">Submit</button>
-					 <a href="{{url('/register')}}" class="float-right mt-3">Creat new account</a>
 				</form>
 
 			</div>

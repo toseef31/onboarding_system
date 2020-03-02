@@ -25,7 +25,7 @@ Route::group(['prefix' => 'dashboard'], function () {
 	Route::get('/payments', 'Dashboard\PaymentController@index');
 
 
-	
+
 	Route::get('/icons', function(){
 		return view('/admin.icons');
 	});
@@ -69,8 +69,8 @@ Route::group(['prefix' => 'user-portal'], function () {
 		return view('frontend.dashboard.dashboard');
 	});
 	Route::get('/dashboard', 'frontend\DashboardController@index');
-	
-	
+
+
 	Route::get('/change-password', function(){
 		return view('frontend.dashboard.changepassword');
 	});
@@ -99,8 +99,11 @@ Route::group(['prefix' => 'user-portal'], function () {
 });
 Route::match(['get','post'],'/register', 'frontend\RegisterController@register');
 Route::match(['get','post'],'/verification', 'frontend\RegisterController@accountVerify');
+Route::get('/resend-code', 'frontend\RegisterController@Resend_code');
 Route::get('/login', 'frontend\RegisterController@accountLogin')->name('login');;
 Route::post('/login', 'frontend\RegisterController@checklogin');
 Route::get('logout', 'frontend\RegisterController@logout')->name('logout');
-
-
+Route::get('/forget-password', 'frontend\RegisterController@forgetPassword');
+Route::match(['get','post'],'/checkEmail','frontend\RegisterController@checkEmail');
+Route::get('/check-token/{token}','frontend\RegisterController@checkToken');
+Route::match(['get','post'],'/reset-passwrod','frontend\RegisterController@ResetPassword');

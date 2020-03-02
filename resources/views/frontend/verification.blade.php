@@ -24,7 +24,7 @@
 					</div>
 					<div class="form-group">
 						<button type="submit" class="btn btn-primary">Submit Verfication Code</button>
-						<a href="" class="btn btn-info w-50">Resend Code</a>
+						<a href="{{url('/resend-code')}}" class="btn btn-info w-50">Resend Code</a>
 
 					</div>
 				</form>

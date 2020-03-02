@@ -11,6 +11,7 @@ use App\User;
 use DB;
 use Session;
 use Hash;
+use Mail;
 
 class RegisterController extends Controller
 {
@@ -39,7 +40,7 @@ class RegisterController extends Controller
      */
     public function create()
     {
-       
+
     }
 
     /**
@@ -65,7 +66,7 @@ class RegisterController extends Controller
         if($request->isMethod('post')){
             $post =User::find($request->user()->user_id);
             $post->f_name = $request->input('f_name');
-            
+
             $post->sur_name = $request->input('sur_name');
             $post->company_name = $request->input('company_name');
             $post->business_nature = $request->input('business_nature');
@@ -91,7 +92,7 @@ class RegisterController extends Controller
      function checklogin(Request $request){
 
         $this->validate($request, [
-            'email' => 'required', 
+            'email' => 'required',
             'password' => 'required',
         ]);
 
@@ -112,34 +113,34 @@ class RegisterController extends Controller
             //    return redirect('user-portal');
             // }else{
             //     return redirect('pricing-plan');
-          
+
            // }
-            
+
         }  return redirect('user-portal');
     }
 
     public function register(Request $request){
-       
+
         if($request->session()->has('User')){
 			return redirect('user-portal');
 		}
 
         if($request->isMethod('post')){
       // dd($request->all());
-            
+
         $mobile = str_replace(' ', '', $request->input('mobile'));
            // dd($mobile);
 
         // $numbers = Number::where('num_id',$request->input('choice_number'))->first();
-           
-          
-           
+
+
+
 			$this->validate($request,[
 				'email' => 'required|email|unique:users,email',
 				'sur_name' => 'required|min:2|max:32',
 				'mobile' => 'required',
 				'f_name' => 'required|min:1|max:50',
-                'password' => 'required|min:5|max:50'
+        'password' => 'required|min:5|max:50'
 
 			],[
 
@@ -152,11 +153,11 @@ class RegisterController extends Controller
 				'mobile.digits_between' => 'Phone Number must be contain 10,17 digits',
             ]);
             $string = rand(1, 1000000);
-            
+
             $input['f_name'] = trim($request->input('f_name'));
             $input['sur_name'] = trim($request->input('sur_name'));
             $input['email'] = trim($request->input('email'));
-           
+
             $input['password'] =Hash::make(trim($request->input('password')));
             $input['mobile'] = trim($mobile);
             $input['local'] = trim($request->input('local'));
@@ -175,31 +176,33 @@ class RegisterController extends Controller
              $sms_msg='Your Verification Code is '.$string;
                 $query_string = "api.aspx?apiusername=".$user."&apipassword=".$pass;
                 $query_string .= "&senderid=".rawurlencode($sms_from)."&mobileno=".rawurlencode($sms_to);
-                $query_string .= "&message=".rawurlencode(stripslashes($sms_msg)) . "&languagetype=1";        
-                $url = "http://gateway80.onewaysms.sg/api2.aspx/".$query_string;       
-                $fd = @implode ('', file ($url));      
-                if ($fd)  
-                {                       
+                $query_string .= "&message=".rawurlencode(stripslashes($sms_msg)) . "&languagetype=1";
+                $url = "http://gateway80.onewaysms.sg/api2.aspx/".$query_string;
+                $fd = @implode ('', file ($url));
+                if ($fd)
+                {
                     if ($fd > 0) {
                     Print("MT ID : " . $fd);
                     $ok = "success";
-                    }        
+                    }
                     else {
                     print("Please refer to API on Error : " . $fd);
                     $ok = "fail";
                     }
-                }           
-                    else      
-                    {                       
-                                // no contact with gateway                      
-                                $ok = "fail";       
-                    }           
-                  //  dd($ok); 
-     
+                }
+                    else
+                    {
+                                // no contact with gateway
+                                $ok = "fail";
+                    }
+                  //  dd($ok);
+
       if($ok == "success"){
            DB::table('numbers')->where('num_id',$request->input('choice_number'))->update(['status'=>'2']);
         //   / dd($result);
            $userId = DB::table('users')->insertGetId($input);
+           $request->session()->put('NaUser',$userId);
+
             setcookie('cc_data', $userId, time() + (86400 * 30), "/");
             $fNotice = 'Please check your mobile for verification code';
 			$request->session()->flash('fNotice',$fNotice);
@@ -212,32 +215,77 @@ class RegisterController extends Controller
 
 
  public function accountVerify(Request $request){
-
         if($request->isMethod('post')){
             $code=trim($request->input('verify_code'));
-            // dd($code);
             $client = DB::table('users')->where('verify_code','=', $code)->first();
+            // dd($client);
             $verify=DB::table('users')->where('user_id','=', $client->user_id)->update(['status'=> 'active']);
-        
+
              if($verify == 1){
                 $verifys = 'Your account verify successfully';
                 $request->session()->flash('verify',$verifys);
-                 
+
                 if ($client != null)
                 {
                     Auth::loginUsingId($client->user_id);
                 }
-            
+
                 if ( Auth::check() ) {
                         return redirect('user-portal');
                     }
-                
+
              }
 
             }
             return view('frontend.verification');
         }
-   
+
+        public function Resend_code(Request $request)
+        {
+          $user_id = $request->session()->get('NaUser');
+          $user_info = DB::table('users')->where('user_id',$user_id)->first();
+          $mobile = $user_info->mobile;
+          $string = rand(1, 1000000);
+          $input['verify_code'] =$string;
+          // dd($input);
+
+          $sms_to=$mobile;
+    //dd($number);
+           $user='APIR95FJDOI1K';
+           $pass='APIR95FJDOI1KR95FJ';
+           $sms_from='PLE';
+          // $sms_to='6581234567';
+           $sms_msg='Your Verification Code is '.$string;
+              $query_string = "api.aspx?apiusername=".$user."&apipassword=".$pass;
+              $query_string .= "&senderid=".rawurlencode($sms_from)."&mobileno=".rawurlencode($sms_to);
+              $query_string .= "&message=".rawurlencode(stripslashes($sms_msg)) . "&languagetype=1";
+              $url = "http://gateway80.onewaysms.sg/api2.aspx/".$query_string;
+              $fd = @implode ('', file ($url));
+              if ($fd)
+              {
+                  if ($fd > 0) {
+                  Print("MT ID : " . $fd);
+                  $ok = "success";
+                  }
+                  else {
+                  print("Please refer to API on Error : " . $fd);
+                  $ok = "fail";
+                  }
+              }
+                  else
+                  {
+                              // no contact with gateway
+                              $ok = "fail";
+                  }
+                  if($ok == "success"){
+            $userId = DB::table('users')->where('user_id',$user_id)->update($input);
+            $fNotice = 'Please check your mobile for verification code';
+            			$request->session()->flash('fNotice',$fNotice);
+                        return redirect('verification');
+            }
+
+        }
+
 public function accountLogin2(Request $request){
         if($request->session()->has('User')){
 			return redirect('user-portal');
@@ -270,7 +318,7 @@ public function accountLogin2(Request $request){
 					return redirect('/user-portal');
 				}
 			}
-   
+
 		}
 
 		return view('frontend.login');
@@ -280,7 +328,7 @@ public function accountLogin2(Request $request){
         /* do login */
         //dd($password);
         $user = DB::table('users')->where('email','=',$email)->where('password','=',$password)->where('status','active')->first();
-       
+
         if(empty($user)){
             return 'invalid';
         }else{
@@ -294,12 +342,77 @@ public function accountLogin2(Request $request){
         return redirect('login');
     }
     //  public function logout(Request $request){
-         
+
     //            Session::flush();
     //            return redirect('login');
-           
+
     //    }
-   
+
+    public function forgetPassword(Request $request)
+    {
+      return view('frontend.forget-password');
+    }
+
+    public function checkEmail(Request $request)
+    {
+      // dd($request->all());
+      $string = rand(5,999999999);
+      // dd($string);
+      $token = $string;
+      $email = $request->input('email');
+      $toemail=$email;
+      $user = DB::table('users')->where('email','=',$email)->first();
+      // dd($toemail);
+      if ($user =="") {
+        $request->session()->flash('resetAlert', "We can't find a user with that e-mail address.");
+        return redirect()->back();
+      }
+      $first_name = $user->f_name;
+      $last_name = $user->sur_name;
+      $user_info['forget_token']=$token;
+      Mail::send('mail.resetpassword',['u_name' =>$first_name." ".$last_name,'token' =>$token],
+      function ($message) use ($toemail)
+      {
+
+        $message->subject('Nautilus.com - Reset Password');
+        $message->from('admin@nautilus.com', 'NAUTILUS');
+        $message->to($toemail);
+      });
+      $user_id = DB::table('users')->where('email','=',$email)->update($user_info);
+      $request->session()->flash('resetSuccess', 'Check your Email to change your password.');
+      return redirect('/forget-password');
+
+    }
+
+    public function checkToken(Request $request, $token)
+    {
+      // dd($token);
+      $user = DB::table('users')->where('forget_token','=',$token)->first();
+      if ($user =="") {
+        $request->session()->flash('resetAlert', "Your secret code don't match please contact to Admin.");
+        return redirect('/forget-password');
+      }
+      // dd($user);
+      return view('frontend.reset-password',compact('user'));
+
+    }
+
+    public function ResetPassword(Request $request)
+    {
+      // dd($request->all());
+            $this->validate($request, [
+              'password' => 'required|min:5|max:50|required_with:confirm_password|same:confirm_password',
+              'confirm_password' => 'min:5'
+      ]);
+      $user_id= $request->input('user_id');
+      $pass=Hash::make(trim($request->input('password')));
+      // dd($pass);
+      $user = DB::table('users')->where('user_id','=',$user_id)->update(array('password'=>$pass));
+      $request->session()->flash('passwordSuccess', 'Password changed successfully');
+      return redirect('/login');
+
+    }
+
     public function edit($id)
     {
         //
