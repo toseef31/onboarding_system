@@ -57,7 +57,10 @@
 					  @endif -->
 					  <h1 class="mt-4 mb-1 text-danger" style="font-weight: 700;">@if($plan->cost ==0.00) Free @else <span style="font-size: 27px;">S$</span>{{$plan->cost}}<span style="font-size: 27px;">.00</span> @endif</h1>
 					  <sub class="h6">{{$plan->pricetag}}</sub><br>
-					  <sub class="h6" style="color: gray;">*annual payment</sub>
+					  <sub class="h6" style="color: gray;">*annual payment</sub><br>
+					  @if(auth()->user()->subscribedToPlan($plan->stripe_plan, 'main'))
+					  <sub class="h6" style="color: green;">Your Current Plan</sub>
+					  @endif
 					<!--<a href="{{url('/user-portal')}}" class="btn btn-danger btn-block mt-5 py-2">Get Plan</a>-->
 				</div>
 			</a>

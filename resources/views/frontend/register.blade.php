@@ -64,8 +64,8 @@
 				  			<input type="text" class="form-control" placeholder="Enter firstname" id="f_name" name="f_name">
 				  		</div>	
 				  		<div class="col-md-6">
-				  			<label>Surname</label>
-				  			<input type="text" class="form-control" placeholder="Enter surname" id="sur_name" name="sur_name">
+				  			<label>Last Name</label>
+				  			<input type="text" class="form-control" placeholder="Enter lastname" id="sur_name" name="sur_name">
 				  		</div>	
 				  	</div>
 				  </div>

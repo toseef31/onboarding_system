@@ -37,7 +37,7 @@
         <div class="col-lg-6 col-md-6 app-view-mainCol">
           <div class="cards cards-user">
             <div class="header">
-              <h4 class="title">Telephone Setting</h4>
+              <h4 class="title">NUMBERS</h4>
             </div>
             <div class="content">
               <div class="table-responsive">
@@ -78,39 +78,34 @@
                 </table>
               </div>
               <a href="{{url('user-portal/create-extension')}}" class="btn btn-success border-radius">Manage Number</a>
-             @if($userplan != null) <a href="{{url('user-portal/stopnumber/'.$user->choice_number)}}" onclick='deleteItem()' class="btn btn-warning border-radius">Stop Number</a>@endif
+             @if($userplan != null) <a href="javascript:void(0)" onclick="deleteItem('{{$user->choice_number}}')" class="btn btn-warning border-radius">Stop Number</a>@endif
 
             </div>
             <hr>
             <div class="header">
-              <h4 class="title">Call Reporting</h4>
+              <h4 class="title">EXTENSIONS</h4>
             </div>
             <div class="content">
               <div class="table-responsive">
                 <table class="table  table-bordered">
                   <thead>
                     <tr>
-                      <th>Phone</th>
-                      <th>State of Phone</th>
+                      <th>Name</th>
+                      <th>Ext.</th>
+                      <th>Connect To</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>+60-3-2935-9078</td>
-                      <td>Ringing</td>
+                      <td>Johan Alam (Me)</td>
+                      <td>301</td>
+                      <td>Mobile App & +6512345678</td>
                     </tr>
-                    <tr>
-                      <td>+60-3-2935-9078</td>
-                      <td>Answered</td>
-                    </tr>
-                    <tr>
-                      <td>+60-3-2935-9078</td>
-                      <td>Hang up</td>
-                    </tr>
+                   
                   </tbody>
                 </table>
               </div>
-              <a href="{{url('user-portal/call-report')}}" class="btn btn-success border-radius">Manage Call Reports</a>
+              <a href="{{url('user-portal/call-report')}}" class="btn btn-success border-radius">Manage My Extensions</a>
 
             </div>
             <hr>
@@ -233,9 +228,10 @@
 
 @section('script')
 <script>
-function deleteItem() {
+function deleteItem(id) {
     if (confirm("Are you sure?")) {
-        // your deletion code
+        
+        window.location.href = "{{url('user-portal/stopnumber')}}/"+id;
     }
     return false;
 }

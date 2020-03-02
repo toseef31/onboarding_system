@@ -80,6 +80,11 @@ class DashboardController extends Controller
           $number->status = '3';
           $number->updated_at = Carbon::now();
           $number->save();
+          $user =User::find($request->user()->user_id);
+          
+          $user->choice_number = '';
+          $user->updated_at = Carbon::now();
+          $user->save();
           //dd($number);
            try {
         //\Stripe::setApiKey(env('STRIPE_SECRET_KEY'));
