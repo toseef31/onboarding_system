@@ -11,7 +11,7 @@ class SubscriptionController extends Controller
     public function create(Request $request, Plan $plan)
     {
         if($request->user()->subscribedToPlan($plan->stripe_plan, 'main')) {
-            return redirect()->route('home')->with('success', 'You have already subscribed the plan');
+            return redirect()->route('user-portal')->with('success', 'You have already subscribed the plan');
         }
         $plan = Plan::findOrFail($request->get('plan'));
         //dd($request->stripeToken);
