@@ -118,28 +118,6 @@
                         <a href="" class="text-success">Redeem a coupon</a>
                       </div>
                     </div>
-              		  <!-- <div class="table-responsive">
-              		    <table class="table  table-bordered">
-              		      <thead>
-              		        <tr>
-              		          <th>Package Name</th>
-              		          <th>Card Owner</th>
-              		          <th>Payment</th>
-                            <th>Payment Date</th>
-              		        </tr>
-              		      </thead>
-              		      <tbody>
-              		        <tr>
-                          @if($userplan != null)
-              		          <td>{{ $userplan->name}}</td>
-              		          <td>{{ $userplan->f_name}}</td>
-              		          <td>$ {{ $userplan->cost}}</td>
-                            <td>{{ $userplan->created_at}}</td>
-                            @endif
-              		        </tr>
-              		      </tbody>
-              		    </table>
-              		  </div> -->
               		</div>
                 </div>
             	</div>
@@ -402,7 +380,6 @@
                 </div>
               </div>
             </div>
-          <!-- </div> -->
         </div>
       </div>
     </div>
