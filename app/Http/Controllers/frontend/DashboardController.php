@@ -69,7 +69,7 @@ class DashboardController extends Controller
           //dd($number);
          $updatenumber= Number::where('num_id',$request->input('number'))->update(['status'=>'2']);
          // dd($updatenumber);
-          return back()->with('success','User updated successfully');
+          return back()->with('success','Number updated successfully');
     }
 
      public function stopNumber(Request $request,$id)
