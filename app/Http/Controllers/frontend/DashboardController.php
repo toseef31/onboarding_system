@@ -94,7 +94,7 @@ class DashboardController extends Controller
           $user->stripe_id = null;
           $user->save();
           DB::table('subscriptions')->where('user_user_id',$request->user()->user_id)->delete();
-          return back()->with('success','User updated successfully');
+          return back()->with('success','Your number deactivate successfully');
        
     } catch (\Exception $ex) {
         return $ex->getMessage();
