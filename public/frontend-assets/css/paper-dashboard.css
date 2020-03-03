@@ -242,7 +242,7 @@ hr {
 }
 
 .wrapper {
-   position: relative;
+   /*position: relative; */
    top: 0;
    height: 100vh;
 }
@@ -492,7 +492,7 @@ a:focus, a:hover {
 
 .main-panel {
    background-color: #f4f3ef;
-   position: relative;
+   /*position: relative; */
    z-index: 2;
    float: right;
    width: calc(100% - 260px);
@@ -1036,7 +1036,7 @@ fieldset[disabled] .btn-neutral.active {
     background-color: #FFFFFF;
     color: #252422;
     margin-bottom: 20px;
-    position: relative;
+    /*position: relative; */
     z-index: 1;
 }
 

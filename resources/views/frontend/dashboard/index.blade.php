@@ -15,7 +15,7 @@
 @include('frontend.dashboard.menu.menu')
 
 <div class="main-panel">
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-default" style="position: initial !important;">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle">
