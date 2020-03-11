@@ -1,5 +1,4 @@
 @extends('frontend.layouts.master')
-@extends('frontend.dashboard.layout.master')
 
 @section('title', 'Upgrade Package')
 @section('styling')

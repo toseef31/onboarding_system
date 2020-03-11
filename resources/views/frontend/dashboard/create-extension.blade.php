@@ -81,7 +81,7 @@
 							<hr>
 						</div>
 						<div class="content">
-							<form class="form-horizontals profile-form" action="" method="post">
+							<form class="form-horizontals profile-form" action="" method="get">
 								{{ csrf_field() }}
 								<!-- <div class="row">
 									<div class="col-md-6">
@@ -103,7 +103,7 @@
 									<div class="col-md-12">
 										<div class="form-group">
 											<label>Call Flow</label>
-											<input type="text" class="form-controls border-input" placeholder="Instruction/Setting" value="">
+											<textarea name="" class="form-control border-input" rows="4" cols="80" placeholder="Call Flow"></textarea>
 										</div>
 									</div>
 								</div>
@@ -111,19 +111,22 @@
 									<div class="col-md-12">
 										<div class="form-group">
 											<label>Call Recording</label>
-											<input type="text" class="form-controls border-input" placeholder="Extension" value="" style="margin-bottom: 20px;">
-											<input type="text" name="" placeholder="Instruction" class="form-controls border-input">
+											<select class="form-controls border-input" style="margin-bottom: 20px;">
+													<option>Yes</option>
+													<option>No</option>
+											</select>
+											<!-- <input type="text" class="form-controls border-input" placeholder="Extension" value="" style="margin-bottom: 20px;"> -->
+											<!-- <input type="text" name="" class="form-controls border-input" placeholder="Instruction" class="form-controls border-input"> -->
 										</div>
 									</div>
 								</div>
-								
-								
+
+
 								<div class="row">
 									<div class="col-md-12">
 										<div class="form-group">
 											<label>Call Log Reports</label>
-											<select class="form-controls border-input" style="margin-bottom: 20px;">	
-													<option>Select Option</option>
+											<select class="form-controls border-input" style="margin-bottom: 20px;">
 													<option>Yes</option>
 													<option>No</option>
 											</select>
@@ -154,7 +157,7 @@
 											<input type="text" class="form-controls border-input" placeholder="Timeline/Deadline as stipulated by Client" name="deadline" value="" id="deadline">
 										</div>
 									</div>
-								</div> 
+								</div>
 								<h4>Contact Person (for project):</h4>
 								<div class="row">
 									<div class="col-md-12">
@@ -210,18 +213,12 @@
 									<div class="col-md-12">
 										<div class="form-group">
 											<label>Additional Comments</label>
-											<textarea class="form-controls border-input" placeholder="Additional Comments"></textarea>
+											<!-- <textarea class="form-controls border-input" placeholder="Additional Comments"></textarea> -->
+											<textarea name="" class="form-control border-input" placeholder="Additional Comments" rows="4" cols="80"></textarea>
 										</div>
 									</div>
 								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<div class="form-group">
-											<label>Customer Acceptance Signature </label>
-											<textarea class="form-controls border-input" placeholder="Customer Acceptance Signature"></textarea>
-										</div>
-									</div>
-								</div>
+
 								<div class="row">
 									<div class="col-md-12">
 										<div class="form-group">
@@ -235,22 +232,6 @@
 										<div class="form-group">
 											<label>Date </label>
 											<input type="date" name="date" class="form-controls border-input">
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<div class="form-group">
-											<label>Company Seal </label>
-											<textarea class="form-controls border-input" placeholder="Company Seal"></textarea>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<div class="form-group">
-											<label>Registration Code </label>
-											<input type="text" class="form-controls border-input" name="registration_code">
 										</div>
 									</div>
 								</div>

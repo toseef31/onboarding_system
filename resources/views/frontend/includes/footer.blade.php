@@ -1,3 +1,6 @@
+<!-- Start of pdi-nautilussip Zendesk Widget script -->
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=01ca8b74-4979-472d-b701-4b88bfc88320"> </script>
+<!-- End of pdi-nautilussip Zendesk Widget script -->
   <!-- Site footer -->
     <footer class="site-footer mt-5" style="">
       <!-- <div class="container">
@@ -40,7 +43,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by 
+            <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by
          <a href="#">Nautilus</a>.
             </p>
           </div>
@@ -50,7 +53,7 @@
               <li><a class="facebook" href="#"><i class="fab fa-facebook"></i></a></li>
               <li><a class="twitter" href="#"><i class="fab fa-twitter"></i></a></li>
               <li><a class="dribbble" href="#"><i class="fab fa-dribbble"></i></a></li>
-              <li><a class="linkedin" href="#"><i class="fab fa-linkedin"></i></a></li>   
+              <li><a class="linkedin" href="#"><i class="fab fa-linkedin"></i></a></li>
             </ul>
           </div>
         </div>

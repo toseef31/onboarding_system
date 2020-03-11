@@ -42,7 +42,7 @@
       // dd(request());
       // dd(request()->path());
       ?>
-      <li class="{{ request()->is('/user-portal/update-pricing-plan') ? 'active' : '' }}">
+      <li class="{{ request()->is('user-portal/update-pricing-plan') ? 'active' : '' }}">
         <a href="{{url('/user-portal/update-pricing-plan')}}">
           <i class="ti-image"></i>
           <p>Upgrade package</p>

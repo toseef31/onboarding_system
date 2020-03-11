@@ -73,7 +73,7 @@
           </div>
         </div> -->
         <div class="col-lg-12 col-md-12 app-view-mainCol">
-          
+
             <div class="row">
             	<div class="col-md-6">
                 <div class="cards">
@@ -110,14 +110,14 @@
                         <p class="text-danger">your trial period has ended</p>
                       </div>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                       <div class="col-md-4">
                         <h5 class="text-muted">Coupon</h5>
                       </div>
                       <div class="col-md-8">
                         <a href="" class="text-success">Redeem a coupon</a>
                       </div>
-                    </div>
+                    </div> -->
               		</div>
                 </div>
             	</div>
@@ -166,7 +166,7 @@
                     <div class="row">
                       <div class="col-md-12">
                         <a href="" class="text-success">Cancel your subscription</a>
-                      </div>    
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -305,7 +305,7 @@
               <div class="col-md-6">
                 <div class="cards">
                   <div class="header">
-                    <h4 class="title">Seats usage</h4>
+                    <h4 class="title">User Extension</h4>
                   </div>
                   <div class="content plan-content">
                     <div class="row">
@@ -383,7 +383,7 @@
         </div>
       </div>
     </div>
-    
+
   </div>
 </div>
 
@@ -393,7 +393,7 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/imask/3.4.0/imask.min.js'></script>
 <script  src="{{('frontend-assets/js/credit-card.js')}}"></script>
 <script>
-  
+
   window.onload = function () {
 
   const name = document.getElementById('name');

@@ -116,7 +116,7 @@ class RegisterController extends Controller
 
            // }
 
-        }  return redirect('user-portal');
+        }  return redirect('user-portal/dashboard');
     }
 
     public function register(Request $request){

@@ -21,6 +21,19 @@
 	.border-primary {
 	  border-color: #00abff!important;
 	}
+	.mt-2 {
+		margin-top: 2rem !important;
+	}
+	.subscribe-box .list-group-item {
+    padding: .75rem .2rem;
+}
+.align-items-start {
+    -webkit-box-align: start!important;
+    -ms-flex-align: start!important;
+    align-items: flex-start!important;
+		text-align: left;
+}
+
 </style>
 @endsection
 @section('content')
@@ -49,9 +62,7 @@
 						<div class="row justify-content-center mb-5 mt-5">
 							<div class="col-md-10 text-center">
 								<h1 class="mb-5">Nautilus <span class="text-danger">Pricing Plans</span></h1>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+								<p></p>
 								</div>
 							</div>
 							<!-- Subscription Box -->
@@ -61,8 +72,8 @@
 									@foreach($plans as $plan)
 									<div class="col col-md-3 text-center text-dark mb-3 px-1 mx-2 rounded">
 										<a href="{{ route('plans.show', $plan->slug) }}">
-											<div class="subscribe-box bg-white p-3 pt-5 pb-5 rounded shadow-lg" style="height: 605px;">
-												<h2 class="text-capitalize text-primary">{{$plan->name}}</h2>
+											<div class="subscribe-box bg-white p-3 pt-5 pb-5 rounded shadow-lg" style="height: 500px;">
+												<h2 class="text-capitalize text-primary"style="font-size: 31px;padding-top: 36px;">{{$plan->name}}</h2>
 
 												<div class="border-top-3 border-primary"></div>
 												<h6 class="text-danger mt-2">{{$plan->heading}}</h6>
