@@ -15,7 +15,7 @@ class NumberController extends Controller
      */
     public function index()
     {
-        $numbers = Number::all();
+        $numbers = Number::orderBy('num_id','desc')->paginate(10);
         $numbersbook = Number::where('status','1')->count();
         $numbersavailable = Number::where('status','0')->count();
         $numbersreserve = Number::where('status','2')->count();

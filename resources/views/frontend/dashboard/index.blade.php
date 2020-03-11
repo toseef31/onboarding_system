@@ -15,7 +15,7 @@
 @include('frontend.dashboard.menu.menu')
 
 <div class="main-panel">
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-default" style="position: initial !important;">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle">
@@ -32,6 +32,14 @@
 
 
   <div class="content">
+  @if(Session::has('success'))
+			<div class="alert alert-success">
+				{{ Session::get('success') }}
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			@endif
     <div class="container-fluid app-view-mainCol">
       <div class="row">
         <div class="col-lg-6 col-md-6 app-view-mainCol">

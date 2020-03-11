@@ -1,9 +1,28 @@
 @extends('frontend.dashboard.layout.master')
 
-@section('title', 'Call Reporting')
+@section('title', 'Billing Info')
 
 @section('styling')
 <link rel="stylesheet" type="text/css" href="{{asset('frontend-assets/css/credit-card.css')}}">
+<style>
+  .plan-content{
+    padding-top: 0 !important;
+  }
+  .plan-content .row{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .plan-content1 .row{
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .plan-content .progress{
+    height: 10px;
+  }
+  .plan-content .progress .progress-bar{
+    background-color: #5cb85c;
+  }
+</style>
 @endsection
 @section('content')
 
@@ -54,40 +73,106 @@
           </div>
         </div> -->
         <div class="col-lg-12 col-md-12 app-view-mainCol">
-          <div class="cards" style="height: 420px;">
+          
             <div class="row">
-            	<div class="col-md-7">
-            		<div class="header">
-            		  <h3 class="title">Information</h3>
-                  <hr>
-            		</div>
-            		<div class="content">
-            		  <div class="table-responsive">
-            		    <table class="table  table-bordered">
-            		      <thead>
-            		        <tr>
-            		          <th>Package Name</th>
-            		          <th>Card Owner</th>
-            		          <th>Payment</th>
-                          <th>Payment Date</th>
-            		        </tr>
-            		      </thead>
-            		      <tbody>
-            		        <tr>
+            	<div class="col-md-6">
+                <div class="cards">
+              		<div class="header">
+              		  <h4 class="title">Current Plan</h4>
+                    <hr style="margin-bottom: 0;">
+              		</div>
+              		<div class="content plan-content">
+                    <div class="row">
+                      <div class="col-md-6">
                         @if($userplan != null)
-            		          <td>{{ $userplan->name}}</td>
-            		          <td>{{ $userplan->f_name}}</td>
-            		          <td>$ {{ $userplan->cost}}</td>
-                          <td>{{ $userplan->created_at}}</td>
-                          @endif
-            		        </tr>
-            		      </tbody>
-            		    </table>
-            		  </div>
-            		</div>
+                        <h5>{{ $userplan->name}}</h5>
+                        @endif
+                      </div>
+                      <div class="col-md-6 text-right">
+                        <a href="{{url('update-pricing-plan')}}" class="btn btn-success">Reactivate subscription</a>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <h5 class="text-muted">Payment</h5>
+                      </div>
+                      <div class="col-md-8">
+                        @if($userplan != null)
+                        <p>$ {{ $userplan->cost}} <sub>per month</sub></p>
+                        @endif
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <h5 class="text-muted">Next payment</h5>
+                      </div>
+                      <div class="col-md-8">
+                        <p class="text-danger">your trial period has ended</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <h5 class="text-muted">Coupon</h5>
+                      </div>
+                      <div class="col-md-8">
+                        <a href="" class="text-success">Redeem a coupon</a>
+                      </div>
+                    </div>
+              		</div>
+                </div>
             	</div>
+              <div class="col-md-6">
+                <div class="cards" style="height: 315px;">
+                  <div class="header">
+                    <h4 class="title">Payment & account details</h4>
+                    <hr style="margin-bottom: 0;">
+                  </div>
+                  <div class="content plan-content1">
+                    <div class="row">
+                      <div class="col-md-8">
+                        <p class="text-muted">No credit card on file</p>
+                      </div>
+                      <div class="col-md-4 text-right">
+                        <a href="" class="btn btn-success">Add card</a>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <h5 class="text-muted">Send receipts to</h5>
+                      </div>
+                      <div class="col-md-8">
+                        <p>nautilusnetworksg@gmail.com</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <h5 class="text-muted">CC receipts to</h5>
+                      </div>
+                      <div class="col-md-8">
+                        <p>email</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <h5 class="text-muted">Account owner</h5>
+                      </div>
+                      <div class="col-md-6">
+                        <p>nautilusnetworksg@gmail.com</p>
+                      </div>
+                      <div class="col-md-2">
+                        <a href="" class="text-success">Change</a>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <a href="" class="text-success">Cancel your subscription</a>
+                      </div>    
+                    </div>
+                  </div>
+                </div>
+              </div>
                @if($userplan != null)
-            	<div class="col-md-5">
+            	<div class="col-md-5" style="display: none;">
             		<div class="header">
             		  <h3 class="title">Card Info</h3>
                   <hr>
@@ -216,14 +301,89 @@
             	</div>
               @endif
             </div>
-            
-          </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="cards">
+                  <div class="header">
+                    <h4 class="title">Seats usage</h4>
+                  </div>
+                  <div class="content plan-content">
+                    <div class="row">
+                      <div class="col-md-8">
+                        <p class="text-muted">1 seat</p>
+                      </div>
+                      <div class="col-md-4 text-right">
+                        <a href="" class="btn btn-success">Manage seats</a>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="progress">
+                          <div class="progress-bar" role="progressbar" aria-valuenow="100"
+                          aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                            <span class="sr-only">100% Complete</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="cards">
+                  <div class="header">
+                    <h4 class="title">Payment history</h4>
+                  </div>
+                  <div class="content plan-content">
+                    @if($userplan != null)
+                    <div class="row">
+                      <div class="col-md-6">
+                        <h5 class="text-muted">Package Name</h5>
+                      </div>
+                      <div class="col-md-6">
+                        <p>{{ $userplan->name}}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <h5 class="text-muted">Card Owner</h5>
+                      </div>
+                      <div class="col-md-6">
+                        <p>{{ $userplan->f_name}}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <h5 class="text-muted">Payment</h5>
+                      </div>
+                      <div class="col-md-6">
+                        <p>$ {{ $userplan->cost}}</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <h5 class="text-muted">Payment Date</h5>
+                      </div>
+                      <div class="col-md-6">
+                        <p>{{ $userplan->created_at}}</p>
+                      </div>
+                    </div>
+                    @endif
+                    @if($userplan == null)
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="text-muted">you have no invoices yet.</p>
+                      </div>
+                    </div>
+                    @endif
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
       </div>
     </div>
-
-        
-
+    
   </div>
 </div>
 

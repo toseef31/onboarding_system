@@ -69,7 +69,7 @@ class DashboardController extends Controller
           //dd($number);
          $updatenumber= Number::where('num_id',$request->input('number'))->update(['status'=>'2']);
          // dd($updatenumber);
-          return back()->with('success','User updated successfully');
+          return back()->with('success','Number updated successfully');
     }
 
      public function stopNumber(Request $request,$id)
@@ -80,11 +80,11 @@ class DashboardController extends Controller
           $number->status = '3';
           $number->updated_at = Carbon::now();
           $number->save();
-          $user =User::find($request->user()->user_id);
+          // $user =User::find($request->user()->user_id);
           
-          $user->choice_number = '';
-          $user->updated_at = Carbon::now();
-          $user->save();
+          // $user->choice_number = '';
+          // $user->updated_at = Carbon::now();
+          // $user->save();
           //dd($number);
            try {
         //\Stripe::setApiKey(env('STRIPE_SECRET_KEY'));
@@ -94,7 +94,7 @@ class DashboardController extends Controller
           $user->stripe_id = null;
           $user->save();
           DB::table('subscriptions')->where('user_user_id',$request->user()->user_id)->delete();
-          return back()->with('success','User updated successfully');
+          return back()->with('success','Your number deactivate successfully');
        
     } catch (\Exception $ex) {
         return $ex->getMessage();
