@@ -24,18 +24,28 @@
           <p>Telephone Setting</p>
         </a>
       </li>
-      
+
       <li class="{{ request()->is('user-portal/call-report') ? 'active' : '' }}">
         <a href="{{url('/user-portal/call-report')}}">
           <i class="ti-pencil-alt2"></i>
           <p>Call Reporting</p>
         </a>
       </li>
-      
-      <li class="{{ request()->is('user-portal/disposition-call-report') ? 'active' : '' }}">
+
+      <!-- <li class="{{ request()->is('user-portal/disposition-call-report') ? 'active' : '' }}">
         <a href="{{url('user-portal/disposition-call-report')}}">
           <i class="ti-map"></i>
           <p>Disposition of calls report</p>
+        </a>
+      </li> -->
+      <?php
+      // dd(request());
+      // dd(request()->path());
+      ?>
+      <li class="{{ request()->is('/user-portal/update-pricing-plan') ? 'active' : '' }}">
+        <a href="{{url('/user-portal/update-pricing-plan')}}">
+          <i class="ti-image"></i>
+          <p>Upgrade package</p>
         </a>
       </li>
       <li class="{{ request()->is('user-portal/billing-info') ? 'active' : '' }}">
@@ -44,20 +54,15 @@
           <p>Billing Information</p>
         </a>
       </li>
-      
-      <li class="{{ request()->is('/update-pricing-plan') ? 'active' : '' }}">
-        <a href="{{url('/update-pricing-plan')}}">
-          <i class="ti-image"></i>
-          <p>Upgrade package</p>
-        </a>
-      </li>
-      
-      <li class="{{ request()->is('') ? 'active' : '' }}">
+
+
+
+      <!-- <li class="{{ request()->is('') ? 'active' : '' }}">
         <a href="">
           <i class="ti-comments"></i>
           <p>WebRTC</p>
         </a>
-      </li>
+      </li> -->
       <!--  <li class="{{ request()->is('dashboard/affiliate') ? 'active' : '' }}">
         <a href="/dashboard/affiliate">
           <i class="ti-image"></i>
@@ -76,7 +81,7 @@
           <p>Local Data Upload</p>
         </a>
       </li> -->
-      
+
     </ul>
   </div>
 </div>

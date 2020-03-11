@@ -1,4 +1,7 @@
 @extends('frontend.layouts.master')
+@extends('frontend.dashboard.layout.master')
+
+@section('title', 'Upgrade Package')
 @section('styling')
 <style>
 	.rounded{
@@ -22,6 +25,7 @@
 </style>
 @endsection
 @section('content')
+@include('frontend.dashboard.menu.menu')
 <div class="container">
 	<div class="row justify-content-center mb-5 mt-5">
 		<div class="col-md-10 text-center">
@@ -38,7 +42,7 @@
 			<a href="{{ route('plans.show', $plan->slug) }}">
 				<div class="subscribe-box bg-white p-3 pt-5 pb-5 rounded shadow-lg" style="height: 605px;">
 					<h2 class="text-capitalize text-primary">{{$plan->name}}</h2>
-					
+
 					<div class="border-top-3 border-primary"></div>
 					<h6 class="text-danger mt-2">{{$plan->heading}}</h6>
 					<ul class="list-group align-items-start mt-4">
@@ -51,7 +55,7 @@
 					<!-- <p class="pt-1 pb-1">Up to 3 users</p> -->
 					<!-- @if(!auth()->user()->subscribedToPlan($plan->stripe_plan, 'main'))
 	                          <a href="{{ route('plans.show', $plan->slug) }}" class="btn btn-danger btn-block mt-5 py-2">Get Plan</a>
-	                 
+
 					 @else
 					 <button class="btn btn-success btn-block mt-5 py-2" disabled>Your Current Plan</button>
 					  @endif -->

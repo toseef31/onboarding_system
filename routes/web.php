@@ -87,13 +87,13 @@ Route::group(['prefix' => 'user-portal'], function () {
 	Route::match(['get','post'],'/manage-profile', 'frontend\RegisterController@show');
 	Route::match(['get','post'],'/changeNumber', 'frontend\DashboardController@updateNumber');
 	Route::get('/stopnumber/{id}', 'frontend\DashboardController@stopNumber');
+	Route::get('/update-pricing-plan', 'PlanController@updateplan');
 });
 
     Route::get('/pricing-plan', 'PlanController@index')->name('plans.index');
     Route::get('/plan/{plan}', 'PlanController@show')->name('plans.show');
     Route::post('/subscription', 'SubscriptionController@create')->name('subscription.create');
 
-  Route::get('/update-pricing-plan', 'PlanController@updateplan');
 
 
 });

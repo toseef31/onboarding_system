@@ -19,7 +19,7 @@ class PlanController extends Controller
     {
         $plans = Plan::all();
        //dd($plans);
-        return view('frontend.update-pricing', compact('plans'));
+        return view('frontend.dashboard.update-pricing', compact('plans'));
     }
     public function show(Plan $plan, Request $request)
     {
