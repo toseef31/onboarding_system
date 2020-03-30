@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNumbersTable extends Migration
+class CreateChatAdminTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class CreateNumbersTable extends Migration
      */
     public function up()
     {
-        Schema::create('numbers', function (Blueprint $table) {
+        Schema::create('chat_admin', function (Blueprint $table) {
             $table->increments('id');
+			$table->string('name');
+            $table->string('email');
+			$table->string('password');
+            $table->enum('role', ['admin', 'job','payment']);
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateNumbersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('numbers');
+        Schema::dropIfExists('chat_admin');
     }
 }
